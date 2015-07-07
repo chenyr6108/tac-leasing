@@ -1,0 +1,2289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.visitation.service);
+
+
+var dataMap = VisitationService.getVisitReport(params["visit_id"].value);
+
+vars["busi_name"] = dataMap.getBusi_name();
+vars["real_visit_date"] = dataMap.getReal_visit_date();
+vars["real_visitor_name"] = dataMap.getReal_visitor_name();
+vars["create_by_name"] = dataMap.getCreate_by_name();
+vars["sensor_name"] = dataMap.getSensor_name();
+vars["busi_manager"] = dataMap.getBusi_manager();
+vars["cust_comp_name"] = dataMap.getCust_comp_name();
+vars["cust_apply_amount"] = dataMap.getCust_apply_amount();
+vars["cust_guar"] = dataMap.getCust_guar();
+vars["cust_comp_status"] = dataMap.getCust_comp_status();
+vars["cust_relation"] = dataMap.getCust_relation();
+vars["cust_product"] = dataMap.getCust_product();
+vars["cust_invoice"] = dataMap.getCust_invoice();
+vars["legal_name"] = dataMap.getLegal_name();
+vars["legal_address"] = dataMap.getLegal_address();
+vars["legal_experience"] = dataMap.getLegal_experience();
+vars["factory_envi"] = dataMap.getFactory_envi();
+vars["factory_is_self"] = dataMap.getFactory_is_self();
+vars["factory_has_dorm"] = dataMap.getFactory_has_dorm();
+vars["factory_has_mess"] = dataMap.getFactory_has_mess();
+vars["factory_clean"] = dataMap.getFactory_clean();
+vars["factory_worker"] = dataMap.getFactory_worker();
+vars["factory_jia_dong"] = dataMap.getFactory_jia_dong();
+vars["factory_apply_use_to"] = dataMap.getFactory_apply_use_to();
+vars["factory_worker_attitude"] = dataMap.getFactory_worker_attitude();
+vars["factory_has_overalls"] = dataMap.getFactory_has_overalls();
+vars["inventory_status"] = dataMap.getInventory_status();
+vars["inventory_put_status"] = dataMap.getInventory_put_status();
+vars["manage_work_status"] = dataMap.getManage_work_status();
+vars["manage_has_overalls"] = dataMap.getManage_has_overalls();
+vars["manage_work_attitude"] = dataMap.getManage_work_attitude();
+vars["added_info"] = dataMap.getAdded_info();
+vars["visit_result"] = dataMap.getVisit_result();
+vars["reason"] = dataMap.getReason();
+vars["cust_comp_status2"] = dataMap.getCust_comp_status2();
+vars["cust_product_percent1"] = dataMap.getCust_product_percent1();
+vars["cust_product_percent2"] = dataMap.getCust_product_percent2();
+vars["cust_product_other"] = dataMap.getCust_product_other();
+vars["legal_position"] = dataMap.getLegal_position();
+vars["legal_position_other"] = dataMap.getLegal_position_other();
+vars["legal_age"] = dataMap.getLegal_age();
+vars["legal_address2"] = dataMap.getLegal_address2();
+vars["legal_experience_year1"] = dataMap.getLegal_experience_year1();
+vars["legal_experience_year2"] = dataMap.getLegal_experience_year2();
+vars["legal_experience_affiliated"] = dataMap.getLegal_experience_affiliated();
+vars["legal_experience_affiliated_company"] = dataMap.getLegal_experience_affiliated_company();
+vars["legal_experience_from"] = dataMap.getLegal_experience_from();
+vars["legal_experience_from_other"] = dataMap.getLegal_experience_from_other();
+vars["legal_experience_from_year"] = dataMap.getLegal_experience_from_year();
+vars["legal_experience_inherit"] = dataMap.getLegal_experience_inherit();
+vars["legal_experience_flag"] = dataMap.getLegal_experience_flag();
+vars["factory_worker_class"] = dataMap.getFactory_worker_class();
+vars["factory_apply_use_to_other"] = dataMap.getFactory_apply_use_to_other();
+vars["reason_s"] = dataMap.getReason_s();
+vars["reason_w"] = dataMap.getReason_w();
+vars["reason_o"] = dataMap.getReason_o();
+vars["reason_t"] = dataMap.getReason_t();
+vars["cust_type"] = dataMap.getCust_type();
+vars["contract_type"] = dataMap.getContract_type();
+vars["contract_type_other"] = dataMap.getContract_type_other();
+vars["legal_address_other"] = dataMap.getLegal_address_other();
+
+vars["authLeader"] = dataMap.getAuth_leader_name();
+vars["cust_product_process"] = dataMap.getCust_product_process();]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="visit_id" id="7">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="8"/>
+    </data-sources>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="font" id="408">
+            <property name="fontFamily">"微软雅黑"</property>
+            <property name="fontSize">14px</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="409">
+            <property name="style">font</property>
+            <property name="fontSize">20px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">访厂报告</text-property>
+        </label>
+        <grid id="410">
+            <property name="style">font</property>
+            <property name="marginTop">10px</property>
+            <column id="411">
+                <property name="textAlign">right</property>
+            </column>
+            <column id="412">
+                <property name="textAlign">left</property>
+            </column>
+            <column id="413">
+                <property name="textAlign">right</property>
+            </column>
+            <column id="414">
+                <property name="textAlign">left</property>
+            </column>
+            <row id="415">
+                <cell id="416">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <label id="430">
+                        <text-property name="text">实际访厂时间：</text-property>
+                    </label>
+                </cell>
+                <cell id="417">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <data id="442">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">real_visit_date</property>
+                                <text-property name="displayName">real_visit_date</text-property>
+                                <expression name="expression" type="javascript">vars["real_visit_date"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">real_visit_date</property>
+                    </data>
+                </cell>
+                <cell id="418">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <label id="433">
+                        <text-property name="text">实际访厂人员：</text-property>
+                    </label>
+                </cell>
+                <cell id="419">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <data id="439">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">real_visitor_name</property>
+                                <text-property name="displayName">real_visitor_name</text-property>
+                                <expression name="expression" type="javascript">vars["real_visitor_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">real_visitor_name</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="420">
+                <cell id="421">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <label id="431">
+                        <text-property name="text">报告填写人：</text-property>
+                    </label>
+                </cell>
+                <cell id="422">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <data id="437">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">create_by_name</property>
+                                <text-property name="displayName">create_by_name</text-property>
+                                <expression name="expression" type="javascript">vars["create_by_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">create_by_name</property>
+                    </data>
+                </cell>
+                <cell id="423">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <label id="434">
+                        <text-property name="text">业务员：</text-property>
+                    </label>
+                </cell>
+                <cell id="424">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <data id="440">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">sensor_name</property>
+                                <text-property name="displayName">sensor_name</text-property>
+                                <expression name="expression" type="javascript">vars["sensor_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">sensor_name</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="701">
+                <cell id="702">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <label id="706">
+                        <text-property name="text">审查处访厂主管：</text-property>
+                    </label>
+                </cell>
+                <cell id="703">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <data id="707">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">authLeader</property>
+                                <text-property name="displayName">authLeader</text-property>
+                                <expression name="expression" type="javascript">vars["authLeader"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">authLeader</property>
+                    </data>
+                </cell>
+                <cell id="704">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                </cell>
+                <cell id="705">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                </cell>
+            </row>
+            <row id="425">
+                <cell id="426">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <label id="432">
+                        <text-property name="text">案件类型：</text-property>
+                    </label>
+                </cell>
+                <cell id="427">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <data id="438">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cust_type</property>
+                                <text-property name="displayName">cust_type</text-property>
+                                <expression name="expression" type="javascript">vars["cust_type"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cust_type</property>
+                    </data>
+                </cell>
+                <cell id="428">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <label id="435">
+                        <text-property name="text">业务主管是否访厂：</text-property>
+                    </label>
+                </cell>
+                <cell id="429">
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">2pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <data id="441">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">busi_manager</property>
+                                <text-property name="displayName">busi_manager</text-property>
+                                <expression name="expression" type="javascript">vars["busi_manager"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">busi_manager</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="463">
+            <property name="style">font</property>
+            <property name="marginTop">5pt</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">test</property>
+                    <expression name="expression" type="javascript">BirtStr.search("纯代工222",vars["cust_product"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="464">
+                <property name="width">0.375in</property>
+                <property name="verticalAlign">middle</property>
+            </column>
+            <column id="465">
+                <property name="width">2.8020833333333335in</property>
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+            </column>
+            <column id="466">
+                <property name="width">4.770833333333333in</property>
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+            </column>
+            <row id="467">
+                <cell id="468">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">8</property>
+                    <property name="fontSize">14px</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <property name="textAlign">center</property>
+                    <label id="677">
+                        <text-property name="text">承</text-property>
+                    </label>
+                    <label id="678">
+                        <text-property name="text">租</text-property>
+                    </label>
+                    <label id="679">
+                        <text-property name="text">人</text-property>
+                    </label>
+                </cell>
+                <cell id="469">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="572">
+                        <text-property name="text">公司名称：</text-property>
+                    </label>
+                </cell>
+                <cell id="470">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="608">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cust_comp_name</property>
+                                <text-property name="displayName">cust_comp_name</text-property>
+                                <expression name="expression" type="javascript">vars["cust_comp_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cust_comp_name</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="471">
+                <cell id="473">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="573">
+                        <text-property name="text">预计申请额度：</text-property>
+                    </label>
+                </cell>
+                <cell id="474">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="667">
+                        <property name="display">inline</property>
+                        <text-property name="text">RMB：</text-property>
+                    </label>
+                    <data id="609">
+                        <structure name="numberFormat">
+                            <property name="category">Currency</property>
+                            <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="display">inline</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cust_apply_amount</property>
+                                <text-property name="displayName">cust_apply_amount</text-property>
+                                <expression name="expression" type="javascript">vars["cust_apply_amount"]</expression>
+                                <property name="dataType">decimal</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cust_apply_amount</property>
+                    </data>
+                    <label id="668">
+                        <property name="display">inline</property>
+                        <text-property name="text">元</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="475">
+                <cell id="477">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="574">
+                        <text-property name="text">预计申请租赁方式：</text-property>
+                    </label>
+                </cell>
+                <cell id="478">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="610">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["contract_type"] == "其他"</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">contract_type</property>
+                                <text-property name="displayName">contract_type</text-property>
+                                <expression name="expression" type="javascript">vars["contract_type"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">contract_type</property>
+                    </data>
+                    <data id="611">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["contract_type_other"] == null || row["contract_type_other"] == ""</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">contract_type_other</property>
+                                <text-property name="displayName">contract_type_other</text-property>
+                                <expression name="expression" type="javascript">vars["contract_type_other"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">contract_type_other</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="479">
+                <cell id="481">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="575">
+                        <text-property name="text">保证内容（包含预测保证）：</text-property>
+                    </label>
+                </cell>
+                <cell id="482">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="612">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cust_guar</property>
+                                <text-property name="displayName">cust_guar</text-property>
+                                <expression name="expression" type="javascript">vars["cust_guar"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cust_guar</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="483">
+                <cell id="485">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="576">
+                        <text-property name="text">公司形态及组织</text-property>
+                    </label>
+                </cell>
+                <cell id="486">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="613">
+                        <property name="display">inline</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cust_comp_status</property>
+                                <text-property name="displayName">cust_comp_status</text-property>
+                                <expression name="expression" type="javascript">"1. " + vars["cust_comp_status"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cust_comp_status</property>
+                    </data>
+                    <label id="700">
+                        <property name="display">inline</property>
+                        <text-property name="text">；</text-property>
+                    </label>
+                    <data id="614">
+                        <property name="display">inline</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cust_comp_status2</property>
+                                <text-property name="displayName">cust_comp_status2</text-property>
+                                <expression name="expression" type="javascript">"2. " + vars["cust_comp_status2"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cust_comp_status2</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="487">
+                <cell id="489">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="577">
+                        <text-property name="text">股东背景及关系：</text-property>
+                    </label>
+                </cell>
+                <cell id="490">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="615">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cust_relation</property>
+                                <text-property name="displayName">cust_relation</text-property>
+                                <expression name="expression" type="javascript">vars["cust_relation"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cust_relation</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="491">
+                <cell id="493">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="579">
+                        <text-property name="text">主要产品及用途：</text-property>
+                    </label>
+                </cell>
+                <cell id="494">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="712">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">BirtStr.search("纯代工",vars["cust_product"]) == -1</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cust_product_process</property>
+                                <text-property name="displayName">cust_product_process</text-property>
+                                <expression name="expression" type="javascript">"纯代工，加工产品：" + vars["cust_product_process"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cust_product_process</property>
+                    </data>
+                    <label id="713">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">BirtStr.search("代工代料",vars["cust_product"]) == -1</expression>
+                            </structure>
+                        </list-property>
+                        <text-property name="text">代工代料</text-property>
+                    </label>
+                    <data id="714">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">BirtStr.search("比例",vars["cust_product"]) == -1</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cust_product_percent1</property>
+                                <text-property name="displayName">cust_product_percent1</text-property>
+                                <expression name="expression" type="javascript">"代工比例：" + vars["cust_product_percent1"] + "%；代料比例：" + vars["cust_product_percent2"] + "%"</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cust_product_percent1</property>
+                    </data>
+                    <data id="715">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">BirtStr.search("自有产品",vars["cust_product"]) == -1</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cust_product_other</property>
+                                <text-property name="displayName">cust_product_other</text-property>
+                                <expression name="expression" type="javascript">"自有产品：" + vars["cust_product_other"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cust_product_other</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="495">
+                <cell id="497">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="580">
+                        <text-property name="text">开票比例：</text-property>
+                    </label>
+                </cell>
+                <cell id="498">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="620">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cust_invoice</property>
+                                <text-property name="displayName">cust_invoice</text-property>
+                                <expression name="expression" type="javascript">vars["cust_invoice"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cust_invoice</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="499">
+                <cell id="500">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">3</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <property name="textAlign">center</property>
+                    <label id="621">
+                        <text-property name="text">法</text-property>
+                    </label>
+                    <label id="680">
+                        <text-property name="text">人</text-property>
+                    </label>
+                    <label id="681">
+                        <text-property name="text">代</text-property>
+                    </label>
+                    <label id="682">
+                        <text-property name="text">表</text-property>
+                    </label>
+                    <label id="683">
+                        <text-property name="text">或</text-property>
+                    </label>
+                    <label id="684">
+                        <text-property name="text">负</text-property>
+                    </label>
+                    <label id="685">
+                        <text-property name="text">责</text-property>
+                    </label>
+                    <label id="686">
+                        <text-property name="text">人</text-property>
+                    </label>
+                    <label id="687">
+                        <text-property name="text">背</text-property>
+                    </label>
+                    <label id="688">
+                        <text-property name="text">景</text-property>
+                    </label>
+                </cell>
+                <cell id="501">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="581">
+                        <text-property name="text">面谈者：</text-property>
+                    </label>
+                    <label id="622">
+                        <text-property name="text">(1)姓名、职位、出身年月（几岁）：</text-property>
+                    </label>
+                </cell>
+                <cell id="502">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="623">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">legal_name</property>
+                                <text-property name="displayName">legal_name</text-property>
+                                <expression name="expression" type="javascript">"姓名：" + vars["legal_name"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">legal_name</property>
+                    </data>
+                    <data id="624">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">legal_position</property>
+                                <text-property name="displayName">legal_position</text-property>
+                                <expression name="expression" type="javascript">"职位：" + vars["legal_position"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">legal_position</property>
+                    </data>
+                    <data id="626">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">legal_age</property>
+                                <text-property name="displayName">legal_age</text-property>
+                                <expression name="expression" type="javascript">"年龄：" + vars["legal_age"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">legal_age</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="503">
+                <cell id="505">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="582">
+                        <text-property name="text">(2)国家地区：</text-property>
+                    </label>
+                </cell>
+                <cell id="506">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="627">
+                        <property name="display">inline</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["legal_address"] == "其他"</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">legal_address</property>
+                                <text-property name="displayName">legal_address</text-property>
+                                <expression name="expression" type="javascript">vars["legal_address"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">legal_address</property>
+                    </data>
+                    <data id="628">
+                        <property name="display">inline</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">vars["legal_address"] != "中国"</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">legal_address2</property>
+                                <text-property name="displayName">legal_address2</text-property>
+                                <expression name="expression" type="javascript">"（" + vars["legal_address2"] + "）"</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">legal_address2</property>
+                    </data>
+                    <data id="669">
+                        <property name="display">inline</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">vars["legal_address"] != "其他"</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">legal_address_other</property>
+                                <text-property name="displayName">legal_address_other</text-property>
+                                <expression name="expression" type="javascript">vars["legal_address_other"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">legal_address_other</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="507">
+                <cell id="509">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="584">
+                        <text-property name="text">(3)本业资历（创业历程）：</text-property>
+                    </label>
+                </cell>
+                <cell id="510">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="629">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">vars["legal_experience_year1"] == null || vars["legal_experience_year1"] == ""</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">legal_experience_year1</property>
+                                <text-property name="displayName">legal_experience_year1</text-property>
+                                <expression name="expression" type="javascript">"1.  从事本业相关资历" + vars["legal_experience_year1"] + "年；经营企业（含关联企业）" + vars["legal_experience_year2"] + "年"</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">legal_experience_year1</property>
+                    </data>
+                    <data id="631">
+                        <property name="display">inline</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">legal_experience_affiliated</property>
+                                <text-property name="displayName">legal_experience_affiliated</text-property>
+                                <expression name="expression" type="javascript">"2.  关联企业：" + vars["legal_experience_affiliated"] + " "</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">legal_experience_affiliated</property>
+                    </data>
+                    <data id="632">
+                        <property name="display">inline</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">vars["legal_experience_affiliated_company"] == null || vars["legal_experience_affiliated_company"] == ""</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">legal_experience_affiliated_company</property>
+                                <text-property name="displayName">legal_experience_affiliated_company</text-property>
+                                <expression name="expression" type="javascript">"：" + vars["legal_experience_affiliated_company"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">legal_experience_affiliated_company</property>
+                    </data>
+                    <data id="633">
+                        <property name="display">block</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">legal_experience_from</property>
+                                <text-property name="displayName">legal_experience_from</text-property>
+                                <expression name="expression" type="javascript">"3.  " + vars["legal_experience_from"] + (vars["legal_experience_from_other"]  != null &amp;&amp; vars["legal_experience_from_other"]  != "" ? &#13;
+(vars["legal_experience_from_other"] + "，担任主管" + vars["legal_experience_from_year"] + "年") : ""&#13;
+)</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">legal_experience_from</property>
+                    </data>
+                    <data id="636">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">legal_experience_inherit</property>
+                                <text-property name="displayName">legal_experience_inherit</text-property>
+                                <expression name="expression" type="javascript">vars["legal_experience_inherit"] == "Y" ? "4.  继承及经营家族企业" : "4.  非继承或经营家族企业"</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">legal_experience_inherit</property>
+                    </data>
+                    <data id="637">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">vars["legal_experience_flag"] == "N"</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">legal_experience_flag</property>
+                                <text-property name="displayName">legal_experience_flag</text-property>
+                                <expression name="expression" type="javascript">vars["legal_experience_flag"] == "Y" ? ("5.  其他：（说明）" + vars["legal_experience"]) : ""</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">legal_experience_flag</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="511">
+                <cell id="512">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">9</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <property name="textAlign">center</property>
+                    <label id="638">
+                        <text-property name="text">厂</text-property>
+                    </label>
+                    <label id="689">
+                        <text-property name="text">方</text-property>
+                    </label>
+                    <label id="690">
+                        <text-property name="text">环</text-property>
+                    </label>
+                    <label id="691">
+                        <text-property name="text">境</text-property>
+                    </label>
+                </cell>
+                <cell id="513">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="585">
+                        <text-property name="text">(1)是否自己所有：</text-property>
+                    </label>
+                </cell>
+                <cell id="514">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="639">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">factory_is_self</property>
+                                <text-property name="displayName">factory_is_self</text-property>
+                                <expression name="expression" type="javascript">vars["factory_is_self"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">factory_is_self</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="515">
+                <cell id="517">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="586">
+                        <text-property name="text">(2)有无员工宿舍：</text-property>
+                    </label>
+                </cell>
+                <cell id="518">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="640">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">factory_has_dorm</property>
+                                <text-property name="displayName">factory_has_dorm</text-property>
+                                <expression name="expression" type="javascript">vars["factory_has_dorm"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">factory_has_dorm</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="519">
+                <cell id="521">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="587">
+                        <text-property name="text">(3)有无员工食堂：</text-property>
+                    </label>
+                </cell>
+                <cell id="522">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="641">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">factory_has_mess</property>
+                                <text-property name="displayName">factory_has_mess</text-property>
+                                <expression name="expression" type="javascript">vars["factory_has_mess"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">factory_has_mess</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="523">
+                <cell id="525">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="592">
+                        <text-property name="text">(4)生产车间清洁度：</text-property>
+                    </label>
+                </cell>
+                <cell id="526">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="642">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">factory_clean</property>
+                                <text-property name="displayName">factory_clean</text-property>
+                                <expression name="expression" type="javascript">vars["factory_clean"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">factory_clean</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="527">
+                <cell id="529">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="593">
+                        <text-property name="text">(5)工厂工人人数及轮班次数：</text-property>
+                    </label>
+                </cell>
+                <cell id="530">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="643">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">factory_worker</property>
+                                <text-property name="displayName">factory_worker</text-property>
+                                <expression name="expression" type="javascript">"员工" + vars["factory_worker"] + "人；分" + vars["factory_worker_class"] + "班制生产"</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">factory_worker</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="531">
+                <cell id="533">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="594">
+                        <text-property name="text">(6)稼动率：</text-property>
+                    </label>
+                </cell>
+                <cell id="534">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="645">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">factory_jia_dong</property>
+                                <text-property name="displayName">factory_jia_dong</text-property>
+                                <expression name="expression" type="javascript">vars["factory_jia_dong"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">factory_jia_dong</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="535">
+                <cell id="537">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="595">
+                        <text-property name="text">(7)本次申请设备用途：</text-property>
+                    </label>
+                </cell>
+                <cell id="538">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="646">
+                        <property name="display">inline</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">factory_apply_use_to</property>
+                                <text-property name="displayName">factory_apply_use_to</text-property>
+                                <expression name="expression" type="javascript">vars["factory_apply_use_to"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">factory_apply_use_to</property>
+                    </data>
+                    <data id="647">
+                        <property name="display">inline</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">factory_apply_use_to_other</property>
+                                <text-property name="displayName">factory_apply_use_to_other</text-property>
+                                <expression name="expression" type="javascript">vars["factory_apply_use_to_other"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">factory_apply_use_to_other</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="539">
+                <cell id="541">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="596">
+                        <text-property name="text">(8)工厂工人劳动态度：</text-property>
+                    </label>
+                </cell>
+                <cell id="542">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="648">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">factory_worker_attitude</property>
+                                <text-property name="displayName">factory_worker_attitude</text-property>
+                                <expression name="expression" type="javascript">vars["factory_worker_attitude"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">factory_worker_attitude</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="543">
+                <cell id="545">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="597">
+                        <text-property name="text">(9)有无穿工作服：</text-property>
+                    </label>
+                </cell>
+                <cell id="546">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="649">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">factory_has_overalls</property>
+                                <text-property name="displayName">factory_has_overalls</text-property>
+                                <expression name="expression" type="javascript">vars["factory_has_overalls"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">factory_has_overalls</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="547">
+                <cell id="548">
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <property name="textAlign">center</property>
+                    <label id="650">
+                        <text-property name="text">存</text-property>
+                    </label>
+                    <label id="692">
+                        <text-property name="text">货</text-property>
+                    </label>
+                </cell>
+                <cell id="549">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="598">
+                        <text-property name="text">工厂存货状态：放置状况（整齐与否）：</text-property>
+                    </label>
+                </cell>
+                <cell id="550">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="651">
+                        <property name="display">inline</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">inventory_status</property>
+                                <text-property name="displayName">inventory_status</text-property>
+                                <expression name="expression" type="javascript">vars["inventory_status"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">inventory_status</property>
+                    </data>
+                    <data id="652">
+                        <property name="display">inline</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">vars["inventory_status"] != "有"</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">inventory_put_status</property>
+                                <text-property name="displayName">inventory_put_status</text-property>
+                                <expression name="expression" type="javascript">"（" + vars["inventory_put_status"] + "）"</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">inventory_put_status</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="551">
+                <cell id="552">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">2pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">2pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <property name="textAlign">center</property>
+                    <label id="653">
+                        <text-property name="text">办</text-property>
+                    </label>
+                    <label id="693">
+                        <text-property name="text">公</text-property>
+                    </label>
+                    <label id="694">
+                        <text-property name="text">室</text-property>
+                    </label>
+                </cell>
+                <cell id="553">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="599">
+                        <text-property name="text">(1)有无工作服：</text-property>
+                    </label>
+                </cell>
+                <cell id="554">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="655">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">manage_has_overalls</property>
+                                <text-property name="displayName">manage_has_overalls</text-property>
+                                <expression name="expression" type="javascript">vars["manage_has_overalls"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">manage_has_overalls</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="555">
+                <property name="pageBreakAfter">auto</property>
+                <cell id="557">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="600">
+                        <text-property name="text">(2)劳动态度：</text-property>
+                    </label>
+                </cell>
+                <cell id="558">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="656">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">manage_work_attitude</property>
+                                <text-property name="displayName">manage_work_attitude</text-property>
+                                <expression name="expression" type="javascript">vars["manage_work_attitude"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">manage_work_attitude</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="559">
+                <property name="verticalAlign">middle</property>
+                <property name="pageBreakAfter">auto</property>
+                <cell id="560">
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <property name="textAlign">center</property>
+                    <label id="657">
+                        <text-property name="text">增</text-property>
+                    </label>
+                    <label id="695">
+                        <text-property name="text">提</text-property>
+                    </label>
+                    <label id="696">
+                        <text-property name="text">资</text-property>
+                    </label>
+                    <label id="697">
+                        <text-property name="text">料</text-property>
+                    </label>
+                </cell>
+                <cell id="561">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="658">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">added_info</property>
+                                <text-property name="displayName">added_info</text-property>
+                                <expression name="expression" type="javascript">vars["added_info"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">added_info</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="563">
+                <cell id="564">
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <property name="textAlign">center</property>
+                    <label id="659">
+                        <text-property name="text">建</text-property>
+                    </label>
+                    <label id="698">
+                        <text-property name="text">议</text-property>
+                    </label>
+                </cell>
+                <cell id="565">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <data id="661">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">visit_result</property>
+                                <text-property name="displayName">visit_result</text-property>
+                                <expression name="expression" type="javascript">(vars["visit_result"] == "0" ? " 可申请(免补)" : "") + &#13;
+(vars["visit_result"] == "1" ? "可(补)" : "") + &#13;
+(vars["visit_result"] == "2" ? "婉拒" : "")</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">visit_result</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="567">
+                <cell id="568">
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <property name="textAlign">center</property>
+                    <label id="660">
+                        <text-property name="text">理</text-property>
+                    </label>
+                    <label id="699">
+                        <text-property name="text">由</text-property>
+                    </label>
+                </cell>
+                <cell id="569">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="paddingTop">3pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">3pt</property>
+                    <property name="paddingRight">3pt</property>
+                    <label id="672">
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">S（优势）：</text-property>
+                    </label>
+                    <data id="662">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">reason_s</property>
+                                <text-property name="displayName">reason_s</text-property>
+                                <expression name="expression" type="javascript">vars["reason_s"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">reason_s</property>
+                    </data>
+                    <label id="673">
+                        <property name="fontWeight">bold</property>
+                        <property name="marginTop">3pt</property>
+                        <text-property name="text">W（弱势）：</text-property>
+                    </label>
+                    <data id="663">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">reason_w</property>
+                                <text-property name="displayName">reason_w</text-property>
+                                <expression name="expression" type="javascript">vars["reason_w"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">reason_w</property>
+                    </data>
+                    <label id="674">
+                        <property name="fontWeight">bold</property>
+                        <property name="marginTop">3pt</property>
+                        <text-property name="text">O（机会）：</text-property>
+                    </label>
+                    <data id="665">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">reason_o</property>
+                                <text-property name="displayName">reason_o</text-property>
+                                <expression name="expression" type="javascript">vars["reason_o"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">reason_o</property>
+                    </data>
+                    <label id="675">
+                        <property name="fontWeight">bold</property>
+                        <property name="marginTop">3pt</property>
+                        <text-property name="text">T（威胁）：</text-property>
+                    </label>
+                    <data id="664">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">reason_t</property>
+                                <text-property name="displayName">reason_t</text-property>
+                                <expression name="expression" type="javascript">vars["reason_t"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">reason_t</property>
+                    </data>
+                    <label id="676">
+                        <property name="fontWeight">bold</property>
+                        <property name="marginTop">3pt</property>
+                        <text-property name="text">总结：</text-property>
+                    </label>
+                    <data id="666">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">reason</property>
+                                <text-property name="displayName">reason</text-property>
+                                <expression name="expression" type="javascript">vars["reason"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">reason</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="busi_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="real_visit_date">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="real_visitor_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="create_by_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="sensor_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="busi_manager">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_comp_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_apply_amount">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_guar">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_comp_status">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_relation">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_product">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_invoice">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_address">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_experience">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="factory_envi">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="factory_is_self">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="factory_has_dorm">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="factory_has_mess">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="factory_clean">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="factory_worker">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="factory_jia_dong">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="factory_apply_use_to">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="factory_worker_attitude">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="factory_has_overalls">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="inventory_status">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="inventory_put_status">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="manage_work_status">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="manage_has_overalls">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="manage_work_attitude">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="added_info">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="visit_result">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="reason">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_comp_status2">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_product_percent1">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_product_percent2">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_product_other">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_position">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_position_other">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_age">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_address2">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_experience_year1">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_experience_year2">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_experience_affiliated">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_experience_affiliated_company">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_experience_from">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_experience_from_other">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_experience_from_year">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_experience_inherit">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_experience_flag">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="factory_worker_class">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="factory_apply_use_to_other">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="reason_s">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="reason_w">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="reason_o">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="reason_t">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_type">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="contract_type">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="contract_type_other">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_address_other">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="authLeader">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_product_process">
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

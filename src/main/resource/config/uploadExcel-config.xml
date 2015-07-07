@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312"?>
+<configuration>  
+    <action>
+  		<name>document.createFile</name>
+  		<allowType>xls</allowType>
+  		<denyType>jsp,exe</denyType>
+  		<path>/uploadExcel/#yyyy#/#mm#/#dd#/</path>
+  		<maxSize>10240000</maxSize>
+  	</action> 	
+</configuration>

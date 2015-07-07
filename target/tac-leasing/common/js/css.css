@@ -1,0 +1,13 @@
+
+.f9 {
+    font-size: 9pt;
+}
+
+input.error{
+	border-color : red;
+}
+
+
+#growlUI.wait{ background: url(icon/time.png) no-repeat 10px 0px }
+#growlUI.ok { background: url(icon/ok.png) no-repeat 10px 0px }
+#growlUI.err { background: url(icon/cross.png) no-repeat 10px 0px }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart caption="应收租金" palette="4" decimals="0" enableSmartLabels="1" enableRotation="0" bgColor="FFFFFF,FFFFFF" formatNumberScale="0" bgAlpha="40,100" bgRatio="0,100" bgAngle="360" showBorder="1" startingAngle="70">
+    <set label="应收租金" value="3.5024029517E8" isSliced="0"/>
+    <set label="收入" value="4.681779734E7" isSliced="0"/>
+    <set label="逾期罚息" value="4847321.219999997" isSliced="0"/>
+    <set label="营业税" value="2667207.08" isSliced="0"/>
+</chart>

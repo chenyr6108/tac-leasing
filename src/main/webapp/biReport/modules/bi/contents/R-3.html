@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			(function(){
+				$.ajax({
+					type:"GET",
+					url:"contents/R-3Company.html",
+					success:function(c){$(".R3company").html(c);}
+				});		
+			})();
+		</script>
+		<script type="text/javascript">
+			(function(){
+				$R3 = {
+					initCharts : function(){ 
+							var chart1 = new FusionCharts("charts/Pie3D.swf", "ChartId", "99%", "99%", "0", "0");
+							chart1.setDataURL("data/R3/1.xml");
+							chart1.render("R3_fusionChartszhengchang"); 
+
+							var chart2 = new FusionCharts("charts/Pie3D.swf", "ChartId", "99%", "99%", "0", "0");
+							chart2.setDataURL("data/R3/2.xml");
+							chart2.render("R3_fusionChartsguanzhu");
+
+							var chart3 = new FusionCharts("charts/Pie3D.swf", "ChartId", "99%", "99%", "0", "0");
+							chart3.setDataURL("data/R3/3.xml");
+							chart3.render("R3_fusionChartsciji");
+
+							var chart4 = new FusionCharts("charts/Pie3D.swf", "ChartId", "99%", "99%", "0", "0");
+							chart4.setDataURL("data/R3/4.xml");
+							chart4.render("R3_fusionChartskeyi");
+
+							var chart5 = new FusionCharts("charts/Pie3D.swf", "ChartId", "99%", "99%", "0", "0");
+							chart5.setDataURL("data/R3/5.xml");
+							chart5.render("R3_fusionChartssunshi");
+										
+							var chart6 = new FusionCharts("charts/MSLine.swf", "ChartId", "99%", "250", "0", "0");
+							chart6.setDataURL("data/R1/data/wujifenlei00.xml");
+							chart6.render("R3_fusionChartsR3x"); 
+			
+							var chart7 = new FusionCharts("charts/StackedColumn2D.swf", "ChartId", "99%", "250", "0", "0");
+							chart7.setDataURL("data/R1/data2/wujifenlei0.xml");
+							chart7.render("R3_fusionChartsR3d");
+							fenlei=document.getElementsByName("fenleiR3"); 
+					}, 
+					changeCharts : function(){ 
+						var v1=0;
+						fenlei=document.getElementsByName("fenleiR3");
+						for(i=0;i<fenlei.length;i++){
+							if(fenlei[i].checked==true){
+								v1=fenlei[i].value;
+							}
+						} 
+						var v3=0;
+						division=document.getElementsByName("divisionR3");
+						for(i=0;i<division.length;i++){
+							if(division[i].checked==true){
+								v3=division[i].value;
+						}
+					}
+					
+							var chart6 = new FusionCharts("charts/MSLine.swf", "ChartId", "99%", "250", "0", "0");
+							chart6.setDataURL("data/R1/data/wujifenlei"+v1+v3+".xml");
+							chart6.render("R3_fusionChartsR3x"); 
+			
+							var chart7 = new FusionCharts("charts/StackedColumn2D.swf", "ChartId", "99%", "250", "0", "0");
+							chart7.setDataURL("data/R1/data2/wujifenlei"+v3+".xml");
+							chart7.render("R3_fusionChartsR3d");   
+					}
+				};
+				
+				$R3.initCharts();
+
+				$(".R3_tabs").tabs();
+
+			})();
+		</script> 
+	</head>
+	<body>
+		<div class="tabs-item" style="float: left;width:100%; margin: 0;padding: 0;">
+			<div style="width:100%;height: 100%;">
+				<div align="center" style="width:100%;height: 99%;margin: 1% 0 0 1%;">
+					<table width="100%">
+						<tbody>
+							<tr>
+								<td align="center"><div id="R3_fusionChartszhengchang"></div>
+									正常
+								</td>
+								<td align="center"><div id="R3_fusionChartsguanzhu"></div>
+									关注
+								</td>
+								<td align="center"><div id="R3_fusionChartsciji"></div>
+									次级
+								</td>   
+								<td align="center"><div id="R3_fusionChartskeyi"></div>
+									可疑
+								</td> 
+								<td align="center"><div id="R3_fusionChartssunshi"></div>
+									损失
+								</td> 
+							</tr> 
+							<tr>
+								<td colspan="5">
+									<div class="R3company"></div>
+								</td>
+							</tr>
+						</tbody>
+					</table> 
+				</div> 
+				<div class="R3_tabs" style="width: 97%;;margin: 1%;">
+					<ul>
+						<li><a href="#R3-tabs1">对比图</a></li>  
+						<li><a href="#R3-tabs2">线性图</a></li> 
+					</ul>
+					<div id="R3-tabs1">  
+						 <div id="R3_fusionChartsR3d"></div>
+					</div>
+					<div id="R3-tabs2"> 
+						五级分类 
+						<input type="radio" name="fenleiR3" value="0" checked="checked" onchange="$R3.changeCharts()"> 全部
+						<input type="radio" name="fenleiR3" value="1" onchange="$R3.changeCharts()"> 正常
+						<input type="radio" name="fenleiR3" value="2" onchange="$R3.changeCharts()"> 关注
+						<input type="radio" name="fenleiR3" value="3" onchange="$R3.changeCharts()"> 次级
+						<input type="radio" name="fenleiR3" value="4" onchange="$R3.changeCharts()"> 可疑
+						<input type="radio" name="fenleiR3" value="5" onchange="$R3.changeCharts()"> 损失
+						<div id="R3_fusionChartsR3x"></div>
+					</div>
+				</div>
+			</div> 
+		</div>
+	</body>
+</html>

@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="start_date" id="94">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="end_date" id="95">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="lease_code" id="96">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="statecon" id="97">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="visit_results" id="98">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="s_employee_id" id="99">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="91"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="allVisitReviewrecords" id="92">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">visit_date</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">is_business</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">visit_conperson</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">is_products</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">is_run</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">prod_degree</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">visit_note</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">visit_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">visit_results</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">ready_visit_date</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">al_period_num</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">dun_day</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">should_payprice</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">pay_date</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">user_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">visit_reson</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">cust_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">lease_code</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">decp_name_cn</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">lease_period</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">visit_date</property>
+                    <text-property name="displayName">visit_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">is_business</property>
+                    <text-property name="displayName">is_business</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">visit_conperson</property>
+                    <text-property name="displayName">visit_conperson</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">is_products</property>
+                    <text-property name="displayName">is_products</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">is_run</property>
+                    <text-property name="displayName">is_run</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">prod_degree</property>
+                    <text-property name="displayName">prod_degree</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">visit_note</property>
+                    <text-property name="displayName">visit_note</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">visit_name</property>
+                    <text-property name="displayName">visit_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">visit_results</property>
+                    <text-property name="displayName">visit_results</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ready_visit_date</property>
+                    <text-property name="displayName">ready_visit_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">al_period_num</property>
+                    <text-property name="displayName">al_period_num</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dun_day</property>
+                    <text-property name="displayName">dun_day</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">should_payprice</property>
+                    <text-property name="displayName">should_payprice</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pay_date</property>
+                    <text-property name="displayName">pay_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">user_name</property>
+                    <text-property name="displayName">user_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">visit_reson</property>
+                    <text-property name="displayName">visit_reson</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cust_name</property>
+                    <text-property name="displayName">cust_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">lease_code</property>
+                    <text-property name="displayName">lease_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">decp_name_cn</property>
+                    <text-property name="displayName">decp_name_cn</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">lease_period</property>
+                    <text-property name="displayName">lease_period</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">visit_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">is_business</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">visit_conperson</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">is_products</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">is_run</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">prod_degree</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">visit_note</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">visit_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">visit_results</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">ready_visit_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">al_period_num</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">dun_day</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">should_payprice</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">pay_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">user_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">visit_reson</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">cust_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">lease_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">decp_name_cn</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">lease_period</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.backVisit.service);
+var resultMap =BackVisitMessageService.exportVisitReviewRecords(params["start_date"].value,params["end_date"].value,params["lease_code"].value,params["statecon"].value,params["visit_results"].value,params["s_employee_id"].value);
+
+var list = resultMap.get("allVisitReviewrecords");
+iter=list.iterator();
+]]></method>
+            <method name="fetch"><![CDATA[
+if(iter.hasNext()==false){
+	return false;
+}
+var data=iter.next();
+
+row["visit_date"]=data.get("VISIT_DATE");
+if(data.get("IS_BUSINESS")=="0"){
+	row["is_business"]="是"
+}else if(data.get("IS_BUSINESS")=="1"){
+	row["is_business"]="否"
+}
+row["visit_conperson"]=data.get("VISIT_CONPERSON");
+if(data.get("IS_PRODUCTS")=="0"){
+	row["is_products"]="是"
+}else if(data.get("IS_PRODUCTS")=="1"){
+	row["is_products"]="否"
+}
+if(data.get("PROD_DEGREE")=="0"){
+	row["prod_degree"]="正常"
+}else if(data.get("PROD_DEGREE")=="1"){
+	row["prod_degree"]="破损"
+}
+if(data.get("IS_RUN")=="0"){
+	row["is_run"]="是"
+}else if(data.get("IS_RUN")=="1"){
+	row["is_run"]="否"
+}
+if(data.get("VISIT_RESULTS")=="0"){
+	row["visit_results"]="正常"
+}else if(data.get("VISIT_RESULTS")=="1"){
+	row["visit_results"]="异常"
+}else if(data.get("VISIT_RESULTS")=="2"){
+	row["visit_results"]="已停业"
+}else if(data.get("VISIT_RESULTS")=="3"){
+	row["visit_results"]="其他"
+}
+row["visit_name"]=data.get("VISIT_USER");
+row["user_name"]=data.get("NAME");
+if(data.get("VISIT_RESON")=="-1"){
+	row["visit_reson"]="逾期25天"
+}else if(data.get("VISIT_RESON")=="0"){
+	row["visit_reson"]="异常提前回访"
+}else if(data.get("VISIT_RESON")=="1"){
+	row["visit_reson"]="再访回访"
+}else if(data.get("VISIT_RESON")=="2"){
+	row["visit_reson"]="正常回访"
+}else if(data.get("VISIT_RESON")=="2"){
+	row["visit_reson"]="其他回访"
+}
+row["ready_visit_date"]=data.get("READY_VISIT_DATE");
+row["al_period_num"]=data.get("AL_PERIOD_NUM");
+row["dun_day"]=data.get("DUN_DAY");
+row["should_payprice"]=data.get("SHOULD_PAYPRICE");
+if(data.get("PAY_DATE")=="1900-01-01"){
+	row["pay_date"]="";
+}else{
+	row["pay_date"]=data.get("PAY_DATE");
+}
+row["visit_note"]=data.get("VISIT_NOTE");
+row["cust_name"]=data.get("CUST_NAME");
+row["lease_code"]=data.get("LEASE_CODE");
+row["decp_name_cn"]=data.get("DECP_NAME_CN");
+row["lease_period"]=data.get("LEASE_PERIOD");
+return true;]]></method>
+            <method name="close"><![CDATA[list=null;
+data=null;
+iter=null;]]></method>
+        </script-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+        </simple-master-page>
+    </page-setup>
+</report>

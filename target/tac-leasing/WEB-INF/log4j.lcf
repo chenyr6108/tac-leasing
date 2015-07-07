@@ -1,0 +1,47 @@
+#FATAL 0 
+#ERROR 3 
+#WARN 4 
+#INFO 6 
+#DEBUG 7 
+######log4j.rootLogger###############
+log4j.rootLogger = INFO, A1, D, D1, trans
+
+######ConsoleAppender###############
+log4j.appender.A1=org.apache.log4j.ConsoleAppender 
+log4j.appender.A1.layout=org.apache.log4j.PatternLayout 
+log4j.appender.A1.layout.ConversionPattern=%d %p %c.%M():%L - %m%n
+
+#######DailyRollingFileAppender - INFO##################
+log4j.appender.D = org.apache.log4j.DailyRollingFileAppender
+log4j.appender.D.File = d:/log/log
+log4j.appender.D.MaxFileSize=5000KB
+log4j.appender.D.Threshold = INFO
+log4j.appender.D.DatePattern = '.'yyyy-MM-dd'.log'
+log4j.appender.D.layout = org.apache.log4j.PatternLayout
+log4j.appender.D.layout.ConversionPattern=%d %p %c.%M():%L - %m%n
+#######DailyRollingFileAppender - ERROR##################
+log4j.appender.D1 = org.apache.log4j.DailyRollingFileAppender
+log4j.appender.D1.File = d:/log/error
+log4j.appender.D1.MaxFileSize=5000KB
+log4j.appender.D1.Threshold = ERROR
+log4j.appender.D1.DatePattern = '.'yyyy-MM-dd'.log'
+log4j.appender.D1.layout = org.apache.log4j.PatternLayout
+log4j.appender.D1.layout.ConversionPattern=%d %p %c.%M():%L - %m%n
+
+########################################
+# Add a new category/logger called "ExternalAppLogger" and specify  
+# the log level ("INFO") and the appender name ("extAppLogFile").  
+log4j.category.ExternalAppLogger=INFO, trans
+    
+# Set the appender settings
+log4j.appender.trans=org.apache.log4j.RollingFileAppender  
+log4j.appender.trans.File=D:/log/trans.log  
+log4j.appender.trans.MaxFileSize=5000KB
+log4j.appender.trans.Threshold = INFO
+log4j.appender.trans.MaxBackupIndex=10  
+log4j.appender.trans.layout=org.apache.log4j.PatternLayout  
+log4j.appender.trans.layout.ConversionPattern=%d %p %c.%M():%L - %m%n
+
+
+
+

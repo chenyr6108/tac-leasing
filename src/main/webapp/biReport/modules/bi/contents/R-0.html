@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			(function(){
+				$R0 = {
+					initCharts : function(){
+						var chart1 = new FusionCharts("charts/Pie3D.swf", "ChartId", "99%", "99%", "0", "0");
+						chart1.setDataURL("data/R0/fahuoefenbu.xml");
+						chart1.render("R0_fusionChartsFahuoe");
+
+						var chart2 = new FusionCharts("charts/Pie3D.swf", "ChartId", "99%", "99%", "0", "0");
+						chart2.setDataURL("data/R0/yingshouzujinfenbu.xml");
+						chart2.render("R0_fusionChartsYingshou");
+						
+						var chart1 = new FusionCharts("charts/Pie3D.swf", "ChartId", "99%", "99%", "0", "0");
+						chart1.setDataURL("data/R0/yingshouzujinshiyebu.xml");
+						chart1.render("R0_fusionChartsYinshouShiyebu");
+					}
+				};
+				
+				$R0.initCharts();
+				$(".R0_tabs").tabs();
+			})();
+		</script>
+		<script type="text/javascript">
+			(function(){
+				$.ajax({
+					type:"GET",
+					url:"contents/R-0Table.html",
+					success:function(c){$(".R0Table").html(c);}
+				});		
+			})();
+		</script>
+	</head>
+	<body>
+		<div class="tabs-item" style="float: left;width:100%; margin: 0;padding: 0;">
+			<div style="width:100%;height: 100%;">
+				<div align="center" style="width:100%;height: 99%;margin: 1% 0 0 1%;">
+					<table width="100%">
+						<tbody>
+							<tr>
+								<td align="center"><div id="R0_fusionChartsFahuoe"></div>
+									C1: 已收租金/未收租金
+								</td>
+								<td align="center"><div id="R0_fusionChartsYingshou"></div>
+									C2：应收租金构成（应收租金、收入、逾期罚息、营业税）
+								</td>
+							</tr>
+							<tr>
+								<td align="center" style="padding-top: 31px;">
+									<div id="R0_fusionChartsYinshouShiyebu" style="height:230px"></div>
+									C3：分公司应收租金
+								</td>
+								<td align="center" style="padding-top: 30px;">
+									<div class="R0Table" style="height:230px"></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div> 
+		</div>
+	</body>
+</html>

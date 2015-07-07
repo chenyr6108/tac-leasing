@@ -1,0 +1,2193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="ID" id="93">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="7"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="schemeMap" id="8">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">lease_period</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">pledge_price</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">head_hire</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">head_hire_percent</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">float_rate</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">year_interest</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">lease_topric</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">flag</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">pledge_price_rate</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">tr_rate</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">tr_irr_rate</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">pledge_back_price</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">pledge_last_price</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">pledge_last_period</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">staybuy_price</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">cust_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">rate_diff</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">ren_price</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">sales_tax</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">commit_date</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">str_tax</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">lease_rze</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">total_renprice</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">pledge_ave_price</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">total_value_added_tax</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">lease_period</property>
+                    <text-property name="displayName">lease_period</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pledge_price</property>
+                    <text-property name="displayName">pledge_price</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">head_hire</property>
+                    <text-property name="displayName">head_hire</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">head_hire_percent</property>
+                    <text-property name="displayName">head_hire_percent</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">float_rate</property>
+                    <text-property name="displayName">float_rate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">year_interest</property>
+                    <text-property name="displayName">year_interest</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">lease_topric</property>
+                    <text-property name="displayName">lease_topric</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">flag</property>
+                    <text-property name="displayName">flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pledge_price_rate</property>
+                    <text-property name="displayName">pledge_price_rate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tr_rate</property>
+                    <text-property name="displayName">tr_rate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tr_irr_rate</property>
+                    <text-property name="displayName">tr_irr_rate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pledge_back_price</property>
+                    <text-property name="displayName">pledge_back_price</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pledge_last_price</property>
+                    <text-property name="displayName">pledge_last_price</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pledge_last_period</property>
+                    <text-property name="displayName">pledge_last_period</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">staybuy_price</property>
+                    <text-property name="displayName">staybuy_price</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cust_name</property>
+                    <text-property name="displayName">cust_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rate_diff</property>
+                    <text-property name="displayName">rate_diff</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ren_price</property>
+                    <text-property name="displayName">ren_price</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sales_tax</property>
+                    <text-property name="displayName">sales_tax</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">commit_date</property>
+                    <text-property name="displayName">commit_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">str_tax</property>
+                    <text-property name="displayName">str_tax</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">lease_rze</property>
+                    <text-property name="displayName">lease_rze</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">total_renprice</property>
+                    <text-property name="displayName">total_renprice</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pledge_ave_price</property>
+                    <text-property name="displayName">pledge_ave_price</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">total_value_added_tax</property>
+                    <text-property name="displayName">total_value_added_tax</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">lease_period</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">pledge_price</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">head_hire</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">head_hire_percent</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">float_rate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">year_interest</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">lease_topric</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">pledge_price_rate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">tr_rate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">tr_irr_rate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">pledge_back_price</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">pledge_last_price</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">pledge_last_period</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">staybuy_price</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">cust_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">rate_diff</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">ren_price</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">sales_tax</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">commit_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">str_tax</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">lease_rze</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">total_renprice</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">pledge_ave_price</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">total_value_added_tax</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.quotation.service);
+
+if(params["ID"].value != null){
+	
+	var resultMap =Quotation.exportQuotationMDF(params["ID"].value);
+}
+
+var list = resultMap.get("schema");
+
+iter=list.iterator();
+
+
+]]></method>
+            <method name="fetch"><![CDATA[
+if(iter.hasNext()==false){
+	return false;
+}
+var data=iter.next();
+
+row["lease_period"]=data.get("LEASE_PERIOD");
+row["pledge_price"]=data.get("PLEDGE_PRICE");
+row["head_hire"]=data.get("HEAD_HIRE");
+row["head_hire_percent"]=data.get("HEAD_HIRE_PERCENT");
+row["float_rate"]=data.get("FLOAT_RATE");
+row["year_interest_type"]=data.get("YEAR_INTEREST_TYPE");
+row["year_interest"]=data.get("YEAR_INTEREST");
+row["lease_topric"]=data.get("LEASE_ALLPRIC");
+row["flag"]=data.get("FLAG");
+row["pledge_price_rate"]=data.get("PLEDGE_PRICE_RATE");
+row["tr_rate"]=data.get("TR_RATE");
+row["tr_irr_rate"]=data.get("TR_IRR_RATE");
+row["pledge_back_price"]=data.get("PLEDGE_BACK_PRICE");
+row["pledge_last_price"]=data.get("PLEDGE_LAST_PRICE");
+row["pledge_last_period"]=data.get("PLEDGE_LAST_PERIOD");
+row["staybuy_price"]=data.get("STAYBUY_PRICE");
+row["cust_name"]=data.get("CUST_NAME");
+row["is_tax"]=data.get("IS_TAX");
+row["rate_diff"]=data.get("RATE_DIFF");
+row["ren_price"]=data.get("REN_PRICE");
+row["sales_tax"]=data.get("SALES_TAX");
+row["commit_date"]=data.get("COMMIT_DATE");
+row["lease_rze"]=data.get("LEASE_RZE");
+row["total_renprice"]=data.get("TOTALRENPRICE");
+row["pledge_ave_price"]=data.get("PLEDGE_AVE_PRICE");
+row["total_value_added_tax"]=data.get("TOTAL_VALUEADDED_TAX");
+
+if (data.get("IS_TAX")=="0"){
+	row["str_tax"]="含税"
+}else{
+	row["str_tax"]="未税"
+}
+
+if (data.get("PLEDGE_BACK_PRICE")!=0){
+vars["str_pledge_back"]=data.get("PLEDGE_BACK_PRICE")+"元。(契约期满返还)";
+}else{
+vars["str_pledge_back"]="0";
+}
+
+if (data.get("PLEDGE_LAST_PRICE")!=0){
+vars["str_pledge_last"]=data.get("TOTAL_LAST_PRICE")+"元。(充抵最后"+data.get("PLEDGE_LAST_PERIOD")+"期租金)";
+}else{
+vars["str_pledge_last"]="0";
+}
+
+return true;]]></method>
+            <method name="close"><![CDATA[list=null;
+data=null;
+iter=null;]]></method>
+        </script-data-set>
+        <script-data-set name="equipmentList" id="31">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">0</property>
+                    <property name="name">type_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">kind_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">amount</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">supl_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">type_name</property>
+                    <text-property name="displayName">type_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">kind_name</property>
+                    <text-property name="displayName">kind_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">amount</property>
+                    <text-property name="displayName">amount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">supl_name</property>
+                    <text-property name="displayName">supl_name</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">type_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">kind_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">amount</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">supl_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.quotation.service);
+
+if(params["ID"].value != null){
+	
+	var resultMap =Quotation.exportQuotationMDF(params["ID"].value);
+}
+
+var list = resultMap.get("equipmentList");
+
+iter=list.iterator();
+
+
+]]></method>
+            <method name="fetch"><![CDATA[if(iter.hasNext()==false){
+	return false;
+}
+var data=iter.next();
+row["type_name"]=data.get("TYPE_NAME");
+row["kind_name"]=data.get("KIND_NAME");
+row["amount"]=data.get("AMOUNT");
+row["supl_name"]=data.get("SUPL_NAME");
+
+return true;
+]]></method>
+            <method name="close"><![CDATA[list=null;
+data=null;
+iter=null;]]></method>
+        </script-data-set>
+        <script-data-set name="irrMonthPaylines" id="30">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">irr_month_price</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">irr_month_price_start</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">irr_month_price_end</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ren_rate</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">month_price_tax</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">value_added_tax</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">irr_month_price</property>
+                    <text-property name="displayName">irr_month_price</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">irr_month_price_start</property>
+                    <text-property name="displayName">irr_month_price_start</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">irr_month_price_end</property>
+                    <text-property name="displayName">irr_month_price_end</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ren_rate</property>
+                    <text-property name="displayName">ren_rate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">month_price_tax</property>
+                    <text-property name="displayName">month_price_tax</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">value_added_tax</property>
+                    <text-property name="displayName">value_added_tax</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">irr_month_price</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">irr_month_price_start</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">irr_month_price_end</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ren_rate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">month_price_tax</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">value_added_tax</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.quotation.service);
+
+if(params["ID"].value != null){
+	
+	var resultMap =Quotation.exportQuotationMDF(params["ID"].value);
+}
+
+var list = resultMap.get("irrMonthPaylines");
+
+iter=list.iterator();
+
+
+]]></method>
+            <method name="fetch"><![CDATA[if(iter.hasNext()==false){
+	return false;
+}
+var data=iter.next();
+row["irr_month_price"]=data.get("IRR_MONTH_PRICE");
+row["irr_month_price_start"]=data.get("IRR_MONTH_PRICE_START");
+row["irr_month_price_end"]=data.get("IRR_MONTH_PRICE_END");
+row["ren_rate"]=data.get("REN_RATE");
+row["month_price_tax"]=data.get("MONTH_PRICE_TAX");
+row["value_added_tax"]=data.get("VALUE_ADDED_TAX");
+return true;]]></method>
+            <method name="close"><![CDATA[list=null;
+data=null;
+iter=null;]]></method>
+        </script-data-set>
+        <script-data-set name="quotationFee" id="32">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">0</property>
+                    <property name="name">create_show_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">fee</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">create_show_name</property>
+                    <text-property name="displayName">create_show_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">fee</property>
+                    <text-property name="displayName">fee</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">create_show_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">fee</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.quotation.service);
+
+if(params["ID"].value != null){
+	
+	var resultMap =Quotation.exportQuotationMDF(params["ID"].value);
+}
+
+var list = resultMap.get("quotationFee");
+
+iter=list.iterator();
+
+
+]]></method>
+            <method name="fetch"><![CDATA[if(iter.hasNext()==false){
+	return false;
+}
+var data=iter.next();
+row["create_show_name"]=data.get("CREATE_SHOW_NAME");
+row["fee"]=data.get("FEE");
+
+return true;
+]]></method>
+            <method name="close"><![CDATA[list=null;
+data=null;
+iter=null;]]></method>
+        </script-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="topMargin">0.14583333333333334in</property>
+            <page-header>
+                <image id="269">
+                    <property name="height">0.5in</property>
+                    <property name="width">2.7083333333333335in</property>
+                    <property name="source">file</property>
+                    <expression name="uri" type="constant">birtReport/image/logo.jpg</expression>
+                </image>
+            </page-header>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="33">
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">schemeMap</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">cust_name</property>
+                    <text-property name="displayName">cust_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cust_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding</property>
+                    <expression name="expression" type="javascript">"提案日："+dataSetRow["commit_date"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="46">
+                <property name="width">1in</property>
+            </column>
+            <column id="47">
+                <property name="width">4.302083333333333in</property>
+            </column>
+            <column id="48">
+                <property name="width">2.6458333333333335in</property>
+            </column>
+            <header>
+                <row id="34">
+                    <cell id="35">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <label id="49">
+                            <property name="fontSize">18pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">收益率申请表</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <footer>
+                <row id="259">
+                    <cell id="260">
+                        <property name="fontFamily">"微软雅黑"</property>
+                    </cell>
+                    <cell id="261">
+                        <property name="fontFamily">"微软雅黑"</property>
+                    </cell>
+                    <cell id="262">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <data id="263">
+                            <property name="resultSetColumn">Column Binding</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="42">
+                    <cell id="43">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <label id="50">
+                            <property name="fontSize">14pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">承租人：</text-property>
+                        </label>
+                    </cell>
+                    <cell id="44">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <data id="51">
+                            <property name="fontSize">14pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textUnderline">underline</property>
+                            <property name="resultSetColumn">cust_name</property>
+                        </data>
+                    </cell>
+                    <cell id="45">
+                        <property name="fontFamily">"微软雅黑"</property>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+        <table id="52">
+            <property name="width">7.958333333333333in</property>
+            <property name="dataSet">equipmentList</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">type_name</property>
+                    <text-property name="displayName">type_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["type_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">kind_name</property>
+                    <text-property name="displayName">kind_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["kind_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">amount</property>
+                    <text-property name="displayName">amount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["amount"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">supl_name</property>
+                    <text-property name="displayName">supl_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["supl_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="68">
+                <property name="width">2.3125in</property>
+            </column>
+            <column id="69">
+                <property name="width">2.4583333333333335in</property>
+            </column>
+            <column id="70">
+                <property name="width">0.7708333333333334in</property>
+            </column>
+            <column id="71">
+                <property name="width">2.4166666666666665in</property>
+            </column>
+            <header>
+                <row id="53">
+                    <cell id="54">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="72">
+                            <property name="fontSize">12pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">租赁物明细</text-property>
+                        </label>
+                    </cell>
+                </row>
+                <row id="254">
+                    <cell id="255">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="264">
+                            <text-property name="text">厂牌</text-property>
+                        </label>
+                    </cell>
+                    <cell id="256">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="265">
+                            <text-property name="text">产品名称</text-property>
+                        </label>
+                    </cell>
+                    <cell id="257">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="266">
+                            <text-property name="text">数量</text-property>
+                        </label>
+                    </cell>
+                    <cell id="258">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="267">
+                            <text-property name="text">供应商</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="58">
+                    <cell id="59">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="73">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">type_name</property>
+                        </data>
+                    </cell>
+                    <cell id="60">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="74">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">kind_name</property>
+                        </data>
+                    </cell>
+                    <cell id="61">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="75">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">amount</property>
+                        </data>
+                    </cell>
+                    <cell id="62">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="76">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">supl_name</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <table id="77">
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">schemeMap</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">lease_topric</property>
+                    <text-property name="displayName">lease_topric</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["lease_topric"]+"元"</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">pledge_price</property>
+                    <text-property name="displayName">pledge_price</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["pledge_price_rate"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">lease_period</property>
+                    <text-property name="displayName">lease_period</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["lease_period"]+"期；"+"每期租金("+dataSetRow["flag"]+")"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">flag</property>
+                    <text-property name="displayName">flag</text-property>
+                    <expression name="expression" type="javascript">"每期租金("+dataSetRow["flag"]+")"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding</property>
+                    <text-property name="displayName">lease_topric</text-property>
+                    <expression name="expression" type="javascript">"人民币 "+Formatter.format(dataSetRow["lease_topric"],"#,##0.00")+"元("+dataSetRow["str_tax"]+")"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding_1</property>
+                    <expression name="expression" type="javascript">"自备款"+dataSetRow["pledge_price_rate"]+"%，"+Formatter.format(dataSetRow["pledge_price"],"#,##0.00")+"元。(实拨金额"+Formatter.format((dataSetRow["lease_topric"]-dataSetRow["pledge_price"]),"#,##0.00")+"元)"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">pledge_back_price</property>
+                    <text-property name="displayName">pledge_back_price</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["pledge_back_price"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">pledge_last_price</property>
+                    <text-property name="displayName">pledge_last_price</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["pledge_last_price"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">pledge_last_period</property>
+                    <text-property name="displayName">pledge_last_period</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["pledge_last_period"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding_2</property>
+                    <text-property name="displayName">pledge_back</text-property>
+                    <expression name="expression" type="javascript">if( (vars["str_pledge_back"]!="0")&amp;&amp;(vars["str_pledge_last"]!="0"))&#13;
+{&#13;
+	vars["str_pledge_back"]+vars["str_pledge_last"]&#13;
+}else if( (vars["str_pledge_back"]!="0")&amp;&amp;(vars["str_pledge_last"]=="0")){&#13;
+	vars["str_pledge_back"]&#13;
+}else if( (vars["str_pledge_back"]=="0")&amp;&amp;(vars["str_pledge_last"]!="0")){&#13;
+	vars["str_pledge_last"]&#13;
+}else{&#13;
+	"0元"&#13;
+}</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">lease_rze</property>
+                    <text-property name="displayName">lease_rze</text-property>
+                    <expression name="expression" type="javascript">Formatter.format(dataSetRow["lease_rze"],"#,##0.00")+"元"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="87">
+                <property name="width">1.6041666666666667in</property>
+            </column>
+            <column id="88">
+                <property name="width">6.34375in</property>
+            </column>
+            <header>
+                <row id="78">
+                    <cell id="79">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="89">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">标的物总价</text-property>
+                        </label>
+                    </cell>
+                    <cell id="80">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="238">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">Column Binding</property>
+                        </data>
+                    </cell>
+                </row>
+            </header>
+            <footer>
+                <row id="84">
+                    <cell id="85">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="91">
+                            <text-property name="text">首付款</text-property>
+                        </label>
+                    </cell>
+                    <cell id="86">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="239">
+                            <property name="resultSetColumn">Column Binding_1</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="240">
+                    <cell id="241">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="243">
+                            <text-property name="text">保证金</text-property>
+                        </label>
+                    </cell>
+                    <cell id="242">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="248">
+                            <property name="resultSetColumn">Column Binding_2</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="276">
+                    <cell id="277">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="279">
+                            <text-property name="text">风险本金</text-property>
+                        </label>
+                    </cell>
+                    <cell id="278">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="280">
+                            <property name="resultSetColumn">lease_rze</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="94">
+                    <cell id="95">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="97">
+                            <text-property name="text">租赁期限</text-property>
+                        </label>
+                    </cell>
+                    <cell id="96">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="98">
+                            <property name="resultSetColumn">lease_period</property>
+                        </data>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+        <table id="99">
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">irrMonthPaylines</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">irr_month_price</property>
+                    <text-property name="displayName">irr_month_price</text-property>
+                    <expression name="expression" type="javascript">"每期"+dataSetRow["irr_month_price"]+"元"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">irr_month_price_start</property>
+                    <text-property name="displayName">irr_month_price_start</text-property>
+                    <expression name="expression" type="javascript">"第"+dataSetRow["irr_month_price_start"]+"~"+dataSetRow["irr_month_price_end"]+"期"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">value_added_tax</property>
+                    <text-property name="displayName">value_added_tax</text-property>
+                    <expression name="expression" type="javascript">"每期"+dataSetRow["value_added_tax"]+"元"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">month_price_tax</property>
+                    <text-property name="displayName">month_price_tax</text-property>
+                    <expression name="expression" type="javascript">"每期"+dataSetRow["month_price_tax"]+"元"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="109">
+                <property name="width">2.0520833333333335in</property>
+            </column>
+            <column id="110">
+                <property name="width">2.0833333333333335in</property>
+            </column>
+            <column id="286">
+                <property name="width">1.4479166666666667in</property>
+            </column>
+            <column id="292">
+                <property name="width">2.3645833333333335in</property>
+            </column>
+            <header>
+                <row id="281">
+                    <cell id="282">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="293">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <text-property name="text">期次</text-property>
+                        </label>
+                    </cell>
+                    <cell id="283">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="294">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <text-property name="text">未含增值税租金</text-property>
+                        </label>
+                    </cell>
+                    <cell id="284">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="295">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <text-property name="text">增值税</text-property>
+                        </label>
+                    </cell>
+                    <cell id="290">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="296">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <text-property name="text">含增值税实际支付租金</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="103">
+                    <cell id="104">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="114">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">irr_month_price_start</property>
+                        </data>
+                    </cell>
+                    <cell id="105">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="113">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">irr_month_price</property>
+                        </data>
+                    </cell>
+                    <cell id="285">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="297">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">value_added_tax</property>
+                        </data>
+                    </cell>
+                    <cell id="291">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="298">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">month_price_tax</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <table id="132">
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">quotationFee</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">create_show_name</property>
+                    <text-property name="displayName">create_show_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["create_show_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">fee</property>
+                    <text-property name="displayName">fee</text-property>
+                    <expression name="expression" type="javascript">"人民币 "+dataSetRow["fee"]+"元"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="142">
+                <property name="width">2in</property>
+            </column>
+            <column id="143">
+                <property name="width">5.947916666666667in</property>
+            </column>
+            <header>
+                <row id="133">
+                    <cell id="134">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="144">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">应收费用</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="136">
+                    <cell id="137">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="145">
+                            <property name="resultSetColumn">create_show_name</property>
+                        </data>
+                    </cell>
+                    <cell id="138">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="146">
+                            <property name="resultSetColumn">fee</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <table id="147">
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">schemeMap</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">sales_tax</property>
+                    <text-property name="displayName">sales_tax</text-property>
+                    <expression name="expression" type="javascript">"人民币 "+Formatter.format(dataSetRow["total_value_added_tax"],"#,##0.00")+"元"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">tr_rate</property>
+                    <text-property name="displayName">tr_rate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tr_irr_rate"]+"%，(年平息"+Formatter.format((dataSetRow["total_renprice"]-(dataSetRow["lease_topric"]-dataSetRow["pledge_price"]))/(dataSetRow["lease_topric"]-dataSetRow["pledge_price"])/(dataSetRow["lease_period"]/12)*100,"##0.00")+"%)"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">lease_topric</property>
+                    <text-property name="displayName">lease_topric</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["lease_topric"]-dataSetRow["pledge_price"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">lease_topric_1</property>
+                    <text-property name="displayName">lease_topric</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["lease_topric"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding</property>
+                    <text-property name="displayName">bokuan</text-property>
+                    <expression name="expression" type="javascript">"人民币 "+Formatter.format((dataSetRow["lease_topric"]-dataSetRow["pledge_price"]),"#,##0.00")+"元"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding_1</property>
+                    <text-property name="displayName">insure</text-property>
+                    <expression name="expression" type="javascript">"人民币 "+Formatter.format(dataSetRow["lease_topric"]*0.00178,"#,##0.00")+"元"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ren_price</property>
+                    <text-property name="displayName">ren_price</text-property>
+                    <expression name="expression" type="javascript">"人民币 "+Formatter.format(dataSetRow["ren_price"],"#,##0.00")+"元"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">staybuy</property>
+                    <text-property name="displayName">staybuy</text-property>
+                    <expression name="expression" type="javascript">"人民币 "+dataSetRow["staybuy_price"]+"元"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding_2</property>
+                    <text-property name="displayName">costPrice</text-property>
+                    <expression name="expression" type="javascript">"人民币 "+Formatter.format((dataSetRow["lease_topric"]*0.00178)+dataSetRow["sales_tax"],"#,##0.00")+"元"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="157">
+                <property name="width">2in</property>
+            </column>
+            <column id="158">
+                <property name="width">5.947916666666667in</property>
+            </column>
+            <header>
+                <row id="270">
+                    <cell id="271">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="273">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">期满购买金</text-property>
+                        </label>
+                    </cell>
+                    <cell id="272">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="274">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">staybuy</property>
+                        </data>
+                    </cell>
+                </row>
+            </header>
+            <footer>
+                <row id="154">
+                    <cell id="155">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="169">
+                            <text-property name="text">增值税</text-property>
+                        </label>
+                    </cell>
+                    <cell id="156">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="177">
+                            <property name="resultSetColumn">sales_tax</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="165">
+                    <cell id="166">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="170">
+                            <text-property name="text">拨款金额</text-property>
+                        </label>
+                    </cell>
+                    <cell id="167">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="182">
+                            <property name="resultSetColumn">Column Binding</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="162">
+                    <cell id="163">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="171">
+                            <text-property name="text">成本合计</text-property>
+                        </label>
+                    </cell>
+                    <cell id="164">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="275">
+                            <property name="resultSetColumn">Column Binding_2</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="173">
+                    <cell id="174">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="172">
+                            <text-property name="text">预估收入</text-property>
+                        </label>
+                    </cell>
+                    <cell id="175">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="184">
+                            <property name="resultSetColumn">ren_price</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="159">
+                    <cell id="160">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="176">
+                            <property name="fontSize">14pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">TR</text-property>
+                        </label>
+                    </cell>
+                    <cell id="161">
+                        <property name="fontFamily">"微软雅黑"</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="178">
+                            <property name="resultSetColumn">tr_rate</property>
+                        </data>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+        <table id="209">
+            <property name="width">7.958333333333333in</property>
+            <column id="228">
+                <property name="width">1.59375in</property>
+            </column>
+            <column id="229">
+                <property name="width">1.59375in</property>
+            </column>
+            <column id="230">
+                <property name="width">1.59375in</property>
+            </column>
+            <column id="231">
+                <property name="width">1.5833333333333333in</property>
+            </column>
+            <column id="232">
+                <property name="width">1.59375in</property>
+            </column>
+            <header>
+                <row id="210">
+                    <property name="height">0.3958333333333333in</property>
+                    <cell id="211">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="233">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">董事长</text-property>
+                        </label>
+                    </cell>
+                    <cell id="212">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="234">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">总经理</text-property>
+                        </label>
+                    </cell>
+                    <cell id="213">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="235">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">（处/部）主管</text-property>
+                        </label>
+                    </cell>
+                    <cell id="214">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="236">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">单位主管</text-property>
+                        </label>
+                    </cell>
+                    <cell id="215">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="237">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">经办</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <footer>
+                <row id="222">
+                    <property name="height">1.0104166666666667in</property>
+                    <cell id="223">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                    </cell>
+                    <cell id="224">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                    </cell>
+                    <cell id="225">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                    </cell>
+                    <cell id="226">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                    </cell>
+                    <cell id="227">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="str_pledge_back">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="str_pledge_last">
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

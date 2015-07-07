@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<title></title>
+		<!-- JQuery1.4.2&JQueryUI1.8.1 -->
+		<script language="JavaScript" src="../../../resources/script/jquery/jquery-1.4.2.min.js"></script>
+		<script language="JavaScript" src="../../../resources/script/jquery/jquery-ui-1.8.1.min.js"></script>
+		<script language="JavaScript" src="../../../resources/script/jquery/plugins/bean.jquery.href.js"></script>
+		<link rel="stylesheet" href="../../../resources/script/jquery/themes/black-tie/jquery-ui-1.8.1.custom.css" type="text/css"></link>
+		<!-- FusionChart -->
+		<script language="JavaScript" src="../fusion/FusionCharts.js"></script>
+		<link rel="stylesheet" href="../style/default.css" type="text/css"></link>
+		<script type="text/javascript">
+			$(function(){
+
+				$(".R4_d1").html($.href("d1"));
+				$(".R4_d2").html($.href("d2"));
+				$(".R4_d3").html($.href("d3"));
+				$(".R4_d4").html($.href("d4"));
+				$(".R4_d5").html($.href("d5"));
+				
+				chart1 = new FusionCharts("../charts/Pie3D.swf", "ChartId", "99%", "99%", "0", "0");
+				chart1.setDataXML(
+					"<chart caption='五级分类' palette='4' decimals='0' enableSmartLabels='0' showValues='0' showNames='0' enableRotation='0' bgColor='FFFFFF,FFFFFF' bgAlpha='40,100' bgRatio='0,100' showBorder='1'>"+
+					"   <set label='正常' value='"+$.href("d1")+"' isSliced='0'/>"+
+					"   <set label='关注' value='"+$.href("d2")+"' isSliced='0'/>"+
+					"   <set label='次级' value='"+$.href("d3")+"' isSliced='0'/>"+
+					"   <set label='可疑' value='"+$.href("d4")+"' isSliced='0'/>"+
+					"   <set label='损失' value='"+$.href("d5")+"' isSliced='0'/>"+
+					"</chart>");
+				chart1.render("R4_tab1FusionCharts");
+
+				var chart2 = new FusionCharts("../charts/MSLine.swf", "ChartId", "99%", "99%", "0", "0");
+				chart2.setDataURL("../data/R4/wujifenlei00.xml");
+				chart2.render("R4_tab2FusionCharts");
+				
+				var chart3 = new FusionCharts("../charts/StackedColumn3D.swf", "ChartId", "99%", "99%", "0", "0");
+				chart3.setDataURL("../data/R4/wujifenlei01.xml");	
+				chart3.render("R4_tab3FusionCharts");
+				
+				$("#R4_dialogContent").tabs();
+			});
+		</script>
+	</head>
+	<body>
+		<div id="R4_dialogContent">
+			<ul>
+				<li><a href="#R4_tab1">五级分类</a></li>
+				<li><a href="#R4_tab3">五级趋势</a></li>
+				<li><a href="#R4_tab2">得分趋势</a></li>
+			</ul>
+			<div id="R4_tab1" style="height: 198px;">
+				<div id="R4_tab1FusionCharts" style="width: 60%;float: left;"></div>
+				<table class="tab-list" style="width: 39%;float: right;">
+					<thead>
+						<tr class="ui-widget-header">
+							<th>风险等级</th>
+							<th>金额</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>正常</td>
+							<td class="R4_d1" align="right"></td>
+						</tr>
+						<tr>
+							<td>关注</td>
+							<td class="R4_d2" align="right"></td>
+						</tr>
+						<tr>
+							<td>次级</td>
+							<td class="R4_d3" align="right"></td>
+						</tr>
+						<tr>
+							<td>可疑</td>
+							<td class="R4_d4" align="right"></td>
+						</tr>
+						<tr>
+							<td>损失</td>
+							<td class="R4_d5" align="right"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="R4_tab2">
+				<div id="R4_tab2FusionCharts"></div>
+			</div>
+			<div id="R4_tab3">
+				<div id="R4_tab3FusionCharts"></div>
+			</div>
+		</div>
+	</body>
+</html>

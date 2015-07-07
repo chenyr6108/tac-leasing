@@ -1,0 +1,84 @@
+﻿CREATE TABLE [dbo].[T_INVOICE_CASE] ( --开票资料表
+[ID] int IDENTITY(1, 1) NOT NULL, --主键
+[DOC_NUM] nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL, --单据号
+[RECP_ID] int NULL, --RECP_ID
+[LEASE_CODE] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL, --合同号
+[PAY_DATE] date NULL, --支付日期
+[PERIOD_NUM] int NULL, --期数
+[PRICE_WHITOUT_TAX] money NULL, --未税金额
+[PRICE_TYPE] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL, --金额类型
+[TAX_RATE] float NULL, --税率
+[INVOICE_NUM] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL, --发票号码
+[INVOICE_TYPE] int NULL, --发票类型   1普票，2增票
+[RESULT] int NULL, --开票结果code  0失败，1成功
+[RESULT_DESCR] nvarchar(4) COLLATE Chinese_PRC_CI_AS NULL, --开票结果描述 成功，失败
+[RESULT_MEMO] nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL, --开票结果详细描述
+[XML_FILE_NAME] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL, --对应在哪个XML文件中
+[CASE_TYPE] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL, --类型新案或者旧案
+[FINANCE_DATE] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL, --结账周期
+[STATUS] int NULL, --状态  0可用的，-1作废的
+[CREATE_TIME] datetime NULL, --生成时间
+PRIMARY KEY CLUSTERED ([ID] )
+WITH ( PAD_INDEX = OFF,
+FILLFACTOR = 100,
+IGNORE_DUP_KEY = OFF,
+STATISTICS_NORECOMPUTE = OFF,
+ALLOW_ROW_LOCKS = ON,
+ALLOW_PAGE_LOCKS = ON,
+DATA_COMPRESSION = NONE )
+ ON [PRIMARY]
+)
+ON [PRIMARY];
+GO
+
+
+
+CREATE TABLE [dbo].[T_INVOICE_STOP_CASE] (--暂停开票表
+[ID] int IDENTITY(1, 1) NOT NULL,
+[RECP_ID] int NULL,
+[STOP_TIME] datetime NULL,--暂停时间
+[STOP_ID] int NULL,--暂停人员
+[STOP_REMARK] nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,--暂停备注
+[STOP_TYPE] nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,--停开类型,如果是JOB跑的逾期45天自动停开,此栏位是DUN_45,其他类型的停开此栏位没有值
+[STATE] int NULL,--0暂停状态,-1是启用状态,此表是多数据结构,如果某期发票被暂停会在此表插入一行状态是0,启用时候会更新此状态到-1,如果此期再暂停则还会插入1条数据
+[EFFECT_DATE] date NULL,--生效时间
+[STATUS] int NULL,
+[START_TIME] datetime NULL,--启用时间
+[START_ID] int NULL,--启用人员
+[START_REMARK] nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,--启用备注
+[CREATE_TIME] datetime NULL, --生成时间
+PRIMARY KEY CLUSTERED ([ID] )
+WITH ( PAD_INDEX = OFF,
+FILLFACTOR = 100,
+IGNORE_DUP_KEY = OFF,
+STATISTICS_NORECOMPUTE = OFF,
+ALLOW_ROW_LOCKS = ON,
+ALLOW_PAGE_LOCKS = ON,
+DATA_COMPRESSION = NONE )
+ ON [PRIMARY]
+)
+ON [PRIMARY];
+GO
+
+
+
+CREATE TABLE [dbo].[T_INVOICE_SPECIAL_CASE] ( --不自动停复开特殊案件表
+[ID] int IDENTITY(1, 1) NOT NULL,
+[RECP_ID] int NULL,
+[TYPE] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL, --类型,NOT_STOP:不自动停开,NOT_OPEN:不自动复开
+[CREATE_BY] int NULL, --创建人
+[CREATE_TIME] datetime NULL, --创建时间
+[REMARK] nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL, --创建原因
+[STATUS] int NULL,
+PRIMARY KEY CLUSTERED ([ID] )
+WITH ( PAD_INDEX = OFF,
+FILLFACTOR = 100,
+IGNORE_DUP_KEY = OFF,
+STATISTICS_NORECOMPUTE = OFF,
+ALLOW_ROW_LOCKS = ON,
+ALLOW_PAGE_LOCKS = ON,
+DATA_COMPRESSION = NONE )
+ ON [PRIMARY]
+)
+ON [PRIMARY];
+GO

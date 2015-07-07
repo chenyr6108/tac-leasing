@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.car.service);
+
+
+var dataMap = CarBackLeasService.buildLeaseContract(params["ID"].value);
+
+vars["lease_code"] = dataMap.get("LEASE_CODE");
+vars["cust_name"] = dataMap.get("cust_name");
+vars["legal_person"] = dataMap.get("LEGAL_PERSON");
+vars["address1"] = dataMap.get("REGISTERED_OFFICE_ADDRESS");
+vars["address2"] = dataMap.get("COMMON_OFFICE_ADDRESS");
+vars["postcode"] = dataMap.get("POSTCODE");
+vars["telephone"] = dataMap.get("TELEPHONE");
+
+]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="ID" id="209">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="207"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="Data Set" id="208">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">address</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">idcard</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">name</property>
+                    <text-property name="displayName">name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">address</property>
+                    <text-property name="displayName">address</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">idcard</property>
+                    <text-property name="displayName">idcard</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">address</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">idcard</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[var list = dataMap.get("vouchers");
+iter=list.iterator();]]></method>
+            <method name="fetch"><![CDATA[if(iter.hasNext()==false){
+	return false;
+}
+var data=iter.next();
+row["name"]=data.get("name");
+row["idcard"]=data.get("idcard");
+row["address"]=data.get("address");
+return true;]]></method>
+            <method name="close"><![CDATA[list=null;
+data=null;
+iter=null;]]></method>
+        </script-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"微软雅黑"</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="font" id="7">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of></value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="8">
+            <property name="style">font</property>
+            <property name="fontSize">24pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">融资租赁合同</text-property>
+        </label>
+        <grid id="9">
+            <property name="verticalAlign">middle</property>
+            <property name="height">0.3541666666666667in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">lease_code</property>
+                    <text-property name="displayName">lease_code</text-property>
+                    <expression name="expression" type="javascript">vars["lease_code"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="10">
+                <property name="width">6.177083333333333in</property>
+            </column>
+            <column id="11">
+                <property name="width">1.7708333333333333in</property>
+            </column>
+            <row id="12">
+                <property name="height">0.3541666666666667in</property>
+                <cell id="13">
+                    <label id="15">
+                        <property name="style">font</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">合同编号：</text-property>
+                    </label>
+                </cell>
+                <cell id="14">
+                    <data id="210">
+                        <property name="resultSetColumn">lease_code</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <text id="16">
+            <property name="style">font</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[合同签订日：20____年_____月_____日
+合同签订地：中华人民共和国]]></text-property>
+        </text>
+        <label id="27">
+            <property name="style">font</property>
+            <property name="fontSize">14pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text"></text-property>
+        </label>
+        <grid id="17">
+            <property name="height">0.375in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">cust_name</property>
+                    <text-property name="displayName">cust_name</text-property>
+                    <expression name="expression" type="javascript">vars["cust_name"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="18">
+                <property name="width">1.4583333333333333in</property>
+            </column>
+            <column id="19">
+                <property name="width">2.5208333333333335in</property>
+            </column>
+            <column id="20">
+                <property name="width">1.53125in</property>
+            </column>
+            <column id="21">
+                <property name="width">2.4375in</property>
+            </column>
+            <row id="22">
+                <property name="height">0.396in</property>
+                <property name="style">font</property>
+                <cell id="23">
+                    <label id="28">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">出租方（甲方）：</text-property>
+                    </label>
+                </cell>
+                <cell id="24">
+                    <label id="30">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">裕融租赁有限公司 </text-property>
+                    </label>
+                </cell>
+                <cell id="25">
+                    <label id="29">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">承租方（乙方）：</text-property>
+                    </label>
+                </cell>
+                <cell id="26">
+                    <data id="211">
+                        <property name="style">font</property>
+                        <property name="resultSetColumn">cust_name</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="32">
+            <property name="height">0.375in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">legal_person</property>
+                    <text-property name="displayName">legal_person</text-property>
+                    <expression name="expression" type="javascript">vars["legal_person"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="33">
+                <property name="width">1.21875in</property>
+            </column>
+            <column id="34">
+                <property name="width">2.7604166666666665in</property>
+            </column>
+            <column id="35">
+                <property name="width">1.6041666666666667in</property>
+            </column>
+            <column id="36">
+                <property name="width">2.3645833333333335in</property>
+            </column>
+            <row id="37">
+                <property name="height">0.396in</property>
+                <property name="style">font</property>
+                <cell id="38">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="116">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">法定代表或负责人：许国兴 </text-property>
+                    </label>
+                </cell>
+                <cell id="42">
+                    <label id="43">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">法定代表或负责人：</text-property>
+                    </label>
+                </cell>
+                <cell id="44">
+                    <data id="212">
+                        <property name="style">font</property>
+                        <property name="resultSetColumn">legal_person</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="46">
+            <property name="height">0.375in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">address1</property>
+                    <text-property name="displayName">address1</text-property>
+                    <expression name="expression" type="javascript">vars["address1"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="47">
+                <property name="width">1.21875in</property>
+            </column>
+            <column id="48">
+                <property name="width">2.7604166666666665in</property>
+            </column>
+            <column id="49">
+                <property name="width">1.96875in</property>
+            </column>
+            <column id="50">
+                <property name="width">2in</property>
+            </column>
+            <row id="51">
+                <property name="height">0.396in</property>
+                <property name="style">font</property>
+                <cell id="52">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="117">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">注册地址：苏州工业园区东富路8号</text-property>
+                    </label>
+                </cell>
+                <cell id="56">
+                    <label id="57">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">注册地址（户籍地址）：</text-property>
+                    </label>
+                </cell>
+                <cell id="58">
+                    <data id="213">
+                        <property name="style">font</property>
+                        <property name="resultSetColumn">address1</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="60">
+            <property name="height">0.375in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">address2</property>
+                    <text-property name="displayName">address2</text-property>
+                    <expression name="expression" type="javascript">vars["address2"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="61">
+                <property name="width">1.21875in</property>
+            </column>
+            <column id="62">
+                <property name="width">2.7604166666666665in</property>
+            </column>
+            <column id="63">
+                <property name="width">1.9791666666666667in</property>
+            </column>
+            <column id="64">
+                <property name="width">1.9895833333333333in</property>
+            </column>
+            <row id="65">
+                <property name="height">0.396in</property>
+                <property name="style">font</property>
+                <cell id="66">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="119">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">实际经营地：苏州工业园区圆融时代广场23栋11楼</text-property>
+                    </label>
+                </cell>
+                <cell id="70">
+                    <label id="71">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">实际经营地（现居地）：</text-property>
+                    </label>
+                </cell>
+                <cell id="72">
+                    <data id="214">
+                        <property name="style">font</property>
+                        <property name="resultSetColumn">address2</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="74">
+            <property name="height">0.375in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">postcode</property>
+                    <text-property name="displayName">postcode</text-property>
+                    <expression name="expression" type="javascript">vars["postcode"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="75">
+                <property name="width">1.21875in</property>
+            </column>
+            <column id="76">
+                <property name="width">2.7604166666666665in</property>
+            </column>
+            <column id="77">
+                <property name="width">0.9583333333333334in</property>
+            </column>
+            <column id="78">
+                <property name="width">3.0104166666666665in</property>
+            </column>
+            <row id="79">
+                <property name="height">0.396in</property>
+                <property name="style">font</property>
+                <cell id="80">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="120">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">邮政编码：215022 </text-property>
+                    </label>
+                </cell>
+                <cell id="84">
+                    <label id="85">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">邮政编码：</text-property>
+                    </label>
+                </cell>
+                <cell id="86">
+                    <data id="215">
+                        <property name="style">font</property>
+                        <property name="resultSetColumn">postcode</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="88">
+            <property name="height">0.375in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">telephone</property>
+                    <text-property name="displayName">telephone</text-property>
+                    <expression name="expression" type="javascript">vars["telephone"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="89">
+                <property name="width">1.21875in</property>
+            </column>
+            <column id="90">
+                <property name="width">2.7604166666666665in</property>
+            </column>
+            <column id="91">
+                <property name="width">0.96875in</property>
+            </column>
+            <column id="92">
+                <property name="width">3in</property>
+            </column>
+            <row id="93">
+                <property name="height">0.396in</property>
+                <property name="style">font</property>
+                <cell id="94">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="121">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">电话号码：0512-80983566</text-property>
+                    </label>
+                </cell>
+                <cell id="98">
+                    <label id="99">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">电话号码：</text-property>
+                    </label>
+                </cell>
+                <cell id="100">
+                    <data id="216">
+                        <property name="style">font</property>
+                        <property name="resultSetColumn">telephone</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="102">
+            <property name="height">0.375in</property>
+            <property name="width">7.947916666666667in</property>
+            <column id="103">
+                <property name="width">1.21875in</property>
+            </column>
+            <column id="104">
+                <property name="width">2.7604166666666665in</property>
+            </column>
+            <column id="105">
+                <property name="width">1.2291666666666667in</property>
+            </column>
+            <column id="106">
+                <property name="width">2.7395833333333335in</property>
+            </column>
+            <row id="107">
+                <property name="height">0.396in</property>
+                <property name="style">font</property>
+                <cell id="108">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="122">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">传真号码：0512-80983567</text-property>
+                    </label>
+                </cell>
+                <cell id="112"/>
+                <cell id="114"/>
+            </row>
+        </grid>
+        <text id="165">
+            <property name="style">font</property>
+            <property name="letterSpacing">2px</property>
+            <property name="lineHeight">4px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    本合同的租赁是指中国合同法规定的融资租赁形式。出租方 裕融租赁有限公司（以下简称“甲方”）和承租方  ]]></text-property>
+        </text>
+        <data id="217">
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">cust_name</property>
+                    <text-property name="displayName">cust_name</text-property>
+                    <expression name="expression" type="javascript">vars["cust_name"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">cust_name</property>
+        </data>
+        <text id="166">
+            <property name="style">font</property>
+            <property name="letterSpacing">2px</property>
+            <property name="lineHeight">4px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[(以下简称“乙方”)双方就甲方出租本合同规定的合同正本及合同附件中记载的设备（以下简称租赁物），乙方从甲方处承租租赁物事宜，在平等互惠的基础上经友好协商达成以下协议并签订本合同（本合同分为合同正本与合同附件，合同附件经甲、乙双方签字确认后与合同正本有同等的法律效力）。]]></text-property>
+        </text>
+        <label id="168">
+            <property name="style">font</property>
+            <property name="fontSize">16pt</property>
+        </label>
+        <grid id="169">
+            <property name="height">0.3020833333333333in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">cust_name</property>
+                    <text-property name="displayName">cust_name</text-property>
+                    <expression name="expression" type="javascript">vars["cust_name"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="170">
+                <property name="width">1.6145833333333333in</property>
+            </column>
+            <column id="171">
+                <property name="width">2.3645833333333335in</property>
+            </column>
+            <column id="172">
+                <property name="width">1.5520833333333333in</property>
+            </column>
+            <column id="173">
+                <property name="width">2.4166666666666665in</property>
+            </column>
+            <row id="174">
+                <property name="height">0.3020833333333333in</property>
+                <cell id="175">
+                    <label id="179">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">出租方（甲方）：</text-property>
+                    </label>
+                </cell>
+                <cell id="176">
+                    <label id="180">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">裕融租赁有限公司 </text-property>
+                    </label>
+                </cell>
+                <cell id="177">
+                    <label id="181">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">承租方（乙方）：</text-property>
+                    </label>
+                </cell>
+                <cell id="178">
+                    <data id="218">
+                        <property name="style">font</property>
+                        <property name="resultSetColumn">cust_name</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="182">
+            <property name="pageBreakAfter">always</property>
+            <property name="height">0.6979166666666666in</property>
+            <column id="183"/>
+            <column id="184"/>
+            <column id="185"/>
+            <column id="186"/>
+            <row id="187">
+                <property name="height">0.396in</property>
+                <cell id="188">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="197">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">法定代表人或授权人：</text-property>
+                    </label>
+                </cell>
+                <cell id="190">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="199">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">法定代表人或授权人：</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="192">
+                <property name="height">0.3958333333333333in</property>
+                <cell id="193">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="200">
+                <property name="height">0.3958333333333333in</property>
+                <cell id="201">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="205">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">签约日期：</text-property>
+                    </label>
+                </cell>
+                <cell id="203">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="206">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">签约日期：</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <table id="219">
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">idcard</property>
+                    <text-property name="displayName">idcard</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["idcard"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">address</property>
+                    <text-property name="displayName">address</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["address"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">name</property>
+                    <text-property name="displayName">name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="230">
+                <property name="width">1.5520833333333333in</property>
+            </column>
+            <column id="226">
+                <property name="width">6.395833333333333in</property>
+            </column>
+            <detail>
+                <row id="222">
+                    <property name="height">1.53125in</property>
+                    <property name="borderBottomStyle">none</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <cell id="229">
+                        <label id="232">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">16px</property>
+                            <text-property name="text">乙方连带保证人：</text-property>
+                        </label>
+                        <label id="233">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">16px</property>
+                            <text-property name="text">身份证号码：</text-property>
+                        </label>
+                        <label id="234">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">16px</property>
+                            <text-property name="text">身份证地址：</text-property>
+                        </label>
+                        <label id="235">
+                            <property name="fontFamily">"宋体"</property>
+                            <property name="fontSize">16px</property>
+                            <text-property name="text">签约日期：</text-property>
+                        </label>
+                    </cell>
+                    <cell id="223">
+                        <data id="227">
+                            <property name="style">font</property>
+                            <property name="resultSetColumn">name</property>
+                        </data>
+                        <data id="228">
+                            <property name="style">font</property>
+                            <property name="resultSetColumn">idcard</property>
+                        </data>
+                        <data id="231">
+                            <property name="style">font</property>
+                            <property name="resultSetColumn">address</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <grid id="236">
+            <property name="pageBreakAfter">always</property>
+            <property name="height">0.34375in</property>
+            <property name="width">7.947916666666667in</property>
+            <column id="237">
+                <property name="width">4.53125in</property>
+            </column>
+            <column id="238">
+                <property name="width">1.0104166666666667in</property>
+            </column>
+            <column id="239">
+                <property name="width">2.40625in</property>
+            </column>
+            <row id="240">
+                <property name="height">0.34375in</property>
+                <cell id="241"/>
+                <cell id="242">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="248">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">对保人</text-property>
+                    </label>
+                </cell>
+                <cell id="243">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                </cell>
+            </row>
+            <row id="244">
+                <property name="height">0.34375in</property>
+                <cell id="245"/>
+                <cell id="246">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <label id="249">
+                        <property name="style">font</property>
+                        <property name="fontSize">16px</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">日期</text-property>
+                    </label>
+                </cell>
+                <cell id="247">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                </cell>
+            </row>
+        </grid>
+        <label id="123">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第一条 	 租赁物</text-property>
+        </label>
+        <text id="124">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    甲方根据乙方的要求及乙方的自主选定，以出租给乙方为目的，为乙方购买合同附表所记载的租赁物租予乙方，乙方则同意向甲方承租并使用该对象。
+1、	租赁物包括：全部补充配件、增设物、修缮物及附属或定着于该租赁物的从物在内。
+2、	乙方应对上述选择和决定承担全部责任，甲方对该选定不承担任何责任及对租赁物的瑕疵不承担责任。]]></text-property>
+        </text>
+        <label id="125">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第二条  	租赁物的所有权及抵押的设定</text-property>
+        </label>
+        <text id="126">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1、本合同交易是根据《中华人民共和国合同法》第十四章融资租赁合同相关条款签订，在乙方未完全履行本合同项下的所有义务前，租赁物的所有权归甲方所有，即使因现行行政管理法规或其他管理制度无法依本融资租合同，将租赁物登记为甲方所有名下，而登记于乙方或第三方所有名下，租赁物的所有权及处分权仍全归甲方所有。
+    2、甲、乙双方同意，产权可登记于乙方名下，但乙方须将租赁物抵押登记予甲方，并由乙方承担办理抵押登记手续及产生的相关费用，甲、乙双方了解并确认，前述运作目的是用于保障甲方对租赁物的所有权及预防第三人对租赁物主张任何的权利，双方因本融资租赁法律关系所签订的抵押合同及其他协议，均不影响租赁物所有权归属甲方的事实。
+    3、在租赁期间未经甲方同意，除业务所需乙方不得将租赁物迁离合同约定的设置场所或约定使用区域或转予第三人占有使用。
+    4、乙方不得以任何形式侵犯甲方的所有权，在租赁期间不得实施包括但不限于向第三方销售、转让、转租租赁物、设置质押、抵押等担保及其他有损甲方权益的行为。]]></text-property>
+        </text>
+        <label id="127">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第三条  	租赁物的交付、验收</text-property>
+        </label>
+        <text id="128">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1、租赁物由出卖人直接将租赁物交付承租人或依中华人民共和国物权法第二十七条规定交付予承租人，乙方应在合同附表载明的验收期限内自行对租赁物实施验收，并应在三天内向甲方提交《租赁物验收证明书》，否则视为乙方已验收完毕，并以租赁物交付日视为本合同起租日 。
+    在租赁物的规格、式样、质量、性能、机能、数量等被发现有瑕疵的，乙方应该在三天内以书面形式通知甲方；并且，乙方应直接与卖方协商解决前述纠纷，并在与卖方解决该纠纷后，及时向甲方提交《租赁物验收证明书》，乙方不得拖延时间（自收到租赁物之日起不超过15天，如遇特殊情况应及时通知甲方）。
+    2、乙方拒收租赁物的，乙方应当赔偿由此给甲方带来的一切损失。
+    3、乙方提交《租赁物验收证明书》后，即为认可租赁物已在符合要求的状态下由甲方交付完毕，此后不得再提出任何异议。
+    4、乙方在向甲方提交《租赁物验收证明书》之日起，即可按照本合同的规定使用该租赁物。
+    5、甲方交付租赁物后，乙方应自行负责将租赁物安装至合同附件一载明的场所。根据甲方的委托和确认，乙方与运输、搬运、安装及调试公司签订有关协议的，除甲方承诺支付的费用以外，其他所需费用全部由乙方承担。]]></text-property>
+        </text>
+        <label id="129">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第四条  	租赁期间</text-property>
+        </label>
+        <text id="130">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1、租赁期间是以第三条第1项规定为起租日至租赁物的租金及相关费用交付完毕为止。
+    2、乙方在本合同有效期内不得自行解除本合同，否则应承担本合同第十六条的违约责任。
+    3、乙方于租赁期间届满前欲续租租赁物时,可于租赁期间届满两个月前通知甲方，由双方就续租事宜另行协商解决。]]></text-property>
+        </text>
+        <label id="131">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第五条  	租赁物的瑕疵</text-property>
+        </label>
+        <text id="132">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1、基于乙方购买租赁物的自主权，如卖方延迟租赁物的交货，或提供租赁物与购买合同所规定的内容不符，或在安装调试、操作过程中及质量保证期间有质量瑕疵等情况，根据购买合同的规定，由购买合同的卖方负责，甲方不承担赔偿责任，乙方不得向甲方追索。
+    2、因发生自然灾害、地震、战争及其他不可抗力、运输途中的事故、劳动争议、法令等改废、卖方的原因以及其他不属于甲方的故意或重大过失引起而发生的事由，造成租赁物交付延迟或者不能交付时，甲方不承担任何责任。乙方应与卖方直接进行交涉，并协商解决，不得追究甲方的任何责任。
+    3、甲方认为有必要时，可向乙方转让租赁物的所有权或其在买卖合同中享有的要求赔偿的权利，以便于乙方向卖方直接交涉或请求。但是，对于卖方的责任履行，以及甲方转让所有权后乙方与卖方之间的各种直接交涉，甲方不作任何保证。要求赔偿所需的费用（包括仲裁费、诉讼费和律师费等）和法律后果均由乙方承担并享受其利益。因卖方违反买卖合同而造成的一切损失由乙方承担。
+    4、发生上述1、2、3项所述情况，本合同履行不受影响，乙方须按约定支付租金并承担责任。]]></text-property>
+        </text>
+        <label id="133">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第六条  	租金</text-property>
+        </label>
+        <text id="134">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    乙方应当按照本合同附件《租赁物情况表》规定的数额及支付条件向甲方支付租金。]]></text-property>
+        </text>
+        <label id="135">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第七条	  租赁物的保管及使用</text-property>
+        </label>
+        <text id="136">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1、乙方应当按照甲方的要求在租赁物上注明其所有权属于甲方, 并应将租赁物放置于合同附表内放置地址内，在合同附表所约定的区域内使用租赁物。
+    2、保管和使用租赁物时，乙方应当遵照国家有关部门制定的保护财产安全的各项规定，进行各项检验、验证、审批及安全检查，所产生的相关税、费由乙方承担缴纳，若因乙方未依上述各项规定进行保管使用，有可能损害甲方权益时，甲方可解除本合同，因而给甲方造成损害的，甲方可向乙方请求损害赔偿。
+    3、如乙方违反上述情况，致使租赁物发生部分或全部的损坏，甲方可解除本合同，收回或请求返还租赁物及请求损害赔偿。
+    4、由于租赁物自身或其设置、保管、使用的原因，而对甲方或第三人造成人身伤害或者财产损害的，甲方不承担任何责任，因而造成甲方损害的，均由乙方承担赔偿责任。
+    5、因乙方对租赁物的保管、使用违反国家相关法令规定所产生的罚款及其他任何费用，乙方应承担该罚款及其他任何费用，并应于缴款期限内缴款。]]></text-property>
+        </text>
+        <label id="137">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第八条  	租赁物的保养及费用</text-property>
+        </label>
+        <text id="138">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1、乙方应确保租赁物长期处于正常的运转状态，或者处于充分发挥其机能的工作状态，并进行相关法令规定及正常的维护和修理。
+    2、乙方应自行负责因前项义务发生的零件、附属零件的更换、租赁物的维修、损害处的修理、定期或者不定期的检查和进行其他一切维护、修护，并承担一切费用。
+    3、因维持租赁物的所有权或保管、使用，以及本合同下的交易所产生的税费，由乙方承担。
+    4、乙方应按照税法规定的税率承担因租金而产生的营业税，并与每次应当支付的租金一起付给甲方。根据本合同向甲方支付的费用须缴纳增值税时，乙方应按照甲方的结算请求进行支付。（租赁期间如遇国家税收政策发生重大变化，所产生的税、费增加，仍由乙方担负。）
+    5、关于租赁物，因第三人的专利权、商标、著作权或其他知识产权而发生侵权或纠纷时，甲方不负担任何责任。]]></text-property>
+        </text>
+        <label id="139">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第九条  	租赁物的灭失、损毁</text-property>
+        </label>
+        <text id="140">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1、直至租赁物返还，因盗窃、火灾、风水灾害、地震、征用、没入、执行、扣押、保全措施、乙方的原因或其他任何不可归责于甲方的原因，而引起的租赁物的灭失、毁损及其他一切危险，均由乙方承担损失。通常的损耗、减耗不适用本项。
+    2、租赁物灭失或者毁损的，乙方应按照甲方的要求采取措施，并自行承担一切费用：
+     A.将租赁物复原或修理至完好状态；
+     B.用与租赁物相同、性能相似的对象替换租赁物。
+    3、如租赁物灭失包括但不限于不能修理、侵害所有权、无法返还的情况，乙方应就已到期未付及未到期的租金总额向甲方一次清偿，且保证金由甲方没入，并赔偿甲方所受的损害。
+    4、发生本条第2项的情况时，本合同履行不受影响；发生本条第3项的情况时，应按照规定支付赔偿金额，同时，本合同自动终止。
+    5、乙方按照本条第3项的规定向甲方支付规定的赔偿金额时，在不改变租赁物状态的情况下，甲方要将租赁物的所有权转移给乙方或者第三人。甲方对租赁物的性能、机能以及第三人的资力等不承担任何责任。]]></text-property>
+        </text>
+        <label id="141">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第十条	  租赁物所有权变更的情形</text-property>
+        </label>
+        <text id="142">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    乙方在本合同规定的租赁期届满时，依本合同第十七条规定选择买取租赁物或提前终止合同返还租赁物时，应在租赁期届满2个月前以书面形式通知甲方。]]></text-property>
+        </text>
+        <label id="143">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第十一条	  租赁物的状态改变</text-property>
+        </label>
+        <text id="144">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    乙方没有得到甲方的书面承诺，不得将租赁物附着在其他对象上，或改造其外观、性能、机能、品质等，使租赁物的原状态发生任何变更。如果没有承诺的情形下，其改造、变更所产生的价值无偿归属于租赁物的所有人即甲方，但由此产生的损害由乙方负无条件赔偿责任。]]></text-property>
+        </text>
+        <label id="145">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第十二条  租赁物的检查</text-property>
+        </label>
+        <text id="146">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    无论何时，甲方均可随时进入乙方的事务所、工厂、公司等场所，检查租赁物的现状、运转状况及维护情况，甲方可要求乙方随时告知租赁物目前所在位置及租赁物相关信息，乙方不得有议异。]]></text-property>
+        </text>
+        <label id="147">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第十三条  保险</text-property>
+        </label>
+        <text id="148">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    乙方从起租日起至本合同应履行义务履行完毕前应向保险公司投保相应险种，保险期限至融资租赁合同到期之日，如乙方不履行到期还款的义务，乙方应继续购买保险，直至融资租赁合同下债务履行完毕为止，保险代办人及保险人由甲方指定，保险费用由乙方依保险公司规定交付予保险代办人或交付予甲方转付予保险公司，乙方并同意保险公司以甲方为第一受益人，在本合同有效期间，因乙方原因不能按时对租赁物进行投保和续保而造成的损失，乙方应承担赔偿责任;甲方租赁物价金未支付前、未投保前,本项租赁物危险负担责任仍由乙方承担。]]></text-property>
+        </text>
+        <label id="149">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第十四条  保险金的收取</text-property>
+        </label>
+        <text id="150">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1、发生事故时，乙方应立即通知保险公司及甲方，依保险公司规定的理赔程序申请理赔，并将理赔及受领保险金所需的一切文件交付予保险代办人或保险公司。
+    2、租赁物发生保险事故后获得赔偿时，由甲方领受保险金。如保险金不足以支付甲方损失的，乙方应当予以赔偿。如由于乙方的故意或重大过失造成保险公司不予理赔时，乙方应承担该事故的全部损害赔偿责任。]]></text-property>
+        </text>
+        <label id="151">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第十五条  租赁保证金</text-property>
+        </label>
+        <text id="152">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1、乙方按照本合同的规定承担相应债务，作为债务履行的担保，乙方应在本合同成立的同时向甲方预先支付本合同附件《租赁物情况表》规定的保证金额。
+    2、保证金不计利息，甲方可将保证金抵消乙方基于本合同产生的全部或部分债务。     但是，乙方不得凭保证金免除其超出保证金部分的支付义务。
+    3、发生前项情形时，甲方有权对其与乙方之间的各项支付义务进行结算，所得金额得根据甲方的裁量优先从该保证金帐户支付。
+    4、甲方和乙方之间有本合同以外的其他交易时，或者第1项的保证金以外提供担保时，全部保证金是对全部债权共通的担保。担保的偿付顺序由甲方决定。]]></text-property>
+        </text>
+        <label id="153">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第十六条  违约责任</text-property>
+        </label>
+        <text id="154">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1、乙方有违反本合同条款及发生下列各项情形之一时，甲方无需催告通知即可解除本合同。
+     A.发生一次或一次以上迟延支付租金时，；
+     B.包括但不限于乙方停止履行其对任何第三人的支付义务，或停止生产、 歇业、提出破产、解散清算或被停业整顿、被吊销营业执照时；乙方被命令、通知接受财产保全措施、查封、扣押或因租赁物的保管使用违反相关法令又被没入、扣押之虞时；乙方被卷入诉讼、仲裁或其他法律程序，可能给乙方的经营活动带来显着不利影响时；
+     C.乙方迁移住所前未通知甲方时；
+     D.乙方发生合资、分立、减资、股权变更、股份比例变更且未经甲方书面同意时；
+     E.乙方于议定本合同时，曾为虚伪陈述、保证或伪造相关文件时；
+     F.乙方经营状况显着恶化，或有足够理由相信有此可能时；
+     G.本合同外其他对甲方的债务履行，发生一次或一次以上迟延支付时；
+     H.违反本合同条款或与甲方签订的其他合同条款之一，经甲方催告限定 5 日内改正，但未在该期限内做出回应时；
+     I.发生与上述各项相当的其他事由时；
+     J.连带保证人有上述各项情形之一时。
+    2、本合同基于本条款第1项规定被解除时，甲方可以要求乙方承担以下违约责任：
+     A．乙方应按照本合同的规定立即将租赁物返还给甲方，并向甲方支付本合同约定的违约金。按本项规定返还租赁物发生的修缮及其他费用、各项税款等一切费用均由乙方承担。甲方收回租赁物时，租赁物的价值由双方确定或者由评估机构评估后确定；确定的价格不足以支付甲方损失的，乙方应当予以补偿。
+     B．乙方有义务支付已到期未支付及全部未到期的租金及由租赁物产生的其他一切费用，并对甲方承担相应的损害赔偿责任。
+    3、根据本合同，以及本合同当事人与卖方签订的买卖合同，甲方为乙方订购租赁物后，如发生以下情况，乙方应承担以下责任： 
+     A．因不可归责于甲方（购买方）的事由所导致的租赁合同未能签署（包括无效、撤销）或者在租赁物交接完毕前租赁合同被解除时， 甲方（购买方）可以无条件解除买卖合同（包括撤回要约）。
+     B．如发生本条第A款的情形下，乙方应及时返还甲方（购买方） 已支付的全部款项，并承担相应的违约金（计算标准：购买方实际支付日起至实际收到乙方返还全部支付款项日，以日息万分之五计 算）。同时乙方应立即代替甲方（购买方）与卖方进行协商、妥善处理。
+    4、延迟支付而产生的违约金：乙方怠于向甲方支付本合同租金及其他相关费用时，或者甲方为乙方垫付费用后乙方怠于偿还该垫付款时，在此延迟期间，乙方应每日按照应付金额的万分之五向甲方支付违约金。]]></text-property>
+        </text>
+        <label id="155">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第十七条  租赁物的返还</text-property>
+        </label>
+        <text id="156">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1、本合同在租赁期届满且乙方已履行其在本合同下的债务后，乙方有权行使其在本合同下拥有的选择是否购买租赁物的权利。购买金额以本合同附件《租赁物情况表》中载明的购买选择权为准。
+    2、乙方按本条第1项规定支付购买金额后，即取得租赁物的所有权，所有权在租赁物所在地以当时的状态转移。甲方不对任何瑕疵或者隐藏的瑕疵承担责任。因所有权转移发生的一切费用和税款均由乙方承担。
+    3、本合同在租赁期届满或者因解除而终止时，或者甲方基于本合同要求返还租赁物时，除了租赁物通常损耗或甲方认可范围外，乙方应立即对租赁物恢复原状，将租赁物送交至甲方指定的地点予以返还。运送租赁物所需的必要费用由乙方负担。本合同租赁期满或者因解除而终止时，甲方可以要求乙方报废租赁物。甲方要求乙方在报废处理期限内处分租赁物的，乙方应立即将租赁物送交具有中国政府认定资格的废弃处理单位，委托其在处理期限内处分租赁物，且将该单位出具的《租赁物回收证明 》（或者有关废弃处理的合同及该单位的收据）的原件交付给甲方。如在废弃处理期间未能向甲方交付回收证明（或者有关废弃处理的合同及该单位的收据）的，乙方应按照超过废弃处理期限的天数相应地向甲方支付相当于日租费的违约金。租赁物报废时所需的必要费用由乙方负担。
+    4、经甲方同意提前解约的情况下，乙方迟延返还租赁物时，如甲方提出要求的，乙方应在返还完毕前按照迟延天数支付相应地损害赔偿金，计算方法如下：每天应当支付相当于双倍的日租费作为损害赔偿金。同时遵守本合同的其他约定。
+    5、乙方迟延返还租赁物时，甲方有权自行或指定第三人从租赁物所在地点收回租赁物。]]></text-property>
+        </text>
+        <label id="157">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第十八条 连带保证人</text-property>
+        </label>
+        <text id="158">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1、乙方的连带保证人应保证乙方完全履行本合同，并保证对其债务承担连带赔偿责任。
+    2、连带保证人承担保证责任的范围为乙方在本合同项下对甲方的全部债务及与前述款项有关的滞纳金、损害赔偿金、实现债权的费用和其他一切费用，包括但不限于律师函费、调档费、现场查机服务费、诉讼费用、财产保全费、申请执行费、律师费、公告费、 评估费、拍卖费等。
+    3、连带保证人保证的期间同乙方所负全部债务履行期限。
+    4、因甲方的原因变更、解除本合同下担保责任或其他保证时，连带保证人不得对乙方所付的业已形成的债务向甲方主张免责或要求损害赔偿。
+    5、连带保证人在偿还乙方因本合同所付有的一切债务以前，不得取得代甲方向乙方求偿的权利。
+    6、本合同或票据的要件有欠缺、或请求的手续不完备，或担保物有追索瑕疵等情况时，保证人仍负全部责任。
+    7、保证人要求退保时，在乙方提供经甲方认可的保证人办妥手续，并经甲方书面通知后，始得解除保证责任，以其他方式声明退保，均不生效。]]></text-property>
+        </text>
+        <label id="159">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第十九条  甲方权利的转让</text-property>
+        </label>
+        <text id="160">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    乙方按甲方的要求定期或随时向甲方提供能反映乙方企业真实状况的资料和情况，包括但不限于乙方资产负债表、乙方利润表及其他的明细情况，若乙方为个人的，乙方应按甲方要求定期或随时向甲方提供能反应个人及家庭真实经济状况的资料和情况，包括但不限于个人收入证明及其他的明细情况。
+]]></text-property>
+        </text>
+        <label id="161">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第二十一条  争议的解决</text-property>
+        </label>
+        <text id="162">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    本合同的一切争议，首先应友好协商，如协商不能解决需提起诉讼时，本合同当事人应当向甲方注册所在地的人民法院提起诉讼。]]></text-property>
+        </text>
+        <label id="163">
+            <property name="style">font</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">30px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">第二十二条  合同及附件</text-property>
+        </label>
+        <text id="164">
+            <property name="style">font</property>
+            <property name="lineHeight">25px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    合同附件与本合同具有同等法律效力。
+    本合同一式三份，甲方执两份，乙方执一份，经双方盖章后生效。]]></text-property>
+        </text>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="cust_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="legal_person">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="address1">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="address2">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="postcode">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="telephone">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="lease_code">
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

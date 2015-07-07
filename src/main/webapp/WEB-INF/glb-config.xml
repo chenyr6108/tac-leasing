@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312"?>
+<configuration>
+
+  <params>
+  
+    <param>
+  		<name>log4j-config-file</name>
+  		<type>log4j-cfg</type>
+  		<value>WEB-INF/log4j.lcf</value>
+  	</param> 	
+	
+
+  </params>
+
+</configuration>

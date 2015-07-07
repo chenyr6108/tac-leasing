@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="gantt.css" type="text/css"></link>
+    <script src="main.js"></script>
+    <script src="date.js"></script>
+    <script src="tooltip.js"></script>
+    <script src="wz_jsgraphics.js"></script>
+    <script src="gantt.js"></script>
+    <script>
+      
+      var chart;
+      
+      function init()
+      {
+        var chart = new DS.GanttChart("chart1");
+        chart.start_date = new Date(Date.parse("May 15, 2008"));
+        
+        chart.width = 400;
+        chart.allow_tooltip_copy = false;
+        
+        var design = new DS.GanttTask("Design Control", 2);
+        var code = new DS.GanttTask("Write Code", 3);
+        var describe = new DS.GanttTask("Describe Purpose", 1);
+        var clean_up = new DS.GanttTask("Code Clean-up", 1);
+        var documentation = new DS.GanttTask("Documentation", 2);
+        var blog_post = new DS.GanttTask("Blog Post", 1);
+        
+        code.requires(design);
+        describe.requires(design);
+        clean_up.requires(code);
+        documentation.requires(code);
+        blog_post.requires(documentation);
+        blog_post.requires(describe);
+        
+        chart.add_task(design);
+        chart.add_task(code);
+        chart.add_task(documentation);
+        chart.add_task(clean_up);
+        chart.add_task(describe);
+        chart.add_task(blog_post);
+        
+        chart.schedule();
+      }
+      
+    </script>
+  </head>
+  <body onload="init();">
+    <div id="chart1">
+    </div>
+  </body>
+</html>

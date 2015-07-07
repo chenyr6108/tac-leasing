@@ -1,0 +1,26 @@
+@charset "utf-8";
+.ss_bigo {
+	background-image: url(ss_bigk_05.gif);
+	background-repeat: no-repeat;
+	height: 102px;
+	width: 45px;
+	background-position: right;
+}
+.ss_bigt {
+	background-image: url(ss_bigk2_07.png);
+	background-repeat: repeat-x;
+	height: 102px;
+}
+.ss_wenzi {
+	font-size: 12px;
+	line-height: 1.8em;
+	text-decoration: none;
+	color: #023f90;
+}
+.ss_bigth {
+	background-image: url(ss_bigk3_09.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+	height: 102px;
+	width: 13px;
+}

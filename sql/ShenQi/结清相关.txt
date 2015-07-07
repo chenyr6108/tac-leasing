@@ -1,0 +1,50 @@
+﻿CREATE TABLE [dbo].[T_RENT_SETTLEMENT] (
+[ID] int IDENTITY(1, 1) NOT NULL,
+[RECP_ID] int NOT NULL,
+[SHOULD_PERIOD_NUM] int NULL, --总期数
+[PAY_PERIOD_NUM] int NULL,--已缴期数
+[PAY_PRICE] money NULL,--已缴金额
+[SHOULD_OWN_PRICE] money NULL,--应付本金
+[PAY_OWN_PRICE] money NULL,--已缴本金
+[SHOULD_ACCRUAL_PRICE] money NULL,--应付利息
+[PAY_ACCRUAL_PRICE] money NULL,--已缴利息
+[SHOULD_ADDED_VALUE_TAX] money NULL,--应付增值税
+[PAY_ADDED_VALUE_TAX] money NULL,--已缴增值税
+[SHOULD_FINE] money NULL,--应付罚息
+[PAY_FINE] money NULL,--已缴罚息
+[SHOULD_BREAK_FEE] money NULL,--应付违约金
+[PAY_BREAK_FEE] money NULL,--已缴违约金
+[SHOULD_HARMFUL_FEE] money NULL,--应付损害金
+[PAY_HARMFUL_FEE] money NULL,--已缴损害金
+[SHOULD_STAY_FEE] money NULL,--应付留购价
+[PAY_STAY_FEE] money NULL,--已缴留购价
+[SHOULD_LAW_FEE] money NULL,--应付法务费
+[PAY_LAW_FEE] money NULL,--已缴法务费
+[SHOULD_OTHER_FEE] money NULL,--应付其他费用
+[PAY_OTHER_FEE] money NULL,--已缴其他费用
+[REMARK] nvarchar(MAX) COLLATE Chinese_PRC_CI_AS NULL,--备注
+[STATE] int NULL,--状态, 0默认,1通过,-1驳回
+[SALES_MANAGER] nvarchar(1) COLLATE Chinese_PRC_CI_AS NULL,--业务主管  Y N
+[SALES_DIRECT] nvarchar(1) COLLATE Chinese_PRC_CI_AS NULL,--业务副总  Y N
+[SERVICE_DIRECT] nvarchar(1) COLLATE Chinese_PRC_CI_AS NULL,--业管总监 Y N
+[GENERAL_MANAGER] nvarchar(1) COLLATE Chinese_PRC_CI_AS NULL,--总经理 Y N
+[FINANCIAL] nvarchar(1) COLLATE Chinese_PRC_CI_AS NULL,--财务部 Y N
+[SETTLE_DATE] datetime NULL,--结清日期
+[COMPUTE_SETTLE_DATE] datetime NULL,--预估结清日期,用于提前结清,    此字段如果是空,说明此条数据申请的是正常结清
+[CREATE_BY] int NULL,--创建结清单人员
+[CREATE_TIME] datetime NULL,--创建结清单时间
+[MODIFY_BY] int NULL,--更新人
+[MODIFY_TIME] datetime NULL,--更新时间
+[STATUS] int NULL,--数据有效性  0有效  -1无效
+PRIMARY KEY CLUSTERED ([ID] )
+WITH ( PAD_INDEX = OFF,
+FILLFACTOR = 100,
+IGNORE_DUP_KEY = OFF,
+STATISTICS_NORECOMPUTE = OFF,
+ALLOW_ROW_LOCKS = ON,
+ALLOW_PAGE_LOCKS = ON,
+DATA_COMPRESSION = NONE )
+ ON [PRIMARY]
+)
+ON [PRIMARY];
+GO

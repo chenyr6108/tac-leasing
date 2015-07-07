@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.contract.service);
+
+
+var dataMap = ContractBuilder.directReceiptBuilder(params["creditId"].value);
+vars["lease_code"] = dataMap.get("lease_code");
+vars["cust_name"] = dataMap.get("cust_name");
+vars["supl_name"] = dataMap.get("supl_name");
+vars["total"] = dataMap.get("total");
+vars["company_name"]= dataMap.get("comp_name");
+vars["tax_code"]= dataMap.get("tax_code");
+vars["address"]= dataMap.get("address");
+vars["bank"]= dataMap.get("bank");
+
+
+]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="creditId" id="122">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="19"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="eqmt" id="20">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">index</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">thing_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">thing_kind</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">thing_count</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">model_spec</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">thing_number</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">unit_price</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">index</property>
+                    <text-property name="displayName">index</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">thing_name</property>
+                    <text-property name="displayName">thing_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">thing_kind</property>
+                    <text-property name="displayName">thing_kind</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">thing_count</property>
+                    <text-property name="displayName">thing_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">model_spec</property>
+                    <text-property name="displayName">model_spec</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">thing_number</property>
+                    <text-property name="displayName">thing_number</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">unit_price</property>
+                    <text-property name="displayName">unit_price</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">index</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">thing_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">thing_kind</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">thing_count</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">model_spec</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">thing_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">unit_price</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[var list = dataMap.get("eqmtList");
+iter = list.iterator();]]></method>
+            <method name="fetch"><![CDATA[if(iter.hasNext() == false){
+	return false;
+}
+var data = iter.next();
+
+row["thing_name"] = data.get("THING_NAME");
+row["model_spec"] = data.get("MODEL_SPEC");
+row["unit"] = data.get("UNIT");
+row["thing_count"] = data.get("THING_COUNT");
+row["unit_price"] = data.get("UNIT_PRICE");
+row["thing_kind"] = data.get("THING_KIND");
+row["thing_number"] = data.get("THING_NUMBER");
+row["index"] = data.get("index");
+return true;]]></method>
+            <method name="close"><![CDATA[iter = null;
+list = null;]]></method>
+        </script-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="font" id="12">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of></value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="7">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">36px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">通知暨回执函</text-property>
+        </label>
+        <label id="8">
+            <property name="style">font</property>
+        </label>
+        <text id="10">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[致：（供应商）公司：]]></text-property>
+        </text>
+        <data id="123">
+            <property name="style">font</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">supl_name</property>
+                    <text-property name="displayName">supl_name</text-property>
+                    <expression name="expression" type="javascript">vars["supl_name"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">supl_name</property>
+        </data>
+        <label id="13">
+            <property name="style">font</property>
+            <property name="fontSize">10px</property>
+        </label>
+        <text id="11">
+            <property name="style">font</property>
+            <property name="marginTop">5px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    依据我司和承租人]]></text-property>
+        </text>
+        <data id="124">
+            <property name="style">font</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">cust_name</property>
+                    <text-property name="displayName">cust_name</text-property>
+                    <expression name="expression" type="javascript">vars["cust_name"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">cust_name</property>
+        </data>
+        <text id="15">
+            <property name="style">font</property>
+            <property name="marginTop">5px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[签订的编号为]]></text-property>
+        </text>
+        <data id="125">
+            <property name="style">font</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">lease_code</property>
+                    <text-property name="displayName">lease_code</text-property>
+                    <expression name="expression" type="javascript">vars["lease_code"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">lease_code</property>
+        </data>
+        <text id="16">
+            <property name="style">font</property>
+            <property name="marginTop">5px</property>
+            <property name="lineHeight">21px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[的《融资租赁合同》，以及我司和贵公司签订的《买卖合同》请贵司按照以下机器明细表及开票资料开立相应发票:]]></text-property>
+        </text>
+        <label id="17">
+            <property name="style">font</property>
+        </label>
+        <label id="18">
+            <property name="style">font</property>
+            <property name="fontWeight">bold</property>
+            <text-property name="text">    机器设备：</text-property>
+        </label>
+        <table id="21">
+            <property name="style">font</property>
+            <property name="marginTop">5px</property>
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">eqmt</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">index</property>
+                    <text-property name="displayName">index</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["index"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">thing_name</property>
+                    <text-property name="displayName">thing_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thing_name"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">thing_kind</property>
+                    <text-property name="displayName">thing_kind</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thing_kind"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">thing_count</property>
+                    <text-property name="displayName">thing_count</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thing_count"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">model_spec</property>
+                    <text-property name="displayName">model_spec</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["model_spec"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">thing_number</property>
+                    <text-property name="displayName">thing_number</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thing_number"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">unit_price</property>
+                    <text-property name="displayName">unit_price</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["unit_price"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="35">
+                <property name="width">0.6458333333333334in</property>
+            </column>
+            <column id="41">
+                <property name="width">1.3854166666666667in</property>
+            </column>
+            <column id="47">
+                <property name="width">1.375in</property>
+            </column>
+            <column id="44">
+                <property name="width">0.5625in</property>
+            </column>
+            <column id="38">
+                <property name="width">1.7083333333333333in</property>
+            </column>
+            <column id="31">
+                <property name="width">1.1354166666666667in</property>
+            </column>
+            <column id="32">
+                <property name="width">1.1354166666666667in</property>
+            </column>
+            <header>
+                <row id="22">
+                    <property name="height">0.34375in</property>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="33">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="48">
+                            <text-property name="text">序号</text-property>
+                        </label>
+                    </cell>
+                    <cell id="39">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="49">
+                            <text-property name="text">名称</text-property>
+                        </label>
+                    </cell>
+                    <cell id="45">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="50">
+                            <text-property name="text">厂牌</text-property>
+                        </label>
+                    </cell>
+                    <cell id="42">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="51">
+                            <text-property name="text">数量</text-property>
+                        </label>
+                    </cell>
+                    <cell id="36">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="52">
+                            <text-property name="text">规格型号</text-property>
+                        </label>
+                    </cell>
+                    <cell id="23">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="53">
+                            <text-property name="text">机号</text-property>
+                        </label>
+                    </cell>
+                    <cell id="24">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="54">
+                            <text-property name="text">含税单价</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="25">
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <cell id="34">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="textAlign">center</property>
+                        <data id="115">
+                            <property name="style">font</property>
+                            <property name="paddingTop">2pt</property>
+                            <property name="paddingLeft">2pt</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">2pt</property>
+                            <property name="resultSetColumn">index</property>
+                        </data>
+                    </cell>
+                    <cell id="40">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="116">
+                            <property name="style">font</property>
+                            <property name="resultSetColumn">thing_name</property>
+                        </data>
+                    </cell>
+                    <cell id="46">
+                        <property name="style">font</property>
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="117">
+                            <property name="style">font</property>
+                            <property name="resultSetColumn">thing_kind</property>
+                        </data>
+                    </cell>
+                    <cell id="43">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="118">
+                            <property name="style">font</property>
+                            <property name="resultSetColumn">thing_count</property>
+                        </data>
+                    </cell>
+                    <cell id="37">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="119">
+                            <property name="style">font</property>
+                            <property name="resultSetColumn">model_spec</property>
+                        </data>
+                    </cell>
+                    <cell id="26">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="120">
+                            <property name="style">font</property>
+                            <property name="resultSetColumn">thing_number</property>
+                        </data>
+                    </cell>
+                    <cell id="27">
+                        <property name="fontFamily">"宋体"</property>
+                        <property name="fontSize">16px</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="121">
+                            <property name="style">font</property>
+                            <property name="resultSetColumn">unit_price</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <grid id="65">
+            <property name="style">font</property>
+            <property name="height">0.3541666666666667in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">total</property>
+                    <text-property name="displayName">total</text-property>
+                    <expression name="expression" type="javascript">vars["total"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="66">
+                <property name="width">4.145833333333333in</property>
+            </column>
+            <column id="67">
+                <property name="width">2.40625in</property>
+            </column>
+            <column id="68">
+                <property name="width">1.3958333333333333in</property>
+            </column>
+            <row id="69">
+                <property name="height">0.3541666666666667in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="70"/>
+                <cell id="71">
+                    <label id="73">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">含税单机合计：</text-property>
+                    </label>
+                </cell>
+                <cell id="72">
+                    <data id="134">
+                        <property name="style">font</property>
+                        <property name="resultSetColumn">total</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="76">
+            <property name="style">font</property>
+            <property name="height">0.3958333333333333in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">company_name</property>
+                    <text-property name="displayName">company_name</text-property>
+                    <expression name="expression" type="javascript">vars["company_name"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="77">
+                <property name="width">1.6979166666666667in</property>
+            </column>
+            <column id="78">
+                <property name="width">6.25in</property>
+            </column>
+            <row id="79">
+                <property name="height">0.26in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="80">
+                    <label id="82">
+                        <property name="textAlign">right</property>
+                        <text-property name="text"> 一、开票名称：</text-property>
+                    </label>
+                </cell>
+                <cell id="81">
+                    <data id="145">
+                        <property name="style">font</property>
+                        <property name="resultSetColumn">company_name</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="137">
+            <property name="style">font</property>
+            <property name="height">0.3958333333333333in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">tax_code</property>
+                    <text-property name="displayName">tax_code</text-property>
+                    <expression name="expression" type="javascript">vars["tax_code"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="138">
+                <property name="width">1.6979166666666667in</property>
+            </column>
+            <column id="139">
+                <property name="width">6.25in</property>
+            </column>
+            <row id="140">
+                <property name="height">0.26in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="141">
+                    <label id="142">
+                        <text-property name="text">       税务登记号:</text-property>
+                    </label>
+                </cell>
+                <cell id="143">
+                    <data id="146">
+                        <property name="resultSetColumn">tax_code</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="83">
+            <property name="style">font</property>
+            <property name="height">0.3958333333333333in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">address</property>
+                    <text-property name="displayName">address</text-property>
+                    <expression name="expression" type="javascript">vars["address"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="84">
+                <property name="width">1.7395833333333333in</property>
+            </column>
+            <column id="85">
+                <property name="width">6.208333333333333in</property>
+            </column>
+            <row id="86">
+                <property name="height">0.26in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="87">
+                    <label id="88">
+                        <text-property name="text">       地址、电话:</text-property>
+                    </label>
+                </cell>
+                <cell id="89">
+                    <data id="147">
+                        <property name="resultSetColumn">address</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="90">
+            <property name="style">font</property>
+            <property name="height">0.3958333333333333in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">bank</property>
+                    <text-property name="displayName">bank</text-property>
+                    <expression name="expression" type="javascript">vars["bank"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="91">
+                <property name="width">1.9479166666666667in</property>
+            </column>
+            <column id="92">
+                <property name="width">6in</property>
+            </column>
+            <row id="93">
+                <property name="height">0.26in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="94">
+                    <label id="95">
+                        <text-property name="text">       开户行及账号: </text-property>
+                    </label>
+                </cell>
+                <cell id="96">
+                    <data id="148">
+                        <property name="resultSetColumn">bank</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="149">
+            <property name="style">font</property>
+            <property name="height">0.3958333333333333in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">company_name</property>
+                    <text-property name="displayName">company_name</text-property>
+                    <expression name="expression" type="javascript">vars["company_name"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="150">
+                <property name="width">0.8020833333333334in</property>
+            </column>
+            <column id="151">
+                <property name="width">7.145833333333333in</property>
+            </column>
+            <row id="152">
+                <property name="height">0.26in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="153">
+                    <label id="154">
+                        <property name="textAlign">left</property>
+                        <text-property name="text">通知人:</text-property>
+                    </label>
+                </cell>
+                <cell id="155">
+                    <data id="156">
+                        <property name="style">font</property>
+                        <property name="resultSetColumn">company_name</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <label id="99">
+            <property name="style">font</property>
+            <property name="fontSize">40pt</property>
+            <property name="pageBreakAfter">auto</property>
+        </label>
+        <label id="98">
+            <property name="style">font</property>
+            <text-property name="text">----------------------------------------------------------------------------------------------</text-property>
+        </label>
+        <label id="101">
+            <property name="style">font</property>
+        </label>
+        <grid id="157">
+            <property name="style">font</property>
+            <property name="height">0.3958333333333333in</property>
+            <property name="width">7.947916666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">company_name</property>
+                    <text-property name="displayName">company_name</text-property>
+                    <expression name="expression" type="javascript">vars["company_name"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="158">
+                <property name="width">0.4270833333333333in</property>
+            </column>
+            <column id="159">
+                <property name="width">7.520833333333333in</property>
+            </column>
+            <row id="160">
+                <property name="height">0.26in</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="161">
+                    <label id="162">
+                        <property name="textAlign">left</property>
+                        <text-property name="text">致:</text-property>
+                    </label>
+                </cell>
+                <cell id="163">
+                    <data id="164">
+                        <property name="style">font</property>
+                        <property name="resultSetColumn">company_name</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <label id="136">
+            <property name="style">font</property>
+        </label>
+        <text id="102">
+            <property name="style">font</property>
+            <property name="marginTop">5px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    我司确认依据贵司和承租人]]></text-property>
+        </text>
+        <data id="126">
+            <property name="style">font</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">cust_name</property>
+                    <text-property name="displayName">cust_name</text-property>
+                    <expression name="expression" type="javascript">vars["cust_name"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">cust_name</property>
+        </data>
+        <text id="103">
+            <property name="style">font</property>
+            <property name="marginTop">5px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[签订的编号为]]></text-property>
+        </text>
+        <data id="127">
+            <property name="style">font</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">lease_code</property>
+                    <text-property name="displayName">lease_code</text-property>
+                    <expression name="expression" type="javascript">vars["lease_code"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">lease_code</property>
+        </data>
+        <text id="104">
+            <property name="style">font</property>
+            <property name="marginTop">5px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[的《融资租赁合同》，以及我司和贵公司签订的《买卖合同》所应开立上表机器设备的相应发票（发票共]]></text-property>
+        </text>
+        <text id="133">
+            <property name="style">font</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[  ]]></text-property>
+        </text>
+        <text id="105">
+            <property name="style">font</property>
+            <property name="marginTop">5px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[张），合计开票金额为]]></text-property>
+        </text>
+        <data id="135">
+            <property name="style">font</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">total</property>
+                    <text-property name="displayName">total</text-property>
+                    <expression name="expression" type="javascript">vars["total"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">total</property>
+        </data>
+        <text id="106">
+            <property name="style">font</property>
+            <property name="marginTop">5px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[元,连同本回执确认函交付给贵司。]]></text-property>
+        </text>
+        <label id="107">
+            <property name="style">font</property>
+            <property name="fontSize">20pt</property>
+        </label>
+        <text id="110">
+            <property name="style">font</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[回执确认人: (供应商)公司：]]></text-property>
+        </text>
+        <data id="128">
+            <property name="style">font</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">supl_name</property>
+                    <text-property name="displayName">supl_name</text-property>
+                    <expression name="expression" type="javascript">vars["supl_name"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">supl_name</property>
+        </data>
+        <text id="114">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">5px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[日期：    年  月  日]]></text-property>
+        </text>
+        <label id="112">
+            <property name="style">font</property>
+            <property name="fontSize">60pt</property>
+        </label>
+        <label id="113">
+            <property name="style">font</property>
+            <property name="fontSize">18pt</property>
+            <text-property name="text">※请将发票连同本通知暨回执函交付给通知人</text-property>
+        </label>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="lease_code">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="supl_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="total">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="company_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="address">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="bank">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="tax_code">
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

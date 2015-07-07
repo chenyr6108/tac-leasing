@@ -1,0 +1,148 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>融资租赁信息系统</title>
+		<script type="text/javascript" src="import/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="import/jquery-ui-1.8.1.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="resources/jquery/plugins/css-dock-menu/style.css"></link>
+		<script type="text/javascript" src="resources/jquery/plugins/jquery.contextmenu.r2.js"></script>
+		<script type="text/javascript" src="resources/jquery/plugins/bean.jquery.auto-windows.js"></script>
+		<link rel="stylesheet" type="text/css" href="common/css/navy.css">
+		<link type="text/css" rel="stylesheet" href="style/style.css"></link>
+		<link type="text/css" rel="stylesheet" href="style/tab-button.css"></link>
+		<link type="text/css" rel="stylesheet" href="style/menu.css"></link>
+		<script type="text/javascript" src="script/script.js"></script>
+		<script type="text/javascript" src="script/tab-manager.js"></script>
+		
+		<link rel="stylesheet" href="script/search.css" rel="stylesheet"/>
+		<link type="text/css" href="resources/jquery/plugins/jq-grid/ui.jqgrid.css" rel="stylesheet"></link>
+		<link type="text/css" href="resources/jquery/themes/redmond/jquery-ui-1.8.1.custom.css" rel="stylesheet" />
+		<style type="text/css">
+			* {
+				font-size: 12px;
+			}
+			
+			#main {
+				text-align: left;
+			}
+			
+			div.zc_grid {
+				font-size: 12px;
+			}
+			
+			table.zc_grid_title {
+				width: 100%;
+			}
+			
+			div.zc_grid_body {
+				
+			}
+			
+			th.zc_grid_head {
+				text-align: center;
+				border-bottom: 1px solid #C5DBEC;
+			}
+			
+			.jqgrow table.zc_grid_table {
+				width: 99%;
+				margin: 5px 0.5%;
+				border-left: 1px solid #C5DBEC;
+			}
+			
+			.huise {
+				background-color: #cccccc;
+			}
+			.kk { border: 1px solid #c5dbec; background: #fbf3f3 repeat-x; font-weight: bold; color: #2e6e9e; }
+		</style>	 
+		
+		
+		<script type="text/javascript">
+			$(function (){
+				$.autoWindows();
+			});
+			
+			//弹出添加角色的层
+			function openChangePassDiv(divName){
+				$("#"+divName).dialog({
+					modal:true,
+					autoOpen: false,
+					width: 540
+				});
+				$("#"+divName).dialog('open');
+			}
+			function closeDialog(msg){
+				$("#"+msg).dialog('close');
+			}
+			function openCredit(url,path){
+				openTab({tabName:'资信调查报告',location:url+'/servlet/defaultDispatcher?__action='+path});			
+			}
+			function openNewTab(url,path,title){
+				openTab({tabName:title,location:url+'/servlet/defaultDispatcher?__action='+path});			
+			}
+		</script>
+		<style type="text/css">
+			.cc {
+				font-size: 23px;
+			}
+			.title_font{font-size: 13px; color: blue; font-weight: bold;}
+		</style>
+	</head>
+	<body>
+
+		<div id="page_head">
+			<a id="logo"></a>
+			<div style="width: 60px; right : 440px; top : 1px; position: absolute;">
+				<a href="http://event.tacleasing.cn/mantis" target="_blank"><img alt="Mantis" src="images/mantis_logo.jpg" width="88px" height="35"/></a>
+			</div>
+			<div id="system_menu" style="line-height: 25px;">
+			Mockup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				当前用户：  
+				Mockup
+				<a href="#" class="title_font">[修改密码]</a>
+				<a id="loginOut" class="title_font">[退出]</a>
+			</div>
+			<div id="tab_container" class="z-bg2 bg">
+				<div class="tabs"></div><div class="tab-content-menu"><ul></ul></div>
+			</div>
+		</div>
+		<div id="page_content">
+			<div id="page_menu">
+				<div id="menu_container">
+						<div>
+							<div class="item type">
+								<span class="collapsed"></span><b>访厂管理</b>
+							</div>
+							<div class="childs">
+								<div class="item" onclick="openTab({tabName:'访厂申请',location:'visit/visitApply.html'})">访厂申请</div>
+								<div class="item" onclick="openTab({tabName:'访厂审核',location:'visit/visitAuth.html'})">访厂审核</div>
+								<div class="item" onclick="openTab({tabName:'填报访厂报告',location:'visit/visitReport.html'})">填报访厂报告</div>
+							</div>
+						</div>
+						<div>
+							<div class="item type">
+								<span class="collapsed"></span><b>客户对账函</b>
+							</div>
+							<div class="childs">
+								<div class="item" onclick="openTab({tabName:'客户对账函',location:'custAccountDetail/custRecpList.html'})">客户对账函</div>
+							</div>
+						</div>
+				</div>
+			</div>
+			<div id="page_body">
+				<div id="iframe_substitute"></div>
+				<div id="iframe_container"></div>
+			</div>
+		</div>
+		<div id="page_foot">Copyright © FILSOFT  Co.,Ltd. All Rights Reserved 
+			<a href="#">DataBase:Sql Server</a> 
+		</div>
+		<div id="tab_context_menu">
+			<ul>
+				<li id="tab_context_menu_refresh">刷新</li>
+				<li id="tab_context_menu_close">关闭</li>
+	        	<li id="tab_context_menu_close_all">关闭所有</li>
+				<li id="tab_context_menu_close_other">关闭其他</li>
+			</ul>
+		</div>
+	</body>
+</html>

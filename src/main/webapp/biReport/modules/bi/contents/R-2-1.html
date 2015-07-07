@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<title>R-2-1</title>
+		<!-- JQuery1.4.2&JQueryUI1.8.1 -->
+		<script language="JavaScript" src="../../../resources/script/jquery/jquery-1.4.2.min.js"></script>
+		<script language="JavaScript" src="../../../resources/script/jquery/jquery-ui-1.8.1.min.js"></script>
+		<link rel="stylesheet" href="../../../resources/script/jquery/themes/black-tie/jquery-ui-1.8.1.custom.css" type="text/css"></link>
+		<!-- FusionChart -->
+		<script language="JavaScript" src="../fusion/FusionCharts.js"></script>
+		<link rel="stylesheet" href="../style/default.css" type="text/css"></link>
+		<script type="text/javascript">
+			$(function(){ 
+				var v3=0;
+				division=parent.document.getElementsByName("divisionr2");
+				for(i=0;i<division.length;i++){
+					if(division[i].checked==true){
+						v3=division[i].value;
+					}
+				}
+
+				var chart1 = new FusionCharts("../charts/MSLine.swf", "ChartId", "99%", "250", "0", "0");
+				chart1.setDataURL("../data/R1/data/wujifenlei0"+v3+".xml");
+				chart1.render("R21_fusionChartsR22x");
+
+				var chart2 = new FusionCharts("../charts/StackedColumn2D.swf", "ChartId", "99%", "250", "0", "0");
+				chart2.setDataURL("../data/R1/data2/wujifenlei"+v3+".xml");
+				chart2.render("R21_fusionChartsR22d");
+
+				$(".tabsR22Dialog").tabs();
+			});
+			changeFeiLeiR2 = function () {
+				var v1=0;
+				fenlei=document.getElementsByName("fenleiR2");
+				for(i=0;i<fenlei.length;i++){
+					if(fenlei[i].checked==true){
+						v1=fenlei[i].value;
+					}
+				} 
+
+				var v3=0;
+				division=parent.document.getElementsByName("divisionr2");
+				for(i=0;i<division.length;i++){
+					if(division[i].checked==true){
+						v3=division[i].value;
+					}
+				}
+
+				var chart1 = new FusionCharts("../charts/MSLine.swf", "ChartId", "99%", "250", "0", "0");
+				chart1.setDataURL("../data/R1/data/wujifenlei"+v1+v3+".xml");
+				chart1.render("R21_fusionChartsR22x");
+
+				var chart2 = new FusionCharts("../charts/StackedColumn2D.swf", "ChartId", "99%", "250", "0", "0");
+				chart2.setDataURL("../data/R1/data2/wujifenlei"+v3+".xml");
+				chart2.render("R21_fusionChartsR22d");
+
+				$(".tabsR22Dialog").tabs();
+			
+			}
+		</script>
+	</head>
+	<body>
+		<div align="center" style="width:98%;height: 99%; margin:0 auto;">
+			 <div class="tabsR22Dialog" style="float: left; width: 97%;;margin: 1%;">
+				<ul>
+					<li><a href="#R21_tabs1">事业部资产构成变化趋势</a></li> 
+					<li><a href="#R21_tabs2">单项资产变化曲线</a></li> 
+				</ul>
+				<div id="R21_tabs1">
+					<div id="R21_fusionChartsR22d"></div>
+				</div>
+				<div id="R21_tabs2">
+					 五级分类 
+				 	<input type="radio" name="fenleiR2" value="0" onchange="changeFeiLeiR2()"> 全部
+				 	<input type="radio" name="fenleiR2" value="1" onchange="changeFeiLeiR2()"> 正常
+					<input type="radio" name="fenleiR2" value="2" onchange="changeFeiLeiR2()"> 关注
+					<input type="radio" name="fenleiR2" value="3" onchange="changeFeiLeiR2()"> 次级
+					<input type="radio" name="fenleiR2" value="4" onchange="changeFeiLeiR2()"> 可疑
+					<input type="radio" name="fenleiR2" value="5" onchange="changeFeiLeiR2()"> 损失
+					<div id="R21_fusionChartsR22x"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

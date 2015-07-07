@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>访厂</title>
+<script type="text/javascript" src="../import/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../import/jquery-ui-1.8.1.min.js"></script>
+
+<link rel="stylesheet" href="../script/search.css" rel="stylesheet"/>
+<link type="text/css" href="../resources/jquery/plugins/jq-grid/ui.jqgrid.css" rel="stylesheet"></link>
+<link type="text/css" href="../resources/jquery/themes/redmond/jquery-ui-1.8.1.custom.css" rel="stylesheet" />
+<style type="text/css">
+	* {
+		font-size: 12px;
+	}
+	
+	#main {
+		text-align: left;
+	}
+	
+	div.zc_grid {
+		font-size: 12px;
+	}
+	
+	table.zc_grid_title {
+		width: 100%;
+	}
+	
+	div.zc_grid_body {
+		
+	}
+	
+	th.zc_grid_head {
+		text-align: center;
+		border-bottom: 1px solid #C5DBEC;
+	}
+	
+	.jqgrow table.zc_grid_table {
+		width: 99%;
+		margin: 5px 0.5%;
+		border-left: 1px solid #C5DBEC;
+	}
+	
+	.huise {
+		background-color: #cccccc;
+	}
+	.kk { border: 1px solid #c5dbec; background: #fbf3f3 repeat-x; font-weight: bold; color: #2e6e9e; }
+</style>	 
+<script type="text/javascript">
+	function visitPass(e){
+		if (confirm("确定要这么做吗？")) {
+			$(e).parent().text("已通过");
+		}
+		
+	}
+	
+	function visitReject(e){
+		if (confirm("确定要这么做吗？")) {
+			$(e).parent().text("不通过");
+		}
+	}
+</script>
+</head>
+<body>
+<div class="ui-jqgrid-titlebar ui-widget-header ui-corner-top ui-helper-clearfix" style="height: 30px">
+ 		<span class="ui-jqgrid-title" style="line-height: 30px; font-size: 15px;" >&nbsp;&nbsp;访厂</span>
+</div>
+<div class="zc_grid ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="main">
+        <div class="zc_grid_body jqgrowleft">
+		<div>
+			<table width="755" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+	      <tr>
+	      <td width="65">&nbsp;</td>
+	        <td width="60" class="ss_o">&nbsp;</td>
+	        <td width="439" class="ss_t">&nbsp;&nbsp;
+	          <input type="text" name="content" value="" style="width:395px; height:20px;"></td>
+	        <td width="55" class="ss_th" valign="top">&nbsp;</td>
+	        <td><a href="#" name="search" id="search"  class="blue_button">搜 索</a></td>
+	      </tr>
+	    </table>
+	    </div>
+<br/>
+<div class="ui-state-default ui-jqgrid-hdiv ">
+<table cellspacing="0" cellpadding="0" border="0" class="ui-jqgrid-htable zc_grid_title" id="#table1">
+	<thead>
+	<tr class="ui-jqgrid-labels">
+		<th width="4%" class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>序号</strong>
+		</th>
+		<th width="4%" class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>状态 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>资信类型 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>客户编号 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>客户名称 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>区域 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>办事处</strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>区域主管 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>客户经理 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>风控纪要 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>生成时间 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>操作 </strong>
+		</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr	class="ui-widget-content jqgrow ui-row-ltr">
+			<td>1&nbsp;</td>
+			<td>1&nbsp;</td>
+			<td>新客户&nbsp;</td>
+			<td>0244022012040486 &nbsp;</td>
+			<td>广州市彰旗模具制造有限公司 &nbsp;</td>
+			<td>广东省 &nbsp;</td>
+			<td>佛山办事处 &nbsp;</td>
+			<td>王志成 &nbsp;</td>
+			<td>吴智 &nbsp;</td>
+			<td>未提案&nbsp;</td>
+			<td>2012-04-13&nbsp;</td>
+			<td><a href="javascript:void(0);" onclick="visitPass(this)">[通过]</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="visitReject(this)">[驳回]</a></td>
+		</tr>
+		<tr	class="ui-widget-content jqgrow ui-row-ltr">
+			<td>2&nbsp;</td>
+			<td>1&nbsp;</td>
+			<td>新客户&nbsp;</td>
+			<td>0244022012040486 &nbsp;</td>
+			<td>广州市彰旗模具制造有限公司 &nbsp;</td>
+			<td>广东省 &nbsp;</td>
+			<td>佛山办事处 &nbsp;</td>
+			<td>王志成 &nbsp;</td>
+			<td>吴智 &nbsp;</td>
+			<td>未提案&nbsp;</td>
+			<td>2012-04-13&nbsp;</td>
+			<td><a href="javascript:void(0);" onclick="visitPass(this)">[通过]</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="visitReject(this)">[驳回]</a></td>
+		</tr>
+		<tr	class="ui-widget-content jqgrow ui-row-ltr">
+			<td>3&nbsp;</td>
+			<td>1&nbsp;</td>
+			<td>新客户&nbsp;</td>
+			<td>0244022012040486 &nbsp;</td>
+			<td>广州市彰旗模具制造有限公司 &nbsp;</td>
+			<td>广东省 &nbsp;</td>
+			<td>佛山办事处 &nbsp;</td>
+			<td>王志成 &nbsp;</td>
+			<td>吴智 &nbsp;</td>
+			<td>未提案&nbsp;</td>
+			<td>2012-04-13&nbsp;</td>
+			<td><a href="javascript:void(0);" onclick="visitPass(this)">[通过]</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="visitReject(this)">[驳回]</a></td>
+		</tr>
+		<tr	class="ui-widget-content jqgrow ui-row-ltr">
+			<td>4&nbsp;</td>
+			<td>1&nbsp;</td>
+			<td>新客户&nbsp;</td>
+			<td>0244022012040486 &nbsp;</td>
+			<td>广州市彰旗模具制造有限公司 &nbsp;</td>
+			<td>广东省 &nbsp;</td>
+			<td>佛山办事处 &nbsp;</td>
+			<td>王志成 &nbsp;</td>
+			<td>吴智 &nbsp;</td>
+			<td>未提案&nbsp;</td>
+			<td>2012-04-13&nbsp;</td>
+			<td><a href="javascript:void(0);" onclick="visitPass(this)">[通过]</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="visitReject(this)">[驳回]</a></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

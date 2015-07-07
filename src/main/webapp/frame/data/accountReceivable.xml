@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart caption="应收账款" palette="4" decimals="0" enableSmartLabels="1" enableRotation="0" bgColor="FFFFFF,FFFFFF" formatNumberScale="0" bgAlpha="40,100" bgRatio="0,100" bgAngle="360" showBorder="1" startingAngle="70">
+    <set label="应收本金" value="2000000.6000000006" isSliced="0"/>
+    <set label="利息" value="231400.3999999998" isSliced="0"/>
+    <set label="罚金" value="null" isSliced="0"/>
+    <set label="逾期罚金" value="null" isSliced="0"/>
+</chart>

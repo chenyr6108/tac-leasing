@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart caption="资产构成横向比较" subcaption="" palette="1" shownames="1" showLegend="0" showvalues="0" showSum="1" yAxisMaxValue="100" decimals="0" overlapColumns="0">
+    <categories>
+        <category label="裕融租赁有限公司"/>
+        <category label="裕融租赁有限公司"/>
+        <category label="裕融租赁有限公司"/>
+        <category label="裕融租赁有限公司"/>
+        <category label="裕融租赁有限公司"/>
+        <category label="裕融租赁有限公司"/>
+        <category label="裕融租赁有限公司"/>
+        <category label="裕融租赁有限公司"/>
+        <category label="裕融租赁有限公司"/>
+        <category label="裕融租赁有限公司"/>
+        <category label="裕融租赁有限公司"/>
+        <category label="裕融租赁有限公司"/>
+        <category label="裕融租赁有限公司东莞办事处"/>
+        <category label="裕融租赁有限公司东莞办事处"/>
+        <category label="裕融租赁有限公司东莞办事处"/>
+        <category label="裕融租赁有限公司东莞办事处"/>
+        <category label="裕融租赁有限公司东莞办事处"/>
+        <category label="裕融租赁有限公司东莞办事处"/>
+        <category label="裕融租赁有限公司东莞办事处"/>
+        <category label="裕融租赁有限公司东莞办事处"/>
+        <category label="裕融租赁有限公司东莞办事处"/>
+        <category label="裕融租赁有限公司东莞办事处"/>
+        <category label="裕融租赁有限公司东莞办事处"/>
+        <category label="裕融租赁有限公司东莞办事处"/>
+        <category label="裕融租赁有限公司佛山办事处"/>
+        <category label="裕融租赁有限公司佛山办事处"/>
+        <category label="裕融租赁有限公司昆山办事处"/>
+        <category label="裕融租赁有限公司昆山办事处"/>
+        <category label="裕融租赁有限公司昆山办事处"/>
+        <category label="裕融租赁有限公司昆山办事处"/>
+        <category label="裕融租赁有限公司昆山办事处"/>
+        <category label="裕融租赁有限公司昆山办事处"/>
+        <category label="裕融租赁有限公司昆山办事处"/>
+        <category label="裕融租赁有限公司昆山办事处"/>
+        <category label="裕融租赁有限公司昆山办事处"/>
+        <category label="裕融租赁有限公司昆山办事处"/>
+        <category label="裕融租赁有限公司昆山办事处"/>
+        <category label="裕融租赁有限公司昆山办事处"/>
+        <category label="裕融租赁有限公司南京办事处"/>
+        <category label="裕融租赁有限公司南京办事处"/>
+        <category label="裕融租赁有限公司南京办事处"/>
+        <category label="裕融租赁有限公司厦门办事处"/>
+        <category label="裕融租赁有限公司重庆办事处"/>
+        <category label="裕融租赁有限公司重庆办事处"/>
+        <category label="裕融租赁有限公司重庆办事处"/>
+    </categories>
+    <dataset seriesName="正常" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="9.615204658477365"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="11.398213952731107"/>
+        <set value="100.0"/>
+        <set value="34.93401138152319"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="7.551567851352678"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="18.785294456609428"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="20.755628563146196"/>
+    </dataset>
+    <dataset seriesName="关注" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="26.51371239880901"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="27.33814943412182"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="65.06598861847681"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="23.27843366627856"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="81.21470554339058"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="70.06126195767706"/>
+    </dataset>
+    <dataset seriesName="次级" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="6.710166596639877"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="10.18163015124978"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="6.083729389417036"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="9.183109479176732"/>
+    </dataset>
+    <dataset seriesName="可疑" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="57.160916346073755"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="51.082006461897286"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="63.08626909295173"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+    </dataset>
+    <dataset seriesName="损失" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+    </dataset>
+</chart>

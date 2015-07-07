@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart caption="资产变化趋势分析" subcaption="裕融租赁有限公司" lineThickness="1" showValues="0" formatNumberScale="0" anchorRadius="0" divLineAlpha="20" divLineColor="CC3300" divLineIsDashed="1" showAlternateHGridColor="1" alternateHGridAlpha="5" alternateHGridColor="CC3300" shadowAlpha="40" labelStep="1" numvdivlines="5" chartRightMargin="35" bgColor="FFFFFF,CC3300" bgAngle="270" bgAlpha="10,10">
+    <categories>
+        <category label="2011-05"/>
+    </categories>
+    <dataset seriesName="正常" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set value="7.793403544E7"/>
+    </dataset>
+    <styles>
+        <definition>
+            <style name="CaptionFont" type="font" size="12"/>
+        </definition>
+        <application>
+            <apply toObject="CAPTION" styles="CaptionFont"/>
+            <apply toObject="SUBCAPTION" styles="CaptionFont"/>
+        </application>
+    </styles>
+</chart>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart caption="正常" palette="4" decimals="0" enableSmartLabels="0" showValues="0" showNames="0" enableRotation="0" bgColor="FFFFFF,FFFFFF" bgAlpha="40,100" bgRatio="0,100" showBorder="1">
+    <set label="裕融租赁有限公司" value="1670399.88" isSliced="0"/>
+    <set label="裕融租赁有限公司" value="5054659.62" isSliced="0"/>
+    <set label="裕融租赁有限公司" value="9375269.39" isSliced="0"/>
+    <set label="裕融租赁有限公司" value="3.446281944E7" isSliced="0"/>
+    <set label="裕融租赁有限公司" value="4.792491544E7" isSliced="0"/>
+    <set label="裕融租赁有限公司" value="5.110412544E7" isSliced="0"/>
+    <set label="裕融租赁有限公司" value="6.367562544E7" isSliced="0"/>
+    <set label="裕融租赁有限公司" value="7.793403544E7" isSliced="0"/>
+    <set label="裕融租赁有限公司" value="8.863989044E7" isSliced="0"/>
+    <set label="裕融租赁有限公司" value="1.0051565044E8" isSliced="0"/>
+    <set label="裕融租赁有限公司" value="1.2394163544E8" isSliced="0"/>
+    <set label="裕融租赁有限公司" value="1.409458E7" isSliced="0"/>
+    <set label="裕融租赁有限公司东莞办事处" value="394200.0" isSliced="0"/>
+    <set label="裕融租赁有限公司东莞办事处" value="913799.93" isSliced="0"/>
+    <set label="裕融租赁有限公司东莞办事处" value="8569049.95" isSliced="0"/>
+    <set label="裕融租赁有限公司东莞办事处" value="2.562579996E7" isSliced="0"/>
+    <set label="裕融租赁有限公司东莞办事处" value="3.587345975E7" isSliced="0"/>
+    <set label="裕融租赁有限公司东莞办事处" value="3.854915975E7" isSliced="0"/>
+    <set label="裕融租赁有限公司东莞办事处" value="5.130097975E7" isSliced="0"/>
+    <set label="裕融租赁有限公司东莞办事处" value="6.362966975E7" isSliced="0"/>
+    <set label="裕融租赁有限公司东莞办事处" value="7.812407975E7" isSliced="0"/>
+    <set label="裕融租赁有限公司东莞办事处" value="9.243742375E7" isSliced="0"/>
+    <set label="裕融租赁有限公司东莞办事处" value="1.0543293375E8" isSliced="0"/>
+    <set label="裕融租赁有限公司东莞办事处" value="1.482078002E7" isSliced="0"/>
+    <set label="裕融租赁有限公司佛山办事处" value="990200.0" isSliced="0"/>
+    <set label="裕融租赁有限公司佛山办事处" value="1442600.0" isSliced="0"/>
+    <set label="裕融租赁有限公司昆山办事处" value="326400.0" isSliced="0"/>
+    <set label="裕融租赁有限公司昆山办事处" value="326400.0" isSliced="0"/>
+    <set label="裕融租赁有限公司昆山办事处" value="326400.0" isSliced="0"/>
+    <set label="裕融租赁有限公司昆山办事处" value="4530560.0" isSliced="0"/>
+    <set label="裕融租赁有限公司昆山办事处" value="8741151.0" isSliced="0"/>
+    <set label="裕融租赁有限公司昆山办事处" value="1.2492536E7" isSliced="0"/>
+    <set label="裕融租赁有限公司昆山办事处" value="2.1268886E7" isSliced="0"/>
+    <set label="裕融租赁有限公司昆山办事处" value="2.8194626E7" isSliced="0"/>
+    <set label="裕融租赁有限公司昆山办事处" value="3.7263756E7" isSliced="0"/>
+    <set label="裕融租赁有限公司昆山办事处" value="4.4558686E7" isSliced="0"/>
+    <set label="裕融租赁有限公司昆山办事处" value="5.0453686E7" isSliced="0"/>
+    <set label="裕融租赁有限公司昆山办事处" value="4718140.0" isSliced="0"/>
+    <set label="裕融租赁有限公司南京办事处" value="377740.0" isSliced="0"/>
+    <set label="裕融租赁有限公司南京办事处" value="837740.0" isSliced="0"/>
+    <set label="裕融租赁有限公司南京办事处" value="358600.0" isSliced="0"/>
+    <set label="裕融租赁有限公司厦门办事处" value="654000.0" isSliced="0"/>
+    <set label="裕融租赁有限公司重庆办事处" value="1159450.0" isSliced="0"/>
+    <set label="裕融租赁有限公司重庆办事处" value="4997300.0" isSliced="0"/>
+    <set label="裕融租赁有限公司重庆办事处" value="1611000.0" isSliced="0"/>
+</chart>

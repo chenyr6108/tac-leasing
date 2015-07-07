@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="query_start_date" id="71">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="query_end_date" id="72">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="companyCode" id="73">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="62"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="custLinkerManInfo" id="64">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">cust_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">link_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">link_email</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">link_work_address</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">link_work_mobile</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">link_phone</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">cust_name</property>
+                    <text-property name="displayName">cust_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">link_name</property>
+                    <text-property name="displayName">link_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">link_email</property>
+                    <text-property name="displayName">link_email</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">link_work_address</property>
+                    <text-property name="displayName">link_work_address</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">link_work_mobile</property>
+                    <text-property name="displayName">link_work_mobile</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">link_phone</property>
+                    <text-property name="displayName">link_phone</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">cust_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">link_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">link_email</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">link_work_address</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">link_work_mobile</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">link_phone</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.customer.service);
+System.out.println(params["query_end_date"].value);
+var resultMap =Customer.queryCustLinkerManByFinance(params["query_start_date"].value,params["query_end_date"].value,params["companyCode"].value);
+
+var list = resultMap.get("custLinkManLinker");
+
+iter=list.iterator();
+]]></method>
+            <method name="fetch"><![CDATA[if(iter.hasNext()==false){
+	return false;
+}
+var data=iter.next();
+row["cust_name"]=data.get("CUST_NAME");
+row["link_name"]=data.get("LINK_NAME");
+row["link_email"]=data.get("LINK_EMAIL");
+row["link_work_address"]=data.get("LINK_WORK_ADDRESS");
+row["link_work_mobile"]=data.get("LINK_MOBILE");
+row["link_phone"]=data.get("LINK_PHONE");
+return true;
+]]></method>
+            <method name="close"><![CDATA[list=null;
+data=null;
+iter=null;]]></method>
+        </script-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2"/>
+    </page-setup>
+    <body>
+        <table id="7">
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">custLinkerManInfo</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">cust_name</property>
+                    <text-property name="displayName">cust_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cust_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">link_name</property>
+                    <text-property name="displayName">link_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["link_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">link_email</property>
+                    <text-property name="displayName">link_email</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["link_email"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">link_work_address</property>
+                    <text-property name="displayName">link_work_address</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["link_work_address"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">link_work_mobile</property>
+                    <text-property name="displayName">link_work_mobile</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["link_work_mobile"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">link_phone</property>
+                    <text-property name="displayName">link_phone</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["link_phone"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="29">
+                <property name="width">1.3333333333333333in</property>
+            </column>
+            <column id="30">
+                <property name="width">1.0625in</property>
+            </column>
+            <column id="31">
+                <property name="width">1.2291666666666667in</property>
+            </column>
+            <column id="32">
+                <property name="width">1.125in</property>
+            </column>
+            <column id="33">
+                <property name="width">1.2604166666666667in</property>
+            </column>
+            <column id="34">
+                <property name="width">1.9375in</property>
+            </column>
+            <header>
+                <row id="8">
+                    <cell id="9">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="43">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <text-property name="text">客户名称</text-property>
+                        </label>
+                    </cell>
+                    <cell id="10">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="45">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <text-property name="text">联系人</text-property>
+                        </label>
+                    </cell>
+                    <cell id="11">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="46">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <text-property name="text">手机</text-property>
+                        </label>
+                    </cell>
+                    <cell id="12">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="61">
+                            <text-property name="text">固话</text-property>
+                        </label>
+                    </cell>
+                    <cell id="13">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="47">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <text-property name="text">Email</text-property>
+                        </label>
+                    </cell>
+                    <cell id="14">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="48">
+                            <property name="fontFamily">"微软雅黑"</property>
+                            <text-property name="text">邮寄地址</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="15">
+                    <cell id="16">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="65">
+                            <property name="fontFamily">"@微软雅黑"</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">cust_name</property>
+                        </data>
+                    </cell>
+                    <cell id="17">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="66">
+                            <property name="fontFamily">"@微软雅黑"</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">link_name</property>
+                        </data>
+                    </cell>
+                    <cell id="18">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="69">
+                            <property name="fontFamily">"@微软雅黑"</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">link_work_mobile</property>
+                        </data>
+                    </cell>
+                    <cell id="19">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="70">
+                            <property name="fontFamily">"@微软雅黑"</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">link_phone</property>
+                        </data>
+                    </cell>
+                    <cell id="20">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="67">
+                            <property name="fontFamily">"@微软雅黑"</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">link_email</property>
+                        </data>
+                    </cell>
+                    <cell id="21">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="68">
+                            <property name="fontFamily">"@微软雅黑"</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">link_work_address</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

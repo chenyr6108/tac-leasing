@@ -1,0 +1,1505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.car.service);
+
+
+var dataMap = CarService.getCarCreditProjectInfo(params["ID"].value);
+vars["custName"] = dataMap.get("custName");
+vars["type_1"] = dataMap.get("type_1");
+vars["type_2"] = dataMap.get("type_2");
+vars["type_3"] = dataMap.get("type_3");
+vars["type_4"] = dataMap.get("type_4");
+
+vars["car_producer_1"] = dataMap.get("car_producer_1");
+vars["car_producer_2"] = dataMap.get("car_producer_2");
+vars["car_producer_3"] = dataMap.get("car_producer_3");
+vars["car_producer_4"] = dataMap.get("car_producer_4");
+
+vars["car_brand_1"] = dataMap.get("car_brand_1");
+vars["car_brand_2"] = dataMap.get("car_brand_2");
+vars["car_brand_3"] = dataMap.get("car_brand_3");
+vars["car_brand_4"] = dataMap.get("car_brand_4");
+vars["total"] = dataMap.get("total");
+
+]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="ID" id="243">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="font" id="263">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of></value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="9">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">18pt</property>
+            <property name="fontWeight">normal</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">机动车辆抵押合同</text-property>
+        </label>
+        <label id="40">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <text-property name="text">                                                                  </text-property>
+        </label>
+        <text id="13">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">12px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[抵押人（即借款人下称甲方）：]]></text-property>
+        </text>
+        <data id="265">
+            <property name="style">font</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">custName</property>
+                    <text-property name="displayName">custName</text-property>
+                    <expression name="expression" type="javascript">vars["custName"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">custName</property>
+        </data>
+        <text id="28">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">5px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[抵押权人（即委托贷款人下称乙方）：裕融租赁有限公司 ]]></text-property>
+        </text>
+        <text id="45">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">12px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    为确保甲、乙及]]></text-property>
+        </text>
+        <text id="241">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">12px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[中国银行股份有限公司苏州工业园区支行]]></text-property>
+        </text>
+        <text id="242">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">12px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[（即受托人），三方签订的合同号为： ]]></text-property>
+        </text>
+        <text id="46">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">12px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="pageBreakAfter">auto</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[                ]]></text-property>
+        </text>
+        <text id="47">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">12px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[的《个人委托贷款借款合同》（下称主合同）得到切实的履行，以保障乙方债权的实现，甲、乙双方在友好、公平的情况下，通过充份的协商，甲方愿意提供其合法拥有的机动车辆（下称抵押物），作为抵押物抵押给乙方，担保其履行主合同项下所生债务，甲、乙双方并就抵押物抵押担保事宜达成以下协议：]]></text-property>
+        </text>
+        <label id="59">
+            <property name="style">font</property>
+        </label>
+        <label id="60">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">第一条   抵押物</text-property>
+        </label>
+        <label id="80">
+            <property name="style">font</property>
+        </label>
+        <text id="61">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1.抵押物详细表：（下称抵押物）]]></text-property>
+        </text>
+        <grid id="201">
+            <property name="style">font</property>
+            <property name="width">100%</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">type_1</property>
+                    <text-property name="displayName">type_1</text-property>
+                    <expression name="expression" type="javascript">vars["type_1"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">type_2</property>
+                    <text-property name="displayName">type_2</text-property>
+                    <expression name="expression" type="javascript">vars["type_2"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">type_3</property>
+                    <text-property name="displayName">type_3</text-property>
+                    <expression name="expression" type="javascript">vars["type_3"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">type_4</property>
+                    <text-property name="displayName">type_4</text-property>
+                    <expression name="expression" type="javascript">vars["type_4"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">car_producer_1</property>
+                    <text-property name="displayName">car_producer_1</text-property>
+                    <expression name="expression" type="javascript">vars["car_producer_1"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">car_producer_2</property>
+                    <text-property name="displayName">car_producer_2</text-property>
+                    <expression name="expression" type="javascript">vars["car_producer_2"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">car_producer_3</property>
+                    <text-property name="displayName">car_producer_3</text-property>
+                    <expression name="expression" type="javascript">vars["car_producer_3"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">car_producer_4</property>
+                    <text-property name="displayName">car_producer_4</text-property>
+                    <expression name="expression" type="javascript">vars["car_producer_4"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">car_brand_1</property>
+                    <text-property name="displayName">car_brand_1</text-property>
+                    <expression name="expression" type="javascript">vars["car_brand_1"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">car_brand_2</property>
+                    <text-property name="displayName">car_brand_2</text-property>
+                    <expression name="expression" type="javascript">vars["car_brand_2"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">car_brand_3</property>
+                    <text-property name="displayName">car_brand_3</text-property>
+                    <expression name="expression" type="javascript">vars["car_brand_3"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">car_brand_4</property>
+                    <text-property name="displayName">car_brand_4</text-property>
+                    <expression name="expression" type="javascript">vars["car_brand_4"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="202">
+                <property name="width">7.166666666666667in</property>
+            </column>
+            <row id="203">
+                <cell id="204">
+                    <property name="textAlign">center</property>
+                    <grid id="128">
+                        <property name="height">2.8854166666666665in</property>
+                        <property name="width">700px</property>
+                        <column id="129"/>
+                        <column id="130"/>
+                        <column id="131"/>
+                        <column id="132"/>
+                        <column id="133"/>
+                        <row id="134">
+                            <property name="height">0.40625in</property>
+                            <cell id="135">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="188">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <text-property name="text">车辆</text-property>
+                                </label>
+                            </cell>
+                            <cell id="136">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="189">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <text-property name="text">1</text-property>
+                                </label>
+                            </cell>
+                            <cell id="137">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="190">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <text-property name="text">2</text-property>
+                                </label>
+                            </cell>
+                            <cell id="138">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="191">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <text-property name="text">3</text-property>
+                                </label>
+                            </cell>
+                            <cell id="139">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="192">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <text-property name="text">4</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="140">
+                            <property name="height">0.275in</property>
+                            <cell id="141">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="193">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">类型：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="142">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="248">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="resultSetColumn">type_1</property>
+                                </data>
+                            </cell>
+                            <cell id="143">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="252">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="resultSetColumn">type_2</property>
+                                </data>
+                            </cell>
+                            <cell id="144">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="253">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="resultSetColumn">type_3</property>
+                                </data>
+                            </cell>
+                            <cell id="145">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="254">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="resultSetColumn">type_4</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="146">
+                            <cell id="147">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="194">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">主车生产商：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="148">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="255">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="resultSetColumn">car_producer_1</property>
+                                </data>
+                            </cell>
+                            <cell id="149">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="256">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="resultSetColumn">car_producer_2</property>
+                                </data>
+                            </cell>
+                            <cell id="150">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="257">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="resultSetColumn">car_producer_3</property>
+                                </data>
+                            </cell>
+                            <cell id="151">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="258">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="resultSetColumn">car_producer_4</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="152">
+                            <cell id="153">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="195">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">主车品牌型号：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="154">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="259">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="resultSetColumn">car_brand_1</property>
+                                </data>
+                            </cell>
+                            <cell id="155">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="260">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="resultSetColumn">car_brand_2</property>
+                                </data>
+                            </cell>
+                            <cell id="156">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="261">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="resultSetColumn">car_brand_3</property>
+                                </data>
+                            </cell>
+                            <cell id="157">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="262">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="resultSetColumn">car_brand_4</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="158">
+                            <property name="height">0.275in</property>
+                            <cell id="159">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="196">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">主车车架号：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="160">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="161">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="162">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="163">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                        </row>
+                        <row id="164">
+                            <property name="height">0.275in</property>
+                            <cell id="165">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="197">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">发动机号：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="166">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="167">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="168">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="169">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                        </row>
+                        <row id="170">
+                            <property name="height">0.275in</property>
+                            <cell id="171">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="198">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">主车牌号：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="172">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="173">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="174">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="175">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                        </row>
+                        <row id="176">
+                            <property name="height">0.275in</property>
+                            <cell id="177">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="199">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">车身颜色：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="178">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="179">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="180">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="181">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                        </row>
+                        <row id="182">
+                            <property name="height">0.275in</property>
+                            <cell id="183">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="200">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">抵押物所在地：</text-property>
+                                </label>
+                            </cell>
+                            <cell id="184">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="185">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="186">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                            <cell id="187">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <label id="205">
+            <property name="style">font</property>
+        </label>
+        <grid id="212">
+            <property name="style">font</property>
+            <property name="textAlign">center</property>
+            <property name="height">0.9479166666666666in</property>
+            <property name="width">7.90625in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">total</property>
+                    <text-property name="displayName">total</text-property>
+                    <expression name="expression" type="javascript">vars["total"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="213">
+                <property name="width">7.90625in</property>
+            </column>
+            <row id="214">
+                <property name="height">0.9479166666666666in</property>
+                <cell id="215">
+                    <grid id="216">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="height">0.7083333333333334in</property>
+                        <property name="width">7.333333333333333in</property>
+                        <column id="217">
+                            <property name="width">1.7395833333333333in</property>
+                        </column>
+                        <column id="218">
+                            <property name="width">5.59375in</property>
+                        </column>
+                        <row id="219">
+                            <property name="height">0.7083333333333334in</property>
+                            <cell id="220">
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="222">
+                                    <text-property name="text">抵押物价值</text-property>
+                                </label>
+                            </cell>
+                            <cell id="221">
+                                <property name="textAlign">left</property>
+                                <property name="verticalAlign">middle</property>
+                                <data id="266">
+                                    <property name="style">font</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="display">inline</property>
+                                    <property name="resultSetColumn">total</property>
+                                </data>
+                                <text id="223">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16px</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="lineHeight">26px</property>
+                                    <property name="display">inline</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[元整
+本约定价值不作为乙方对抵押物为处分的估价依据及行使抵押权的限制
+]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <text id="71">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    2.本合同项下的抵押权及于抵押物的孳息、从物、从权利、附属物、附合物、加工物、添加物及其他与抵押物有不可分离或分离足以降低抵押物的价值者。
+    3.本合同项下的抵押权及于抵押物的代位物，包括但不限于保险赔偿金、其他损害赔偿金、各项补偿金、抵押物毁损后的残骸和残值及抵押物变卖的价款。]]></text-property>
+        </text>
+        <label id="65">
+            <property name="style">font</property>
+        </label>
+        <label id="66">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">第二条   抵押物的权属</text-property>
+        </label>
+        <label id="82">
+            <property name="style">font</property>
+        </label>
+        <text id="77">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    甲方须保证订立本合同之日止，抵押物未设置任何限制抵押物所有权的其他权利，设定抵押后，未经乙方书面同意甲方不得擅自处份、变更、改造等影响抵押物或存在其他影响抵押物价值的行为，由此造成乙方损害的应予以赔偿。]]></text-property>
+        </text>
+        <label id="70">
+            <property name="style">font</property>
+        </label>
+        <label id="69">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">第三条   抵押担保的范围</text-property>
+        </label>
+        <label id="83">
+            <property name="style">font</property>
+        </label>
+        <text id="90">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    主合同中所约定的本金、利息、违约金、因主合同所生的损害赔偿金、乙方实现债权的费用及主合同约定应由甲方支付的费用,（包括但不限于律师费、诉讼费）。]]></text-property>
+        </text>
+        <label id="75">
+            <property name="style">font</property>
+        </label>
+        <label id="76">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">第四条   抵押期限</text-property>
+        </label>
+        <label id="85">
+            <property name="style">font</property>
+        </label>
+        <text id="91">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    抵押权和其担保的主合同债权同时存在，主债权消灭的，抵押权亦消灭。]]></text-property>
+        </text>
+        <label id="92">
+            <property name="style">font</property>
+        </label>
+        <label id="93">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">第五条   抵押的办理及费用</text-property>
+        </label>
+        <label id="94">
+            <property name="style">font</property>
+        </label>
+        <text id="95">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1.甲方应无异议配合并提供所须相关材料予乙方或其委托方办理相关抵押登记手续。
+    2.甲方应承担办理相关抵押登记手续的费用。]]></text-property>
+        </text>
+        <label id="96">
+            <property name="style">font</property>
+        </label>
+        <label id="97">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">第六条   抵押证件的保管</text-property>
+        </label>
+        <label id="98">
+            <property name="style">font</property>
+        </label>
+        <text id="99">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    抵押物抵押登记完成后，抵押物登记证书、抵押物抵押证明文件及/或其他相关抵押文件，应交由乙方保管。]]></text-property>
+        </text>
+        <label id="100">
+            <property name="style">font</property>
+        </label>
+        <label id="101">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">第七条   抵押物的使用和保管</text-property>
+        </label>
+        <label id="102">
+            <property name="style">font</property>
+        </label>
+        <text id="103">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    抵押物抵押期间，甲方应善尽其管理人责任:
+    1.未经抵押权人同意,抵押人不得对该抵押物做出任何实质性的结构改变,因抵押人违反本合同所作的改变而使抵押物产生的任何增加物,自动转为本合同的抵押物。
+    2.抵押期间,未经抵押权人同意,抵押人不得将该抵押物转让、出租、变卖、再抵押、抵偿债务、馈赠或以任何形式处置,由此引起抵押权人的任何损失,由抵押人承担责任。
+    3.抵押人对该抵押物必须妥善保管,负有维修、保养、保证完好无损的责任,并随时接受及配合抵押权人的监督检查,对该抵押物造成的任何损坏,由抵押人承担责任。
+    4.抵押期间,甲方对乙方要求抵押物的检查应随时予以配合,抵押期间因甲方原因致抵押物包括但不限于被查封、扣押、没入、消灭等情况视同甲方违约，乙方得依上述《委托贷款主合同》请求甲方一次清偿所有未清偿的借款本息,因而造成乙方经济损失的,甲方应承担相应的损害赔偿责任。]]></text-property>
+        </text>
+        <label id="104">
+            <property name="style">font</property>
+        </label>
+        <label id="105">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">第八条   抵押物的保险（如须有）</text-property>
+        </label>
+        <label id="106">
+            <property name="style">font</property>
+        </label>
+        <label id="108">
+            <property name="style">font</property>
+        </label>
+        <text id="107">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1．抵押人须在取得该抵押物_________日内，到抵押权人指定或同意的保险公司并按抵押权人指定的保险种类为该抵押物购买保险。保险的赔偿范围应包括该抵押物遭受任何火灾、水灾、地震等自然灾害及其他意外事故所导致的破坏及损毁；投保金额不得少于重新购买该抵押物的全部金额；保险期限至主合同到期之日，如抵押人不履行到期还款的义务，抵押人应继续购买保险，直至主合同项下债务履行完毕为止。]]></text-property>
+        </text>
+        <text id="264">
+            <property name="style">font</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    2．抵押人需在保险手续办理完毕十日内，将保险单正本交抵押权人保管。保险单的第一受益人须为抵押权人，保险单不得附有任何损害或影响抵押权人权益的限制条件，或任何不负责赔偿的条款。
+    3．抵押期内，抵押人不得以任何理由中断或撤销上述保险。否则，抵押人须无条件赔偿抵押权人因此所受的一切损失。
+    4．抵押人如违反上述保险条款，抵押权人可依照本合同之保险条款的规定，代为购买保险，所有费用由抵押人支付。
+    5．抵押期间，该抵押物发生保险责任以外的毁损，抵押人应就受损部分及时提供新的担保，并办理相应手续。
+    6.抵押人负责缴付涉及该抵押物的一切税费。抵押人因不履行该项义务而对抵押权人造成的一切损失，抵押人应负责赔偿。]]></text-property>
+        </text>
+        <label id="109">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">第九条   抵押权的实现</text-property>
+        </label>
+        <label id="110">
+            <property name="style">font</property>
+        </label>
+        <text id="111">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1.甲方未依约定履行主合同项下的任何一向债务，乙方或其委托方，有权处分抵押物，以实现抵押权。
+    2.乙方依据本合同处分抵押物时，甲方应予以配合，不得有阻碍、藏匿或其他影响乙方处分抵押物的权利的行为,由此造成乙方损害的由甲方负责赔偿。
+    3.抵押物折价、变卖后，其价款超过抵押担保范围债权数额部分归甲方所有。
+    4.抵押物折价、变卖后，其价款低于抵押担保范围债权数额部分，甲方应即一次向乙方清偿全部不足的债权数额。]]></text-property>
+        </text>
+        <label id="112">
+            <property name="style">font</property>
+        </label>
+        <label id="113">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">第十条   合同的生效、终止</text-property>
+        </label>
+        <label id="114">
+            <property name="style">font</property>
+        </label>
+        <text id="115">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    1.本合同自甲、乙双方签名和/或盖章之日起生效。
+    2.于全部清偿主合同项下所有应履行的债务及损害赔偿日时终止。
+    3.主合同条款部分或全部无效，不影响本抵押合同的效力，甲方仍应按约定承担责任。
+    4.本合同附件为本合同不可分割部份，与本合同条款具有同等法律效力。]]></text-property>
+        </text>
+        <label id="116">
+            <property name="style">font</property>
+        </label>
+        <label id="117">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">第十一条   争议解决</text-property>
+        </label>
+        <label id="118">
+            <property name="style">font</property>
+        </label>
+        <text id="119">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    甲、乙双方于履行本合同过程中产生争议时、应先友好协友好协商解决，协商不成时，则以乙方住所地法院为争议管辖法院。]]></text-property>
+        </text>
+        <label id="120">
+            <property name="style">font</property>
+        </label>
+        <label id="121">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">第十二条   合同份式</text-property>
+        </label>
+        <label id="122">
+            <property name="style">font</property>
+        </label>
+        <text id="123">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    本合同一式三份，甲、乙双方各执一份，抵押物登记部门，各持一份具同等法律效力。]]></text-property>
+        </text>
+        <label id="124">
+            <property name="style">font</property>
+        </label>
+        <text id="125">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    甲方（抵押人）：            
+    法定代表人或授权代表：
+
+    乙方（抵押权人）：裕融租赁有限公司（盖章）                           
+    法定代表人或授权代表：
+]]></text-property>
+        </text>
+        <text id="127">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0px</property>
+            <property name="textAlign">right</property>
+            <property name="lineHeight">26px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[签订日：____年____月____日]]></text-property>
+        </text>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="type_1">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="type_2">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="type_3">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="type_4">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="car_producer_1">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="car_producer_2">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="car_producer_3">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="car_producer_4">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="car_brand_1">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="car_brand_2">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="car_brand_3">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="car_brand_4">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="custName">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="total">
+            <expression name="value" type="javascript">0.00</expression>
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

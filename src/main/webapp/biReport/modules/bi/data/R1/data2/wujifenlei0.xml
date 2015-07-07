@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart caption="资产构成趋势（12个月）" subcaption="全部" palette="1" shownames="1" showLegend="0" showvalues="0" showSum="1" yAxisMaxValue="100" decimals="0" overlapColumns="0">
+    <categories>
+        <category label="2010-10"/>
+        <category label="2010-11"/>
+        <category label="2010-12"/>
+        <category label="2011-01"/>
+        <category label="2011-02"/>
+        <category label="2011-03"/>
+        <category label="2011-04"/>
+        <category label="2011-05"/>
+        <category label="2011-06"/>
+        <category label="2011-07"/>
+        <category label="2011-08"/>
+        <category label="2011-09"/>
+    </categories>
+    <dataset seriesName="正常" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set value="81.14955887607064"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+        <set value="100.0"/>
+    </dataset>
+    <dataset seriesName="关注" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="E6E61A" value="5.886565321534027"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+        <set color="E6E61A" value="0.0"/>
+    </dataset>
+    <dataset seriesName="次级" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="E6941A" value="1.6465658805684753"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+        <set color="E6941A" value="0.0"/>
+    </dataset>
+    <dataset seriesName="可疑" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="DD2248" value="11.31730992182685"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+        <set color="DD2248" value="0.0"/>
+    </dataset>
+    <dataset seriesName="损失" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+        <set color="111111" value="0.0"/>
+    </dataset>
+</chart>

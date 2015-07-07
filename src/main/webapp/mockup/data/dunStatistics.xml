@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart caption="逾期统计（6个月）" numberPrefix="￥" palette="1" shownames="1" showLegend="1" showvalues="0" showSum="1" yAxisMaxValue="100" decimals="1" overlapColumns="0" showAlternateHGridColor="1">
+    <categories>
+        <category label="2011-04"/>
+        <category label="2011-05"/>
+        <category label="2011-06"/>
+        <category label="2011-07"/>
+        <category label="2011-08"/>
+        <category label="2011-09"/>
+    </categories>
+    <dataset seriesName="1~30天" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="B1D7FB" value="0.0"/>
+        <set color="B1D7FB" value="0.0"/>
+        <set color="B1D7FB" value="0.0"/>
+        <set color="B1D7FB" value="0.0"/>
+        <set color="B1D7FB" value="0.0"/>
+        <set color="B1D7FB" value="2719300.0"/>
+    </dataset>
+    <dataset seriesName="30~60天" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="F3BF0B" value="0.0"/>
+        <set color="F3BF0B" value="0.0"/>
+        <set color="F3BF0B" value="0.0"/>
+        <set color="F3BF0B" value="0.0"/>
+        <set color="F3BF0B" value="0.0"/>
+        <set color="F3BF0B" value="4563232.0"/>
+    </dataset>
+    <dataset seriesName="60~90天" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="8AB900" value="0.0"/>
+        <set color="8AB900" value="0.0"/>
+        <set color="8AB900" value="0.0"/>
+        <set color="8AB900" value="0.0"/>
+        <set color="8AB900" value="0.0"/>
+        <set color="8AB900" value="4488830.0"/>
+    </dataset>
+    <dataset seriesName="90天以上" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="FF9048" value="0.0"/>
+        <set color="FF9048" value="0.0"/>
+        <set color="FF9048" value="0.0"/>
+        <set color="FF9048" value="0.0"/>
+        <set color="FF9048" value="0.0"/>
+        <set color="FF9048" value="6.8007770604E7"/>
+    </dataset>
+</chart>

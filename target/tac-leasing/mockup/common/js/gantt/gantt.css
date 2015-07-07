@@ -1,0 +1,205 @@
+div.ganttContainer{
+	overflow: auto;
+}
+
+div.gantt-tooltip
+{
+	color: #000;
+	line-height: 1;
+	font-family: verdana;
+	font-size: 9pt;
+}
+
+div.gantt-chart, td.gantt-chart
+{
+	color: #000;
+	line-height: 1;
+	font-family: verdana;
+	font-size: 9pt;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: relative;
+}
+
+td.gantt-chart
+{
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000;
+	
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000;
+	
+	text-align: center;
+	//width: 20px;
+}
+
+td.task-list
+{
+	line-height: 1;
+	font-family: verdana;
+	font-size: 9pt;
+	
+	padding: 4px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000;
+	
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000;
+}
+td.task-duration	
+{
+	line-height: 1;
+	font-family: verdana;
+	font-size: 9pt;
+	
+	padding: 4px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000;
+	text-align: right;
+}	
+
+div.gantt-task-bar
+{
+	position: absolute;
+	font-size: 3pt;
+	line-height: 1;
+	cursor: hand;
+	
+	border: 1px solid #507FAD;
+	background-image: url(img/task-bar.png);
+	background-color: #6CAAE7;
+}
+
+div.gantt-task-bar-light
+{
+	position: absolute;
+	font-size: 3pt;
+	line-height: 1;
+	height: 15px;
+	
+	border: 1px solid #5C93C8;
+	background: url(img/task-bar-light.png);
+	background-color: #7EC6F5;
+}
+
+td.gantt-grid-weekday 
+{
+	line-height: 1;
+	font-family: verdana;
+	font-size: 9pt;
+	
+	width: 20px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #ccc;
+	
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #eee;
+	
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+td.gantt-grid-weekend
+{
+	line-height: 1;
+	background-color: #eee;
+	
+	font-family: verdana;
+	font-size: 9pt;
+	
+	width: 20px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #ccc;
+	
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #eee;
+	
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+
+
+
+
+table.task-list{
+	position:absolute;
+	border-collapse:collapse;
+	left:0 px;
+	top:0 px;
+	border:1px solid #999;
+}
+
+td.grid-title{
+
+	border-collapse:collapse;
+	font-size: 9pt; 
+	border:1px solid #999;
+
+}
+
+.chart-div{
+	position:absolute;
+	left:100 px;
+	top:0 px;
+	border:0px solid #999;
+	overflow:auto;
+		
+}
+.data-grid{
+	position:absolute;
+	border-collapse:collapse;
+	left:0 px;
+	top:0 px;
+	border:1px solid #999;
+}
+.v-line{
+	border-style: solid; 
+	border-color: blue; 
+	border-width: 0px 1px 0px 0px; 
+	position: absolute; 
+	font-size: 0px; 
+	width: 0px; 
+}
+.h-line{
+  border-style: solid; 
+  border-color: blue; 
+  border-width: 1px 0px 0px; 
+  position: absolute; 
+  font-size: 0px; 
+  height: 0px; 
+}
+.gantt-task-bar-progress
+{
+  border-style: solid; 
+  border-color: yellow; 
+  border-width: 2px 0px 0px; 
+  position: absolute; 
+  font-size: 0px; 
+  height: 2px; 
+}
+
+.gantt-task-bar-progress
+{
+  border-style: solid; 
+  border-color: yellow; 
+  border-width: 2px 0px 0px; 
+  position: absolute; 
+  font-size: 0px; 
+  height: 2px; 
+}
+.task-highlight
+{
+  background-color: yellow; 
+}

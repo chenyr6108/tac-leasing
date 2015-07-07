@@ -1,0 +1,93 @@
+﻿CREATE TABLE [dbo].[T_RENT_INCOME] ( --来款表
+[INCOME_ID] int IDENTITY(1, 1) NOT NULL, --主键,来款表ID
+[INCOME_DATE] date NOT NULL,  --来款日期
+[INCOME_MONEY] money NOT NULL,  --来款金额
+[INCOME_NAME] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,  --来款户名
+[INCOME_NAME_TRUE] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,  --通过虚拟帐号匹配的来款户名
+[INCOME_ACCOUNT] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,  --来款帐号
+[VIRTUAL_ACCOUNT] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,  --虚拟帐号
+[RECEIPT_NAME] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,  --收款单位
+[RECEIPT_ACCOUNT] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,  --收款帐号
+[DEAL_WAY] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,  --交易方式
+[REMARK] nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,  --备注
+[STATUS] int NOT NULL,  --状态 0有效, -1废除
+[UPLOAD_ID] int NOT NULL,  --上传附件人员ID
+[UPLOAD_TIME] datetime NULL,  --上传附件时间
+[UPLOAD_FILE_NAME] nvarchar(100) NULL,  --上传附件的名称
+[FIIN_ID] int NOT NULL, --用在老的租金分解加入到新表中
+PRIMARY KEY CLUSTERED ([INCOME_ID] )
+WITH ( PAD_INDEX = OFF,
+FILLFACTOR = 100,
+IGNORE_DUP_KEY = OFF,
+STATISTICS_NORECOMPUTE = OFF,
+ALLOW_ROW_LOCKS = ON,
+ALLOW_PAGE_LOCKS = ON,
+DATA_COMPRESSION = NONE )
+ ON [PRIMARY]
+)
+ON [PRIMARY];
+GO
+
+
+CREATE TABLE [dbo].[T_RENT_RECORD] (  --金流记录表
+[RECORD_ID] int IDENTITY(1, 1) NOT NULL,  --主键,金流ID
+[RECORD_MONEY] money NOT NULL,  --金流,+代表红冲或者其他冲回,-代表分解或者其他
+[INCOME_ID] int NOT NULL,  --来款表 ID
+[BILL_ID] int NOT NULL,  --功能表 ID
+[RECORD_STATUS] int NOT NULL,  --金流状态, 0待确认,1是已确认,-1驳回
+[RENT_DETAIL_TABLE] nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL, --此笔金流指向哪个功能表,数据字典中配置
+[STATUS] int NOT NULL,  --有效性 0有效,-1废除
+[CREATE_TIME] datetime NOT NULL,  --创建时间
+[CREATE_BY] int NULL,  --创建人
+PRIMARY KEY CLUSTERED ([RECORD_ID] )
+WITH ( PAD_INDEX = OFF,
+FILLFACTOR = 100,
+IGNORE_DUP_KEY = OFF,
+STATISTICS_NORECOMPUTE = OFF,
+ALLOW_ROW_LOCKS = ON,
+ALLOW_PAGE_LOCKS = ON,
+DATA_COMPRESSION = NONE )
+ ON [PRIMARY]
+)
+ON [PRIMARY];
+GO
+
+
+CREATE TABLE [dbo].[T_RENT_DECOMPOSE] (  --租金分解表
+[BILL_ID] int IDENTITY(1, 1) NOT NULL,  --主键,ID
+[INCOME_ID] int NULL,
+[RECP_ID] int NULL,  --支付表号
+[PERIOD_NUM] int NULL,  --期数
+[PAY_DATE] date NULL,  --应付日期
+[BILL_CODE] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,  --分解项目
+[SHOULD_PRICE] money NULL,  --应付金额
+[DECOMPOSE_PRICE] money NULL,  --分解金额
+[DECOMPOSE_STATUS] int NULL,  --分解状态  0分解中,1提交财务,2财务通过,-1财务驳回
+[DECOMPOSE_TYPE] int NULL,  --分解类型  0分解类型,1红冲类型
+[HAS_RED_DECOMPOSE] int NULL, --是否被冲红过   0未冲红过,1冲红过
+[IS_SETTLEMENT_DECOMPOSE] int NULL, --是否是结清分解,0是普通租金分解的数据,1是结清分解的数据
+[DECOMPOSE_ID] int NULL,  --分解人的ID
+[DECOMPOSE_TIME] datetime NULL,  --分解时间
+[DECOMPOSE_FROM] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL, --来款来源,客户或者供应商
+[AUDIT_ID] int NULL,  --财务确认人ID
+[AUDIT_TIME] datetime NULL,  --财务确认时间
+[STATUS] int NULL,  --状态  0有效的,-1作废的
+[CREATE_TIME] datetime NULL,  --创建时间
+[MODIFY_TIME] datetime NULL,  --最后修改时间
+[FICB_ID] int NULL,  --数据迁移时间用
+[PRINCIPAL_CODE] nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL, --本金列印收据号码
+[PRINCIPAL] money NULL, --列印金额
+[IS_PRINT] int NULL, --是否列印  0未打印  1是已打印
+[PRINCIPAL_CREATE_TIME] datetime NULL --本金列印收据号码生成时间
+PRIMARY KEY CLUSTERED ([BILL_ID] )
+WITH ( PAD_INDEX = OFF,
+FILLFACTOR = 100,
+IGNORE_DUP_KEY = OFF,
+STATISTICS_NORECOMPUTE = OFF,
+ALLOW_ROW_LOCKS = ON,
+ALLOW_PAGE_LOCKS = ON,
+DATA_COMPRESSION = NONE )
+ ON [PRIMARY]
+)
+ON [PRIMARY];
+GO

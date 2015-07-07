@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.com.brick.contract.service);
+
+
+var dataMap = RentContractExportPDF.exportCheckNotice(params["ID"].value);
+vars["leaseCode"] = dataMap.get("leaseCode");
+vars["totalMoney"] = dataMap.get("totalMoney");]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="ID" id="25">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="24"/>
+    </data-sources>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"微软雅黑"</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="font" id="8">
+            <property name="fontFamily">"微软雅黑"</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="7">
+            <property name="style">font</property>
+            <property name="fontSize">18pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">承 诺 函</text-property>
+        </label>
+        <text id="10">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="lineHeight">2ex</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[致 裕融租赁有限公司：
+      根据国家税务总局2010年第13号公告，融资性售后回租业务中，承租方出售资产的行为不征收增值税和营业税，且根据财税[2013]106号文件规定，提供融资性售后回租业务的出租方向承租方收取的设备本金，应开具普通发票，不得开具增值税专用发票。]]></text-property>
+        </text>
+        <text id="11">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="lineHeight">2ex</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[      基于本司与贵司于____年__月__日签订的编号为]]></text-property>
+        </text>
+        <data id="12">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftStyle">none</property>
+            <property name="borderRightStyle">none</property>
+            <property name="borderTopStyle">none</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">合同号</property>
+                    <text-property name="displayName">合同号</text-property>
+                    <expression name="expression" type="javascript">vars["leaseCode"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">合同号</property>
+        </data>
+        <text id="13">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="lineHeight">2ex</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[的 《融资租赁合同》及编号为]]></text-property>
+        </text>
+        <data id="14">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">合同号</property>
+                    <text-property name="displayName">合同号</text-property>
+                    <expression name="expression" type="javascript">vars["leaseCode"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">合同号</property>
+        </data>
+        <text id="15">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="lineHeight">2ex</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[的《买卖合同》，即本司与贵司发生的融资性售后回租业务，本司于此承诺如下：]]></text-property>
+        </text>
+        <text id="16">
+            <property name="style">font</property>
+            <property name="fontSize">3pt</property>
+            <property name="lineHeight">2ex</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+        </text>
+        <text id="17">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="marginTop">6pt</property>
+            <property name="lineHeight">2ex</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[      1、本司承诺于____年__月__日前依照前述《买卖合同》开具设备总价款人民币]]></text-property>
+        </text>
+        <data id="18">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">设备总价款</property>
+                    <text-property name="displayName">设备总价款</text-property>
+                    <expression name="expression" type="javascript">Formatter.format(vars["totalMoney"],"###,###,###.##")</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">设备总价款</property>
+        </data>
+        <text id="29">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="marginTop">6pt</property>
+            <property name="lineHeight">2ex</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[元的]]></text-property>
+        </text>
+        <text id="19">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="color">#FF0000</property>
+            <property name="marginTop">6pt</property>
+            <property name="lineHeight">2ex</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[合法有效凭证（经报备核准之凭证）]]></text-property>
+        </text>
+        <text id="20">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="lineHeight">2ex</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[给贵司。]]></text-property>
+        </text>
+        <text id="21">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="color">#FF0000</property>
+            <property name="marginTop">6pt</property>
+            <property name="lineHeight">2ex</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[若因本司辖区税务当局要求应缴纳相应凭证之税费，系属本司该交易之责任，相关税费应由本司自行承担，并承诺永不主张开予贵司的凭证作废。]]></text-property>
+        </text>
+        <text id="23">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="marginTop">3pt</property>
+            <property name="lineHeight">2ex</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[      2、本司同意贵司依照前述《融资租赁合同》就租金本金部分开具普通发票给我司，就利息部分开具增值税专用发票给我司，并承诺决不以贵司开具的普通发票无法抵扣为由拒绝履行前述《融资租赁合同》约定的合同义务。
+      此致]]></text-property>
+        </text>
+        <label id="26">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">                                                                                                           承诺人：                                </text-property>
+        </label>
+        <label id="27">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">                                                                                                     法定代表人：                               </text-property>
+        </label>
+        <label id="28">
+            <property name="style">font</property>
+            <property name="fontSize">12pt</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">                                                                                                            年    月    日                         </text-property>
+        </label>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="leaseCode">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="totalMoney">
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

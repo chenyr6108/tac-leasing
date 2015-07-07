@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="font" id="33">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of></value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="9">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">18pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">放款通知书</text-property>
+        </label>
+        <label id="10">
+            <property name="style">font</property>
+            <property name="fontSize">26pt</property>
+            <property name="textAlign">center</property>
+            <text-property name="text"></text-property>
+        </label>
+        <text id="13">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">5px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    致：中国银行股份有限公司]]></text-property>
+        </text>
+        <text id="14">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">5px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="pageBreakAfter">auto</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[ 苏州工业园区支行 ：]]></text-property>
+        </text>
+        <text id="23">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">5px</property>
+            <property name="lineHeight">24px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    根据委托人、借款人_________及你行签署的编号为__________的《个人委托贷款借款合同》和委托人与你行签署的编号为__________的《个人委托贷款委托协议》的约定，经审核，同意按照借款人的《提款申请书》（编号：_________）向借款人发放本次提款；现授权贵行按照上述《提款申请书》所列示金额及账户从我公司在贵行开立的委托贷款资金账户中划款给以下账户：
+    1、第三方账户（受托支付）______________________                                
+    2、借款人账户（自主支付）______________________                           
+
+
+
+
+
+
+]]></text-property>
+        </text>
+        <label id="25">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">5px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">                                                         委托人：_____________</text-property>
+        </label>
+        <label id="26">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">12px</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">                                                         有权签字人：__________</text-property>
+        </label>
+        <label id="32">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">12pt</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">                                                          ____年____月____日</text-property>
+        </label>
+    </body>
+</report>

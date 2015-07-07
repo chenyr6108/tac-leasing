@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="frame/FusionCharts.js"></script>
+		<link type="text/css" href="resources/jquery/themes/base/ui.all.css" rel="stylesheet" />
+		<link rel="stylesheet" href="frame/desk.css" rel="stylesheet"/>
+		
+		
+		<script type="text/javascript">
+		
+		</script>
+	</head>
+	<body>
+		<div>
+			<input type="button" value="模块添加" onclick="openAddDiv();" class="ui-state-default ui-corner-all">
+		</div>
+		<div class="column" id="column_1">
+			
+		</div>
+		<div class="column" id="column_2">
+			
+		</div>
+		
+		<div id="addDeskDiv" style="display: none;" title="模块添加">
+			<form action="../servlet/defaultDispatcher" name="form1" id="form1" method="post">
+				<input type="hidden" name="__action" value="show.addDiv">
+			   	<div class="zc_grid ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="main">
+		        <div class="zc_grid_body jqgrowleft">
+		        <div class="ui-state-default ui-jqgrid-hdiv ">	
+		        	<table cellspacing="0" cellpadding="0" border="0" class="ui-jqgrid-htable zc_grid_title" id="table1">
+						<tr class="ui-widget-content jqgrow ui-row-ltr">
+						</tr>
+					</table>
+		        	<table cellspacing="0" cellpadding="0" border="0" class="ui-jqgrid-htable zc_grid_title" id="table2">
+						<tr class="ui-widget-content jqgrow ui-row-ltr">
+						</tr>
+					</table>
+					<div align="center">
+						<input type="button" value="添加" onclick="addDiv();" class="ui-state-default ui-corner-all">
+						<input type="button" value="关闭" onclick="closeDialog(addDeskDiv);" class="ui-state-default ui-corner-all">
+					</div>
+				</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

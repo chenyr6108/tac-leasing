@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[var tempValue = "";
+var myIndex = 0;]]></method>
+    <property name="iconFile">/templates/simple_listing.gif</property>
+    <property name="cheatSheet">org.eclipse.birt.report.designer.ui.cheatsheet.simplelisting</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="recd_id" id="29">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="insu_id" id="118">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="27"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="insuranceListDataSet" id="28">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">insu_start_date</property>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">insu_from</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">insu_to</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">thing_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">thing_type</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">thing_number</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">insu_amount</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">insu_amount_total</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">insu_fee</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">thing_brand</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">cell_span</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">thing_addrs</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">shui_price</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">end_date</property>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">rect_id</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">insu_start_date</property>
+                    <text-property name="displayName">保险起讫日</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">insu_from</property>
+                    <text-property name="displayName">投保人</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">insu_to</property>
+                    <text-property name="displayName">被保险人</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">thing_name</property>
+                    <text-property name="displayName">保险项目</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">thing_type</property>
+                    <text-property name="displayName">型号</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">thing_number</property>
+                    <text-property name="displayName">机号</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">insu_amount</property>
+                    <text-property name="displayName">投保金额</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">insu_amount_total</property>
+                    <text-property name="displayName">总投保金额</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">insu_fee</property>
+                    <text-property name="displayName">保费</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">thing_brand</property>
+                    <text-property name="displayName">厂牌</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cell_span</property>
+                    <text-property name="displayName">CellSpan</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">thing_addrs</property>
+                    <text-property name="displayName">租赁物放置地</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shui_price</property>
+                    <text-property name="displayName">设备原值</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">end_date</property>
+                    <text-property name="displayName">合同终止日</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rect_id</property>
+                    <text-property name="displayName">合同ID</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">insu_start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">insu_from</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">insu_to</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">thing_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">thing_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">thing_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">insu_amount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">insu_amount_total</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">insu_fee</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">thing_brand</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">cell_span</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">thing_addrs</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">shui_price</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">end_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">rect_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.insurance.service);
+
+if(params["recd_id"].value != null){
+
+	var resultMap =InsuranceExportCommand.getInsuListByExcel(params["recd_id"].value, 1);
+}
+if(params["insu_id"].value != null){
+
+	var resultMap =InsuranceExportCommand.getInsuListByExcel(params["insu_id"].value, 2);
+}
+var list = resultMap.get("insuInfoList");
+vars["incp_id"] = resultMap.get("incp_id");
+vars["incp_name"] = resultMap.get("incp_name");
+iter=list.iterator();
+]]></method>
+            <method name="describe"><![CDATA[var rect_id = 0;]]></method>
+            <method name="fetch"><![CDATA[if(iter.hasNext() == false){
+	return false;
+}
+var data = iter.next();
+row["insu_start_date"] = data.get("INSU_START_DATE");
+row["end_date"] = data.get("END_DATE");
+row["thing_name"] = data.get("THING_NAME");
+row["thing_type"] = data.get("THING_TYPE");
+row["thing_brand"] = data.get("THING_BRAND");
+row["thing_number"] = data.get("THING_NUMBER");
+row["insu_amount"] = data.get("INSU_AMOUNT");
+row["shui_price"] = data.get("SHUI_PRICE");
+row["thing_addrs"] = data.get("THING_ADDRS");
+row["insu_to"] = data.get("CUST_NAME");
+row["rect_id"] = data.get("RECT_ID");
+row["insu_from"] = "裕融租赁有限公司";
+return true;
+]]></method>
+            <method name="close"><![CDATA[list=null;
+data=null;
+iter=null;]]></method>
+        </script-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="24">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="25">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="26">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table name="insu_table" id="30">
+            <property name="width">100%</property>
+            <property name="dataSet">insuranceListDataSet</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">insu_start_date</property>
+                    <text-property name="displayName">保险起讫日</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["insu_start_date"] + " ~ " + dataSetRow["end_date"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">insu_from</property>
+                    <text-property name="displayName">投保人</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["insu_from"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">insu_to</property>
+                    <text-property name="displayName">被保险人</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["insu_to"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">thing_name</property>
+                    <text-property name="displayName">保险项目</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thing_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">thing_type</property>
+                    <text-property name="displayName">型号</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thing_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">thing_number</property>
+                    <text-property name="displayName">机号</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thing_number"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">insu_amount</property>
+                    <text-property name="displayName">投保金额</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["insu_amount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">insu_amount_total</property>
+                    <text-property name="displayName">总投保金额</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["insu_amount_total"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">insu_fee</property>
+                    <text-property name="displayName">保费</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["insu_fee"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">thing_brand</property>
+                    <text-property name="displayName">厂牌</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thing_brand"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding</property>
+                    <text-property name="displayName">投 保 登 记</text-property>
+                    <expression name="expression" type="javascript">"投 保 登 记(" + vars["incp_name"] + ")"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">cell_span</property>
+                    <text-property name="displayName">CellSpan</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cell_span"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">thing_addrs</property>
+                    <text-property name="displayName">租赁物放置地</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thing_addrs"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">shui_price</property>
+                    <text-property name="displayName">设备原值</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["shui_price"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">end_date</property>
+                    <text-property name="displayName">合同终止日</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["end_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">rect_id</property>
+                    <text-property name="displayName">合同ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rect_id"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">amount_total</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>NewTableGroup1</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["insu_amount"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="61">
+                <property name="width">7.7%</property>
+            </column>
+            <column id="62">
+                <property name="width">7.7%</property>
+            </column>
+            <column id="63">
+                <property name="width">7.7%</property>
+            </column>
+            <column id="122">
+                <property name="width">7.7%</property>
+            </column>
+            <column id="64">
+                <property name="width">7.7%</property>
+            </column>
+            <column id="65">
+                <property name="width">7.7%</property>
+                <list-property name="visibility"/>
+            </column>
+            <column id="66">
+                <property name="width">7.7%</property>
+            </column>
+            <column id="67">
+                <property name="width">7.7%</property>
+            </column>
+            <column id="145">
+                <property name="width">7.7%</property>
+            </column>
+            <column id="128">
+                <property name="width">7.7%</property>
+            </column>
+            <column id="68">
+                <property name="width">7.7%</property>
+            </column>
+            <column id="69">
+                <property name="width">7.7%</property>
+            </column>
+            <column id="113">
+                <property name="width">7.7%</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">true</expression>
+                    </structure>
+                </list-property>
+            </column>
+            <column id="94">
+                <property name="width">7.7%</property>
+            </column>
+            <header>
+                <row id="70">
+                    <cell id="71">
+                        <property name="colSpan">14</property>
+                        <property name="rowSpan">1</property>
+                        <property name="fontFamily">"黑体"</property>
+                        <property name="fontSize">24pt</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="108">
+                            <property name="resultSetColumn">Column Binding</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="31">
+                    <cell id="32">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="97">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[保险起讫日]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="33">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="98">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[投保人]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="34">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="99">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[被保险人]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="120">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="123">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[租赁物放置地]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="35">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="100">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[保险项目]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="36">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="101">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[厂牌]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="37">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="102">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[型号]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="38">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="103">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[机号]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="143">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="146">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[数量]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="126">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="129">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[设备原值]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="39">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="104">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[投保金额]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="40">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="105">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[总投保金额]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="111">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                    </cell>
+                    <cell id="91">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="106">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[保费]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <group id="277">
+                <property name="groupName">NewTableGroup1</property>
+                <expression name="keyExpr" type="javascript">row["rect_id"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["rect_id"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="278">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">true</expression>
+                            </structure>
+                        </list-property>
+                        <cell id="279"/>
+                        <cell id="280"/>
+                        <cell id="281"/>
+                        <cell id="282"/>
+                        <cell id="283"/>
+                        <cell id="284"/>
+                        <cell id="285"/>
+                        <cell id="286"/>
+                        <cell id="287"/>
+                        <cell id="288"/>
+                        <cell id="289"/>
+                        <cell id="290"/>
+                        <cell id="291"/>
+                        <cell id="292"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="293">
+                        <method name="onCreate"><![CDATA[myIndex ++;]]></method>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">true</expression>
+                            </structure>
+                        </list-property>
+                        <cell id="294"/>
+                        <cell id="295"/>
+                        <cell id="296"/>
+                        <cell id="297"/>
+                        <cell id="298"/>
+                        <cell id="299"/>
+                        <cell id="300"/>
+                        <cell id="301"/>
+                        <cell id="302"/>
+                        <cell id="303"/>
+                        <cell id="304"/>
+                        <cell id="305"/>
+                        <cell id="306"/>
+                        <cell id="307"/>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="41">
+                    <method name="onPrepare"><![CDATA[
+]]></method>
+                    <method name="onCreate"><![CDATA[//var totalValue = this.getRowData().getColumnValue("cell_span");
+//if(totalValue != tempValue){
+//	myIndex ++;
+//	tempValue = totalValue;
+//}
+
+if(myIndex % 2 == 0){
+	this.getStyle().backgroundColor = "#A7A7A7";
+} else {
+	this.getStyle().backgroundColor = "#92CDDC";
+}
+
+
+
+
+
+]]></method>
+                    <cell id="42">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="82">
+                            <property name="resultSetColumn">insu_start_date</property>
+                        </data>
+                    </cell>
+                    <cell id="43">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="83">
+                            <property name="resultSetColumn">insu_from</property>
+                        </data>
+                    </cell>
+                    <cell id="44">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="84">
+                            <property name="resultSetColumn">insu_to</property>
+                        </data>
+                    </cell>
+                    <cell id="121">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="124">
+                            <property name="resultSetColumn">thing_addrs</property>
+                        </data>
+                    </cell>
+                    <cell id="45">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="85">
+                            <property name="resultSetColumn">thing_name</property>
+                        </data>
+                    </cell>
+                    <cell id="46">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="86">
+                            <property name="resultSetColumn">thing_brand</property>
+                        </data>
+                    </cell>
+                    <cell id="47">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="87">
+                            <property name="resultSetColumn">thing_type</property>
+                        </data>
+                    </cell>
+                    <cell id="48">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="88">
+                            <property name="resultSetColumn">thing_number</property>
+                        </data>
+                    </cell>
+                    <cell id="144">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="147">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[1]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="127">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="130">
+                            <property name="resultSetColumn">shui_price</property>
+                        </data>
+                    </cell>
+                    <cell id="49">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="89">
+                            <property name="resultSetColumn">insu_amount</property>
+                        </data>
+                    </cell>
+                    <cell id="50">
+                        <method name="onCreate"><![CDATA[if(this.getRowData().getColumnValue("rect_id") != vars["rect_id"]){
+	vars["amount_total_show"] = this.getRowData().getColumnValue("amount_total");
+} else {
+	vars["amount_total_show"] = "";
+}
+vars["rect_id"] = this.getRowData().getColumnValue("rect_id");
+]]></method>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="overflow">auto</property>
+                        <data id="314">
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">amount_total_show</property>
+                                    <text-property name="displayName">amount_total_show</text-property>
+                                    <expression name="expression" type="javascript">vars["amount_total_show"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">amount_total_show</property>
+                        </data>
+                    </cell>
+                    <cell id="112">
+                        <method name="onCreate"><![CDATA[this.getRowData().get
+this.colSpan = 2;]]></method>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="276">
+                            <property name="resultSetColumn">rect_id</property>
+                        </data>
+                    </cell>
+                    <cell id="92">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="96">
+                            <property name="resultSetColumn">insu_fee</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="rect_id">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="incp_id">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="incp_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="amount_total_show">
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

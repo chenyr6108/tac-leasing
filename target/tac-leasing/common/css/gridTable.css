@@ -1,0 +1,175 @@
+@CHARSET "UTF-8";
+
+.grid_table {
+	width : 100%;
+	border-collapse:collapse; /* 关键属性：合并表格内外边框(其实表格边框有2px，外面1px，里面还有1px哦) */
+	border:solid #A6C9E2; /* 设置边框属性；样式(solid=实线)、颜色(#999=灰) */
+	border-width:1px 0 0 1px; /* 设置边框状粗细：上 右 下 左 = 对应：1px 0 0 1px */
+	overflow: hidden;
+}
+.grid_table th {
+	border:solid #A6C9E2;
+    border-width:0 1px 1px 0;
+	background-color: #E1EFFB;
+	padding : 2;
+	margin : 1;
+	font-weight: bold;
+	text-align: center;
+	color: #2E6E9E;
+	height: 28px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+
+.grid_table th *{
+	text-align: center;
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+
+.grid_table tr{
+	cursor: default;
+	overflow: hidden;
+}
+.grid_table td {
+	border:solid #A6C9E2;
+    border-width:0 1px 1px 0;
+    text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	background-color: #FFFFFF;
+	padding : 5px 5px;
+	font-size: 12px;
+	font-weight: normal;
+	color: black;
+	font-family: "微软雅黑";
+}
+.grid_table td *{
+	font-size: 12px;
+	font-family: "微软雅黑";
+}
+
+.grid_table td a {
+	color: #2E6E9E;
+	text-decoration: none!important;
+	font-family: "微软雅黑";
+}
+
+.grid_table td a:hover  {
+	color: red!important;
+	text-decoration: underline!important;
+	font-family: "微软雅黑";
+}
+
+.align_left td{
+	text-align: left !important;
+}
+
+.align_left th{
+	text-align: left !important;
+}
+
+.grid_table .pact{
+	text-align: center; 
+	padding: 0px 3px!important; 
+	height: 0px!important; 
+	border-width: 0px!important;
+}
+
+.panel_table {
+	width : 100%;
+	border-collapse:collapse; /* 关键属性：合并表格内外边框(其实表格边框有2px，外面1px，里面还有1px哦) */
+	border:solid #A6C9E2; /* 设置边框属性；样式(solid=实线)、颜色(#999=灰) */
+	border-width:1px 0 0 1px; /* 设置边框状粗细：上 右 下 左 = 对应：1px 0 0 1px */
+	overflow: hidden;
+}
+.panel_table th {
+	border:solid #A6C9E2;
+    border-width:0 1px 1px 0;
+	background-color: #E1EFFB;
+	padding : 2;
+	margin : 1;
+	font-weight: bold;
+	text-align: center;
+	color: #2E6E9E;
+	height: 28px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+
+.panel_table th *{
+	text-align: center;
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+
+.panel_table tr{
+	cursor: default;
+	overflow: hidden;
+}
+.panel_table td {
+	border:solid #A6C9E2;
+    border-width:0 1px 1px 0;
+    text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	background-color: #FFFFFF;
+	padding : 5px 5px;
+	font-size: 12px;
+	font-weight: normal;
+	color: black;
+	font-family: "微软雅黑";
+}
+.panel_table td *{
+	font-size: 12px;
+	font-family: "微软雅黑";
+}
+
+.panel_text {
+	border:solid #A6C9E2 1px;
+	font-size: 12px;
+	height: 24px;
+	font-family: "微软雅黑";
+}
+
+.panel_text_error {
+	border:solid red 1px;
+	font-size: 12px;
+	height: 24px;
+	font-family: "微软雅黑";
+}
+
+.panel_button{
+	height: 24px;
+	padding: 0px 10px;
+	font-size: 12px!important;
+	font-family: "微软雅黑";
+}
+
+.panel_button_s{
+	height: 24px;
+	padding: 0px 5px;
+	font-size: 12px!important;
+	font-family: "微软雅黑";
+}
+
+.panel_select{
+	font-size: 14px;
+	height: 24px;
+	line-height: 30px;
+	font-family: "微软雅黑";
+	vertical-align: middle;
+}
+
+.panel_a {
+	color: #2E6E9E;
+	text-decoration: none!important;
+	font-family: "微软雅黑";
+	cursor: pointer;
+}
+
+.panel_a:hover  {
+	color: red!important;
+	text-decoration: underline!important;
+	font-family: "微软雅黑";
+}

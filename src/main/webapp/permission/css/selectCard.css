@@ -1,0 +1,18 @@
+.sec1 {
+background-color: #EEEEEE;
+cursor: hand;
+color: #000000;
+border-left: 1px solid #FFFFFF;
+border-top: 1px solid #FFFFFF;
+border-right: 1px solid gray;
+border-bottom: 1px solid #FFFFFF
+}
+.sec2 {
+background-color: #D4D0C8;
+cursor: hand;
+color: #000000;
+border-left: 1px solid #FFFFFF;
+border-top: 1px solid #FFFFFF;
+border-right: 1px solid gray;
+font-weight: bold;
+}

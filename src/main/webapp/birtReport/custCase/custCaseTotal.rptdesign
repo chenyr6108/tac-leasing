@@ -1,0 +1,1339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="USER_NAME" id="136">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="DEPT_ID" id="137">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="CUST_NAME" id="138">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="CASE_TYPE" id="139">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="DATE_TYPE" id="140">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="START_DATE" id="141">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="END_DATE" id="142">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="110"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="Data Set" id="111">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">deptName</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">custCode</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">custName</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">introducer</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">suplName</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">leaseType</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">equName</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">caseType</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">userName</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">confirmMoney</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">visitDateDescr</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">giveDateDescr</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">confirmDateDescr</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">expectedDateDescr</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">payDateDescr</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">payMoney</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">startDateDescr</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">deptName</property>
+                    <text-property name="displayName">办事处</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">custCode</property>
+                    <text-property name="displayName">客户编号</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">custName</property>
+                    <text-property name="displayName">客户名称</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">introducer</property>
+                    <text-property name="displayName">介绍人</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">suplName</property>
+                    <text-property name="displayName">供货商</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">leaseType</property>
+                    <text-property name="displayName">租赁方式</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">equName</property>
+                    <text-property name="displayName">租赁物概要</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">caseType</property>
+                    <text-property name="displayName">案况状态</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">userName</property>
+                    <text-property name="displayName">经办</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">confirmMoney</property>
+                    <text-property name="displayName">核准额度</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">visitDateDescr</property>
+                    <text-property name="displayName">访厂日</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">giveDateDescr</property>
+                    <text-property name="displayName">送件日</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">confirmDateDescr</property>
+                    <text-property name="displayName">核准日</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">expectedDateDescr</property>
+                    <text-property name="displayName">预计拨款日</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">payDateDescr</property>
+                    <text-property name="displayName">实际拨款日</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">payMoney</property>
+                    <text-property name="displayName">起租额度</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">startDateDescr</property>
+                    <text-property name="displayName">预计起租日</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">deptName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">custCode</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">custName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">introducer</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">suplName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">leaseType</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">equName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">caseType</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">userName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">confirmMoney</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">visitDateDescr</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">giveDateDescr</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">confirmDateDescr</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">expectedDateDescr</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">payDateDescr</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">payMoney</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">startDateDescr</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.batchjob.service)
+
+//var request = reportContext.getHttpServletRequest();
+
+var resultList=CustomerCaseBatchJobService.getCustCaseTotal(decodeURI(params["USER_NAME"].value),params["DEPT_ID"].value,decodeURI(params["CUST_NAME"].value),params["CASE_TYPE"].value,params["DATE_TYPE"].value,params["START_DATE"].value,params["END_DATE"].value);
+iter=resultList.iterator();
+]]></method>
+            <method name="fetch"><![CDATA[if(iter.hasNext()==false){
+	return false;
+}
+
+var data=iter.next();
+	row["deptName"]=data.getDeptName();
+	row["custCode"]=data.getCustCode();
+	row["custName"]=data.getCustName();
+	row["introducer"]=data.getIntroducer();
+	row["suplName"]=data.getSuplName();
+	row["leaseType"]=data.getLeaseType();
+	row["equName"]=data.getEquName();
+	row["caseType"]=data.getCaseType();
+	row["userName"]=data.getUserName();
+	row["confirmMoney"]=data.getConfirmMoney();
+	row["visitDateDescr"]=data.getVisitDateDescr();
+	row["giveDateDescr"]=data.getGiveDateDescr();
+	row["confirmDateDescr"]=data.getConfirmDateDescr();
+	row["expectedDateDescr"]=data.getExpectedDateDescr();
+	row["payDateDescr"]=data.getPayDateDescr();
+	row["payMoney"]=data.getPayMoney();
+	row["startDateDescr"]=data.getStartDateDescr();
+	
+return true;]]></method>
+            <method name="close"><![CDATA[resultList=null;
+data=null;
+iter=null;]]></method>
+        </script-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="width">30in</property>
+            <property name="orientation">landscape</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="7">
+            <property name="width">30in</property>
+            <column id="14">
+                <property name="width">21.28125in</property>
+            </column>
+            <header>
+                <row id="8">
+                    <property name="fontFamily">"微软雅黑"</property>
+                    <property name="fontWeight">bold</property>
+                    <cell id="9">
+                        <text id="3">
+                            <property name="fontWeight">normal</property>
+                            <property name="textAlign">left</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[制表时间:<value-of>new Date()</value-of>]]></text-property>
+                        </text>
+                        <label id="15">
+                            <property name="fontSize">16pt</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">客户案况</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+        </table>
+        <table id="16">
+            <property name="width">30in</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">i</property>
+                    <text-property name="displayName">i</text-property>
+                    <expression name="expression" type="javascript">i</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">deptName</property>
+                    <text-property name="displayName">办事处</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["deptName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">custCode</property>
+                    <text-property name="displayName">客户编号</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["custCode"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">custName</property>
+                    <text-property name="displayName">客户名称</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["custName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">introducer</property>
+                    <text-property name="displayName">介绍人</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["introducer"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">leaseType</property>
+                    <text-property name="displayName">租赁方式</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["leaseType"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">equName</property>
+                    <text-property name="displayName">租赁物概要</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["equName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">caseType</property>
+                    <text-property name="displayName">案况状态</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["caseType"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">userName</property>
+                    <text-property name="displayName">经办</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["userName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">suplName</property>
+                    <text-property name="displayName">供货商</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["suplName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">confirmMoney</property>
+                    <text-property name="displayName">核准额度</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["confirmMoney"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">payMoney</property>
+                    <text-property name="displayName">起租额度</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["payMoney"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">visitDateDescr</property>
+                    <text-property name="displayName">访厂日</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["visitDateDescr"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">giveDateDescr</property>
+                    <text-property name="displayName">送件日</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["giveDateDescr"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">confirmDateDescr</property>
+                    <text-property name="displayName">核准日</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["confirmDateDescr"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">expectedDateDescr</property>
+                    <text-property name="displayName">预计拨款日</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["expectedDateDescr"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">payDateDescr</property>
+                    <text-property name="displayName">实际拨款日</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["payDateDescr"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">startDateDescr</property>
+                    <text-property name="displayName">预计起租日</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["startDateDescr"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <method name="onPrepare"><![CDATA[i=1;]]></method>
+            <column id="74">
+                <property name="width">0.3854166666666667in</property>
+            </column>
+            <column id="75">
+                <property name="width">0.75in</property>
+            </column>
+            <column id="76">
+                <property name="width">1.71875in</property>
+            </column>
+            <column id="77">
+                <property name="width">2.0833333333333335in</property>
+            </column>
+            <column id="78">
+                <property name="width">2.1770833333333335in</property>
+            </column>
+            <column id="79">
+                <property name="width">2.3229166666666665in</property>
+            </column>
+            <column id="80">
+                <property name="width">0.8541666666666666in</property>
+            </column>
+            <column id="81">
+                <property name="width">1.96875in</property>
+            </column>
+            <column id="82">
+                <property name="width">0.84375in</property>
+            </column>
+            <column id="83">
+                <property name="width">0.6458333333333334in</property>
+            </column>
+            <column id="84">
+                <property name="width">1.1041666666666667in</property>
+            </column>
+            <column id="85">
+                <property name="width">0.8125in</property>
+            </column>
+            <column id="86">
+                <property name="width">0.8333333333333334in</property>
+            </column>
+            <column id="87">
+                <property name="width">0.8541666666666666in</property>
+            </column>
+            <column id="88">
+                <property name="width">0.9270833333333334in</property>
+            </column>
+            <column id="89">
+                <property name="width">0.9583333333333334in</property>
+            </column>
+            <column id="90">
+                <property name="width">1.1041666666666667in</property>
+            </column>
+            <column id="91">
+                <property name="width">0.8958333333333334in</property>
+            </column>
+            <header>
+                <row id="17">
+                    <property name="fontFamily">"微软雅黑"</property>
+                    <property name="fontSize">11pt</property>
+                    <property name="fontWeight">bold</property>
+                    <cell id="18">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="92">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">序号</text-property>
+                        </label>
+                    </cell>
+                    <cell id="19">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="94">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">办事处</text-property>
+                        </label>
+                    </cell>
+                    <cell id="20">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="95">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">客户编号</text-property>
+                        </label>
+                    </cell>
+                    <cell id="21">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="96">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">客户名称</text-property>
+                        </label>
+                    </cell>
+                    <cell id="22">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="97">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">介绍人</text-property>
+                        </label>
+                    </cell>
+                    <cell id="23">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="98">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">供货商</text-property>
+                        </label>
+                    </cell>
+                    <cell id="24">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="93">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">租赁方式</text-property>
+                        </label>
+                    </cell>
+                    <cell id="25">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="99">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">租赁物概要</text-property>
+                        </label>
+                    </cell>
+                    <cell id="26">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="100">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">案况状态</text-property>
+                        </label>
+                    </cell>
+                    <cell id="27">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="101">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">经办</text-property>
+                        </label>
+                    </cell>
+                    <cell id="28">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="102">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">核准额度</text-property>
+                        </label>
+                    </cell>
+                    <cell id="29">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="103">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">访厂日</text-property>
+                        </label>
+                    </cell>
+                    <cell id="30">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="104">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">送件日</text-property>
+                        </label>
+                    </cell>
+                    <cell id="31">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="105">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">核准日</text-property>
+                        </label>
+                    </cell>
+                    <cell id="32">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="106">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">预计拨款日</text-property>
+                        </label>
+                    </cell>
+                    <cell id="33">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="107">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">实际拨款日</text-property>
+                        </label>
+                    </cell>
+                    <cell id="34">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="108">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">起租额度</text-property>
+                        </label>
+                    </cell>
+                    <cell id="35">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <label id="109">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text-property name="text">预计起租日</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="36">
+                    <method name="onCreate"><![CDATA[i++;]]></method>
+                    <cell id="37">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="112">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">i</property>
+                        </data>
+                    </cell>
+                    <cell id="38">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="113">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">deptName</property>
+                        </data>
+                    </cell>
+                    <cell id="39">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="114">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">custCode</property>
+                        </data>
+                    </cell>
+                    <cell id="40">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="115">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">custName</property>
+                        </data>
+                    </cell>
+                    <cell id="41">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="116">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">introducer</property>
+                        </data>
+                    </cell>
+                    <cell id="42">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="121">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">suplName</property>
+                        </data>
+                    </cell>
+                    <cell id="43">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="117">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">leaseType</property>
+                        </data>
+                    </cell>
+                    <cell id="44">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="118">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">equName</property>
+                        </data>
+                    </cell>
+                    <cell id="45">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="119">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">caseType</property>
+                        </data>
+                    </cell>
+                    <cell id="46">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="120">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">userName</property>
+                        </data>
+                    </cell>
+                    <cell id="47">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="122">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">confirmMoney</property>
+                        </data>
+                    </cell>
+                    <cell id="48">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="130">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">visitDateDescr</property>
+                        </data>
+                    </cell>
+                    <cell id="49">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="131">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">giveDateDescr</property>
+                        </data>
+                    </cell>
+                    <cell id="50">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="132">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">confirmDateDescr</property>
+                        </data>
+                    </cell>
+                    <cell id="51">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="133">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">expectedDateDescr</property>
+                        </data>
+                    </cell>
+                    <cell id="52">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="134">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">payDateDescr</property>
+                        </data>
+                    </cell>
+                    <cell id="53">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="128">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">payMoney</property>
+                        </data>
+                    </cell>
+                    <cell id="54">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">middle</property>
+                        <data id="135">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftColor">#000000</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="resultSetColumn">startDateDescr</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

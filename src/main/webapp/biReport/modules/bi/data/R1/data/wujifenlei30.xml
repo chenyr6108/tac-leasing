@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart caption="资产变化趋势分析" subcaption="全部" lineThickness="1" showValues="0" formatNumberScale="0" anchorRadius="0" divLineAlpha="20" divLineColor="CC3300" divLineIsDashed="1" showAlternateHGridColor="1" alternateHGridAlpha="5" alternateHGridColor="CC3300" shadowAlpha="40" labelStep="1" numvdivlines="5" chartRightMargin="35" bgColor="FFFFFF,CC3300" bgAngle="270" bgAlpha="10,10">
+    <categories>
+        <category label="2010-10"/>
+        <category label="2010-11"/>
+        <category label="2010-12"/>
+        <category label="2011-01"/>
+        <category label="2011-02"/>
+        <category label="2011-03"/>
+        <category label="2011-04"/>
+        <category label="2011-05"/>
+        <category label="2011-06"/>
+        <category label="2011-07"/>
+        <category label="2011-08"/>
+        <category label="2011-09"/>
+    </categories>
+    <dataset seriesName="次级" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set value="2.75889E7"/>
+        <set value="0.0"/>
+        <set value="0.0"/>
+        <set value="0.0"/>
+        <set value="0.0"/>
+        <set value="0.0"/>
+        <set value="0.0"/>
+        <set value="0.0"/>
+        <set value="0.0"/>
+        <set value="0.0"/>
+        <set value="0.0"/>
+        <set value="0.0"/>
+    </dataset>
+    <styles>
+        <definition>
+            <style name="CaptionFont" type="font" size="12"/>
+        </definition>
+        <application>
+            <apply toObject="CAPTION" styles="CaptionFont"/>
+            <apply toObject="SUBCAPTION" styles="CaptionFont"/>
+        </application>
+    </styles>
+</chart>

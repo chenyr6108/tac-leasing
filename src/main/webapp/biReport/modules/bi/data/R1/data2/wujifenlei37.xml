@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart caption="资产构成趋势（12个月）" subcaption="裕融租赁有限公司昆山办事处" palette="1" shownames="1" showLegend="0" showvalues="0" showSum="1" yAxisMaxValue="100" decimals="0" overlapColumns="0">
+    <categories>
+        <category label="2011-08"/>
+    </categories>
+    <dataset seriesName="正常" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set value="100.0"/>
+    </dataset>
+    <dataset seriesName="关注" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="E6E61A" value="0.0"/>
+    </dataset>
+    <dataset seriesName="次级" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="E6941A" value="0.0"/>
+    </dataset>
+    <dataset seriesName="可疑" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="DD2248" value="0.0"/>
+    </dataset>
+    <dataset seriesName="损失" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+        <set color="111111" value="0.0"/>
+    </dataset>
+</chart>

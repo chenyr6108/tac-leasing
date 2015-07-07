@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="font" id="40">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of></value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="9">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">18pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">贷款用途声明</text-property>
+        </label>
+        <label id="10">
+            <property name="style">font</property>
+            <property name="fontSize">26pt</property>
+            <property name="textAlign">center</property>
+            <text-property name="text"></text-property>
+        </label>
+        <text id="13">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">12px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[中国银行股份有限公司]]></text-property>
+        </text>
+        <text id="14">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">12px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="pageBreakAfter">auto</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[   苏州工业园区支   ]]></text-property>
+        </text>
+        <text id="15">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">12px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[行：]]></text-property>
+        </text>
+        <text id="28">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">12px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    本人现向你行申请办理个人委托贷款业务，为此，本人郑重声明如下：]]></text-property>
+        </text>
+        <text id="29">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">12px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    本人保证将个人委托贷款资金用于合法的个人消费支出和经营用途，具体用途为]]></text-property>
+        </text>
+        <text id="30">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">12px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="pageBreakAfter">auto</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[  购车]]></text-property>
+        </text>
+        <text id="31">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">12px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[。本人保证贷款资金与所签订的借款合同约定相符，如果发生贷款资金被挪做他用或用于股票、证券投资以及其他国家法律和金融法规明确禁止的项目，委托人和你行有权立即收回贷款，并由本人承担由此发生的一切损失以及可能的法律后果。]]></text-property>
+        </text>
+        <label id="37">
+            <property name="style">font</property>
+            <property name="fontSize">1px</property>
+        </label>
+        <text id="36">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">12px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    如有需要补充贷款用途证明材料的情况，本人保证在贷款用款后]]></text-property>
+        </text>
+        <text id="35">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">12px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="pageBreakAfter">auto</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[            ]]></text-property>
+        </text>
+        <text id="34">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">12px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[日内，按委托人要求提供资金用途材料]]></text-property>
+        </text>
+        <text id="38">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">12px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="pageBreakAfter">auto</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[                                         ]]></text-property>
+        </text>
+        <text id="39">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">12px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[。
+    以上情况特此声明，如违反上述声明，本人同意按与委托人、你行三方共同签署的《个人委托贷款借款合同》的相关约定承担相关法律责任。
+]]></text-property>
+        </text>
+        <label id="25">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">32pt</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">                                                                     借款人：</text-property>
+        </label>
+        <label id="26">
+            <property name="style">font</property>
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">12pt</property>
+            <property name="textAlign">left</property>
+            <text-property name="text">                                                                            年   月   日    </text-property>
+        </label>
+    </body>
+</report>

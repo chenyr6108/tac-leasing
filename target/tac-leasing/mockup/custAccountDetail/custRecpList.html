@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>客户对账单</title>
+<script type="text/javascript" src="../import/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../import/jquery-ui-1.8.1.min.js"></script>
+
+<link rel="stylesheet" href="../script/search.css" rel="stylesheet"/>
+<link type="text/css" href="../resources/jquery/plugins/jq-grid/ui.jqgrid.css" rel="stylesheet"></link>
+<link type="text/css" href="../resources/jquery/themes/redmond/jquery-ui-1.8.1.custom.css" rel="stylesheet" />
+<style type="text/css">
+	* {
+		font-size: 12px;
+	}
+	
+	#main {
+		text-align: left;
+	}
+	
+	div.zc_grid {
+		font-size: 12px;
+	}
+	
+	table.zc_grid_title {
+		width: 100%;
+	}
+	
+	div.zc_grid_body {
+		
+	}
+	
+	th.zc_grid_head {
+		text-align: center;
+		border-bottom: 1px solid #C5DBEC;
+	}
+	
+	.jqgrow table.zc_grid_table {
+		width: 99%;
+		margin: 5px 0.5%;
+		border-left: 1px solid #C5DBEC;
+	}
+	
+	.huise {
+		background-color: #cccccc;
+	}
+	.kk { border: 1px solid #c5dbec; background: #fbf3f3 repeat-x; font-weight: bold; color: #2e6e9e; }
+	.tb_return{border: 1px solid #A6C9E2; width: 200px; height: 22px; text-align: center;}
+	.tb_return_t{width: 100px; height: 22px;}
+</style>	
+<script type="text/javascript">
+	$(function (){
+		$("#visit_date").datepicker($.datepicker.regional['zh-CN']);
+	});
+
+	function applyVisit(e){
+		$("#applyVisit_div").dialog({modal:true, autoOpen:false, width:500});
+		$("#applyVisit_div").dialog("open");
+	}
+	
+	function openExcel(){
+		window.location.href="AccountInfo.xlsx";
+	}
+	function openPDF(){
+		window.open("AccountInfo.pdf");
+	}
+</script> 
+</head>
+<body>
+
+		<div class="ui-jqgrid-titlebar ui-widget-header ui-corner-top ui-helper-clearfix" style="width: 850px;height: 30px">
+	   		<span class="ui-jqgrid-title" style="line-height: 30px; font-size: 15px;" >&nbsp;&nbsp;对账单管理--对账函信息</span>
+	   	</div>
+		   	<div class="zc_grid ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="main" style="width: 850px">
+            <div class="zc_grid_body jqgrowleft" style="width: 850px">
+			<div class="ui-state-default ui-jqgrid-hdiv " style="width: 850px">
+			<table cellspacing="0" cellpadding="0" border="0" class="ui-jqgrid-htable zc_grid_title" style="width: 800px">
+				<tr class="ui-jqgrid-labels">
+					<td  align="left">
+						客户：苏州杰悦五金机械有限公司&nbsp;
+					</td>
+					<td align="right">
+					<input type="button" value="导出Excel" onclick="openExcel();" class="ui-state-default ui-corner-all">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="导出PDF" onclick="openPDF();" class="ui-state-default ui-corner-all">
+					</td>
+				</tr>
+				</table>
+				<table cellspacing="0" cellpadding="0" border="0" class="ui-jqgrid-htable zc_grid_title" style="width: 800px">
+				<tr class="ui-jqgrid-labels">
+					<td colspan="2" align="center">
+						<strong><font color="red" >对账函</font></strong>
+					</td>
+				</tr>				
+				<tr class="ui-jqgrid-labels">
+					<td valign="top">
+						<table cellspacing="0" cellpadding="0" border="0" class="ui-jqgrid-htable zc_grid_title" style="width: 800px" height="340">
+							<tr class="ui-jqgrid-labels">
+								
+								<th height="26" width="50" class="ui-state-default ui-th-ltr zc_grid_head">
+									日期
+								</th>
+								<th width="150" class="ui-state-default ui-th-ltr zc_grid_head">
+									说明
+								</th>
+								<th width="50" class="ui-state-default ui-th-ltr zc_grid_head">
+									应收金额
+								</th>
+								<th width="50" class="ui-state-default ui-th-ltr zc_grid_head">
+									来款金额
+								</th>
+							</tr>
+								
+							<tr>
+								<td height="26" align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									2010/9/25&nbsp;
+								</td>
+								<td align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									合同：&nbsp;05022010090013&nbsp;&nbsp;第1期&nbsp;租金&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									￥13,050.00&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									&nbsp;
+								</td>
+							</tr>
+							
+							<tr>
+								<td height="26" align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									2010/9/25&nbsp;
+								</td>
+								<td align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									银行来款&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									  &nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									￥13,050.00&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<td height="26" align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									2010/10/20&nbsp;
+								</td>
+								<td align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									银行来款&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									  &nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									￥13,050.00&nbsp;
+								</td>
+							</tr>
+							
+							<tr>
+								<td height="26" align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									2010/10/25&nbsp;
+								</td>
+								<td align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									合同：&nbsp;05022010090013&nbsp;&nbsp;第2期&nbsp;租金&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									￥13,050.00&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									&nbsp;
+								</td>
+							</tr>
+							
+							<tr>
+								<td height="26" align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									2010/11/22&nbsp;
+								</td>
+								<td align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									银行来款&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									  &nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									￥23,200.00&nbsp;
+								</td>
+							</tr>
+						
+							<tr>
+								<td height="26" align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									2010/11/25&nbsp;
+								</td>
+								<td align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									合同：&nbsp;05022010090013&nbsp;&nbsp;第3期&nbsp;租金&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									￥13,050.00&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									&nbsp;
+								</td>
+							</tr>	
+							
+							<tr>
+								<td height="26" align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									2010/11/25&nbsp;
+								</td>
+								<td align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									合同：&nbsp;05022010090014&nbsp;&nbsp;第1期&nbsp;租金&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									￥10,150.00&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									&nbsp;
+								</td>
+							</tr>
+							
+							<tr>
+								<td height="26" align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									2010/12/25&nbsp;
+								</td>
+								<td align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									合同：&nbsp;05022010090013&nbsp;&nbsp;第2期&nbsp;罚息&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									￥120.5&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<td height="26" align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									2010/11/25&nbsp;
+								</td>
+								<td align="center" class="ui-widget-content jqgrow ui-row-ltr">
+								合同：&nbsp;05022010090014&nbsp;&nbsp;第1期&nbsp;罚息&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									￥120.5&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<td height="26" align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									2010/12/25&nbsp;
+								</td>
+								<td align="center" class="ui-widget-content jqgrow ui-row-ltr">
+									银行来款&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									  &nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									￥200.00&nbsp;
+								</td>
+							</tr>																													
+							<tr>
+								<td colspan="2" height="26" align="right" class="ui-widget-content jqgrow ui-row-ltr" >
+									总计：&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									￥49,541.00&nbsp;
+								</td>
+								<td align="right" class="ui-widget-content jqgrow ui-row-ltr">
+									￥49,500.00&nbsp;
+								</td>
+							</tr>
+				<tr>
+					<td colspan="4" align="center">
+						<input type="button" name="back" value="返回" onclick="javascript:history.back(-1);">
+					</td>
+				</tr>
+			</table>
+	</body>
+</html>

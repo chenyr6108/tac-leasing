@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart caption="租金" palette="4" decimals="0" enableSmartLabels="1" enableRotation="0" bgColor="FFFFFF,FFFFFF" formatNumberScale="0" bgAlpha="40,100" bgRatio="0,100" bgAngle="360" showBorder="1" startingAngle="70">
+    <set label="已收租金" value="14500.0" isSliced="0"/>
+    <set label="未收租金" value="3.5024029517E8" isSliced="0"/>
+</chart>

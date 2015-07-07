@@ -1,0 +1,66 @@
+	.ss_o {
+	background-image: url(image/ss_04.gif);
+	background-repeat: no-repeat;
+	height: 49px;
+	width: 53px;
+	background-position: right;
+}
+.ss_t {
+	background-image: url(image/ss_05.png);
+	background-repeat: repeat-x;
+	height: 49px;
+	width: auto;
+}
+.ss_th {
+	background-image: url(image/ss_07.png);
+	background-repeat: no-repeat;
+}
+.blue_button {
+	background-image: url(image/blue_button_bg_12.gif);
+	background-repeat: no-repeat;
+	text-align: center;
+	vertical-align: middle;
+	height: 34px;
+	width: 76px;
+	font-size: 13px;
+	color: #023f90;
+	text-decoration: none;
+	margin-left: 5px;
+	padding-top: 3px;
+	line-height: 26px;
+	float: left;
+}
+.blue_buttonc {
+	background-image: url(image/blue_button_bgc_14.gif);
+	background-repeat: no-repeat;
+	text-align: center;
+	vertical-align: middle;
+	height: 32px;
+	width: 110px;
+	font-size: 13px;
+	color: #023f90;
+	text-decoration: none;
+	margin-left: 5px;
+	padding-top: 3px;
+	line-height: 26px;
+	float: left;
+}
+.border_ss {
+	border: 1px solid #d2d2d2;
+	height: 60px;
+	background-color: #ffffff;
+}
+.fdj_ss {
+	background-image: url(image/fdj_03.png);
+	background-repeat: no-repeat;
+	height: 34px;
+	width: 43px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	margin-top: 8px;
+}
+input{
+    height:18px;
+    }

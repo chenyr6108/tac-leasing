@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 2012/03/22 Yang Yun 转移到spring
+<root>  
+    <service name = "acl" class="com.brick.user.service.UserService" />
+    <service name = "document" class="com.brick.service.app.Document" /> 
+    <service name = "permission" class="com.brick.permission.service.PermissionService" />   
+    <service name = "role" class="com.brick.permission.service.RoleService" />  
+	<service name = "assignmentPermission" class="com.brick.permission.service.AssignmentPermission"></service>
+	<service name = "supplier" class="com.brick.product.service.SupplierService"></service>
+	<service name = "department" class="com.brick.department.service.DepartmentManage" /> 
+	<service name = "employee" class="com.brick.employee.service.EmployeeManage" /> 
+	<service name = "customer" class="com.brick.customer.service.Customer" />   
+	<service name = "customerlink" class="com.brick.customer.service.CustomerLink" />   
+	<service name = "rentContract" class="com.brick.contract.service.RentContract" />   
+	<service name = "collectionManage" class="com.brick.collection.service.CollectionManage" />   
+	<service name = "handlePaylistService" class="com.brick.collection.service.HandlePaylistService" />   
+	<service name = "area" class="com.brick.area.service.AreaService"/>
+	<service name = "checkContract" class="com.brick.contract.service.CheckContractService" />   
+ 	<service name = "suplEquipment" class="com.brick.product.service.SuplEquipmentService"/>
+	<service name = "productType" class="com.brick.product.service.ProductTypeService" /> 
+	<service name = "productKind" class="com.brick.product.service.ProductKindService" /> 
+	<service name = "productProduct" class="com.brick.product.service.ProductProductService" /> 
+	<service name = "creditCustomer" class="com.brick.credit.service.CreditCustomerManage" /> 
+	<service name = "creditReport" class="com.brick.credit.service.CreditReportManage" /> 
+	<service name = "insuCompany"  class="com.brick.baseManage.service.InsuCompanyService" />
+	<service name = "insureType"    class="com.brick.baseManage.service.InsureTypeService" />
+	<service name = "bankInfo" class="com.brick.baseManage.service.BankInfoService" /> 
+	<service name = "bankAccount" class="com.brick.baseManage.service.BankAccountService" /> 
+	<service name = "pucsContract" class="com.brick.contract.service.PucsContract" />
+	<service name = "creditCustomerCorp" class="com.brick.credit.service.CreditCustomerCorpService" /> 
+	<service name = "creditPriorRecords" class="com.brick.credit.service.CreditPriorRecordsService" /> 
+	<service name = "creditPaylistService" class="com.brick.credit.service.CreditPaylistService" /> 
+	<service name = "riskAudit" class="com.brick.risk_audit.RiskAudit" />  
+	<service name = "pointsItems" class="com.brick.pointsItems.service.PointsItemsConfiguration" /> 
+	<service name = "riskAuditUpdate" class="com.brick.risk_audit.RiskAuditUpdate" />  
+	<service name = "riskAuditSee" class="com.brick.risk_audit.RiskAuditSee" />  
+	<service name = "riskAuditUpdateAfter" class="com.brick.risk_audit.RiskAuditUpdateAfter" />  
+	<service name = "composeUpload" class="com.brick.decompose.service.ComposeService" /> 
+	<service name = "decompose" class="com.brick.decompose.service.DecomposeManager" /> 
+	<service name = "deposit" class="com.brick.decompose.service.DepositService" /> 
+	<service name = "receivables" class="com.brick.receivables.service.ReceivablesManager" /> 
+	<service name = "report" class="com.brick.report.service.ReportService" /> 
+	<service name = "statement" class="com.brick.statement.service.StatementService" /> 
+	<service name = "checkDecompose" class="com.brick.decompose.service.CheckManager" /> 
+	<service name = "paymentService" class="com.brick.contract.service.PaymentService" /> 
+	<service name = "deliveryNoticeService" class="com.brick.contract.service.DeliveryNoticeService" /> 
+	<service name = "businessLog" class="com.brick.baseManage.service.BusinessLog" /> 
+	<service name = "dunTask" class="com.brick.dun.service.DunTaskService" /> 
+	<service name = "dunRent" class="com.brick.dun.service.DunRentService" /> 
+	<service name = "dataDictionary" class="com.brick.baseManage.service.DictionaryService" />
+	<service name = "memocontract" class="com.brick.contract.service.MemoContract" /> 
+	<service name = "companyManage" class="com.brick.department.service.CompanyManageService" /> 
+	<service name = "show" class="com.brick.permission.service.ShowService" /> 
+	<service name = "rentFile" class="com.brick.contract.service.RentFile" /> 
+	<service name = "fileService" class="com.brick.baseManage.service.FileManageService" /> 
+	<service name = "invoiceContract" class="com.brick.contract.service.InvoiceContractService" />
+	<service name = "supportCreditReportDelete" class="com.brick.support.service.SupportCreditReportDelete" />
+	<service name = "supportPaylist" class="com.brick.support.service.SupportPaylist" />
+	<service name = "supportUpdatePayMoney" class="com.brick.support.service.SupportUpdatePayMoney" />
+	<service name = "supportRiskDelete" class="com.brick.support.service.SupportRiskDelete" /> 
+	<service name = "creditVoucher" class="com.brick.credit.service.CreditVouchService" />
+	<service name = "supportUpdatePay" class="com.brick.support.service.SupportUpdatePay" /> 
+	<service name = "projectManage" class="com.brick.project.service.ProjectManage" /> 
+	<service name = "uploadService" class="com.brick.upload.service.UploadService" /> 
+	<service name = "exportPayToPdf" class="com.brick.collection.service.ExportPayToPdf" />
+	<service name = "dunDaily" class="com.brick.decompose.service.DunDailyService" /> 
+	<service name = "riskLevel" class="com.brick.risk_audit.RiskLevelManage" /> 
+	<service name = "salesLeads" class="com.brick.salesLeads.service.SalesLeadsManager" />
+	<service name = "lockManagement" class="com.brick.contract.service.LockManagementService" />
+	<service name = "biReport" class="com.brick.biReport.service.BiReportService" />
+	<service name = "expContract" class="com.brick.contract.service.ExpContract" />
+	<service name = "expQuoToPdf" class="com.brick.credit.service.ExportQuoToPdf" />
+	<service name = "achievement" class="com.brick.report.service.AchievementService" />
+	<service name = "openInvoice" class="com.brick.collection.service.OpenInvoice" />
+	<service name = "moneyRate" class="com.brick.moneyRate.service.MoneyRateService" />
+	<service name = "differentReport" class="com.brick.report.service.DifferentReportService" />
+	<service name = "exportContractPdf" class="com.brick.exportcontractpdf.service.ExportContractPdf" />
+	<service name = "exportCreditPdfs" class="com.brick.exportcontractpdf.service.ExportBeginCustPdf" />
+	<service name = "exporLleaseHoldPdf" class="com.brick.exportcontractpdf.service.ExporLleaseHoldPdf" />
+	<service name = "insuranceReport" class="com.brick.report.service.InsuranceService" />
+	<service name = "exportPayMoneyPdf" class="com.brick.exportcontractpdf.service.ExportPayMoneyPdf" />
+	<service name = "custCredit" class="com.brick.customer.service.CustomerCredit" />
+	<service name = "productCredit" class="com.brick.product.service.ProductCredit" />
+	<service name = "supplierContribute" class="com.brick.product.service.SupplierContributeService" />
+	<service name = "applyCompanyManage" class="com.brick.applycompanymanage.service.ApplyCompanyManage" />
+	<service name = "supplierReports" class="com.brick.product.service.SupplierReportsService" />
+	<service name = "backVisit" class="com.brick.backVisit.service.BackVisitMessageService" />
+	<service name = "visitViewToPdf" class="com.brick.backVisit.service.visitViewToPdf" />
+	<service name = "emailAndSms" class="com.brick.sendEmailAndSms.service.EmailAndSms" />
+	<service name = "backMoney" class="com.brick.backMoney.service.backMoneyMessageService" />
+	<service name = "backMoneyToPdf" class="com.brick.backMoney.service.backMoneyToPdf" />
+	<service name = "exportCreditMakeContractPdf" class="com.brick.exportcontractpdf.service.exportCreditMakeContractPdf" />
+	<service name = "exportApporvalletters" class="com.brick.exportcontractpdf.service.ExportApporvalletters" />
+	<service name = "backinfo" class="com.brick.backinfo.service.BackInfoManage" />
+	<service name = "bonusManage" class="com.brick.bonus.service.BonusService" />
+	<service name = "payMoney" class="com.brick.payMoney.service.payMoneyMessageService" />
+	<service name = "creditVouchManage" class="com.brick.credit.service.CreditVouchManage" />
+	<service name = "equipmentManager" class="com.brick.contract.service.EquipmentManagerService" />
+	<service name = "activitiesLog" class="com.brick.activitiesLog.service.activitiesLogService" />
+	<service name = "activityLogging" class="com.brick.baseManage.service.ActivityLoggingService" />
+	<service name = "ChangeSenson" class="com.brick.support.service.ChangeSenson" />
+	<service name = "passwordHomework" class="com.brick.exportcontractpdf.service.PasswordHomework" />
+	<service name = "officeTable" class="com.brick.tables.service.OfficeTableService" />
+	<service name = "contractCustomerHAB" class="com.brick.customer.service.ContractCustomerHAB" />
+	<service name = "insure" class="com.brick.insurance.service.InsureService" />
+	<service name = "cancellation" class="com.brick.insurance.service.CancellationService" />
+	<service name = "insuranceList" class="com.brick.insurance.service.InusranceListService" />
+	<service name = "renewal" class="com.brick.insurance.service.RenewalService" />
+	<service name = "satisfaction" class="com.brick.insurance.service.SatisfactionService" />
+	<service name="exportInsuExcel" class="com.brick.insurance.service.ExportExcel"></service>
+	<service name="satisfaction" class="com.brick.insurance.service.SatisfactionService"></service>
+	<service name="surrender" class="com.brick.insurance.service.SurrenderService"></service>
+	<service name="expBankNoticepdf" class="com.brick.contract.service.ExpBankNoticepdf"></service>
+	<service name="productNumber" class="com.brick.product.service.ProductNumberService"></service>
+	<service name="expEqmtPriceAgreeWTpdf" class="com.brick.contract.service.ExpEqmtPriceAgreeWTpdf"></service>
+	<service name="expEqmtPriceAgreeYBpdf" class="com.brick.contract.service.ExpEqmtPriceAgreeYBpdf"></service>
+
+	<service name = "exportApplySupperPromise" class="com.brick.exportcontractpdf.service.ExportApplySupperPromisePdf" />
+	<service name="backVisitRecordPDF" class="com.brick.backVisit.service.backVisitRecordPDF"></service>
+	<service name="expBuyBackPdf" class="com.brick.exportcontractpdf.service.ExpBuyBackPdf"></service>
+
+    <service name="expDunTaskDetails" class="com.brick.dun.service.ExpDunTaskDetails"></service>
+
+	<service name = "businessSupport" class="com.brick.businessSupport.BusinessSupport"></service>
+	 新增案况报表的模块 add by Shen Qi 
+	<service name="caseReportService" class="com.brick.caseReport.service.CaseReportService"></service>
+	<service name="interest" class="com.brick.report.service.InterestService"></service>
+	<service name="settleManage" class="com.brick.settle.service.SettleManage"></service>
+	Add By Michael 2011 09/20 For 修改合同设备
+	<service name="rentContractEquiMDF" class="com.brick.contract.service.RentContractEquiMDF"></service>
+	
+	Add By Michael 2012 1/9 For 增加测算表费用设置
+	<service name="paylistFeeSet" class="com.brick.paylistFeeSet.service.PaylistFeeSet"></service>
+	
+</root> -->

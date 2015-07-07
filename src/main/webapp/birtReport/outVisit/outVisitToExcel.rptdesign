@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="OUT_DATE" id="218">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Data Source" id="211"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="Data Set" id="212">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">auditDate</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">leaseCode</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">custName</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">userName</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">decpName</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">companyName</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">auditDate</property>
+                    <text-property name="displayName">委访日期</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">leaseCode</property>
+                    <text-property name="displayName">合同号</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">custName</property>
+                    <text-property name="displayName">承租人</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">userName</property>
+                    <text-property name="displayName">业务员</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">decpName</property>
+                    <text-property name="displayName">办事处</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">companyName</property>
+                    <text-property name="displayName">公司别</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">auditDate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">leaseCode</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">custName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">userName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">decpName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">companyName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.dun.command);
+
+
+var resultList=DunTaskLawCommand.getAuditExcel(params["OUT_DATE"].value);
+//System.out.print("222______________________________________________-"+resultList.size());
+iter=resultList.iterator();]]></method>
+            <method name="fetch"><![CDATA[if(iter.hasNext()==false){
+	return false;
+}
+var data=iter.next();
+row["auditDate"] = data.get("AUDIT_DATE");
+row["leaseCode"] = data.get("LEASE_CODE");
+row["custName"] = data.get("CUST_NAME");
+row["userName"] = data.get("NAME");
+row["decpName"] = data.get("DECP_NAME_CN");
+row["companyName"] = data.get("COMPANY_NAME");
+
+return true;]]></method>
+        </script-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2"/>
+    </page-setup>
+    <body>
+        <table id="103">
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">decpName</property>
+                    <text-property name="displayName">办事处</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["decpName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">leaseCode</property>
+                    <text-property name="displayName">合同号</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["leaseCode"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">custName</property>
+                    <text-property name="displayName">承租人</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["custName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">userName</property>
+                    <text-property name="displayName">业务员</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["userName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">auditDate</property>
+                    <text-property name="displayName">委访日期</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["auditDate"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">companyName</property>
+                    <text-property name="displayName">公司别</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["companyName"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="221">
+                <property name="width">0.7395833333333334in</property>
+            </column>
+            <column id="170">
+                <property name="width">0.7395833333333334in</property>
+            </column>
+            <column id="171">
+                <property name="width">0.5104166666666666in</property>
+            </column>
+            <column id="172">
+                <property name="width">0.5520833333333334in</property>
+            </column>
+            <column id="173">
+                <property name="width">0.010416666666666666in</property>
+            </column>
+            <column id="174">
+                <property name="width">0.4479166666666667in</property>
+            </column>
+            <column id="175">
+                <property name="width">0.28125in</property>
+            </column>
+            <column id="176">
+                <property name="width">0.2604166666666667in</property>
+            </column>
+            <column id="177">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <column id="178">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <column id="179">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <column id="180">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <column id="181">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <column id="182">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <column id="183">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <column id="184">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <column id="185">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <column id="186">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <column id="187">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <column id="188">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <column id="189">
+                <property name="width">0.3958333333333333in</property>
+            </column>
+            <header>
+                <row id="104">
+                    <property name="height">0.4583333333333333in</property>
+                    <cell id="219">
+                        <label id="222">
+                            <text-property name="text">公司别</text-property>
+                        </label>
+                    </cell>
+                    <cell id="105">
+                        <label id="191">
+                            <text-property name="text">办事处</text-property>
+                        </label>
+                    </cell>
+                    <cell id="106">
+                        <label id="192">
+                            <text-property name="text">合同编号</text-property>
+                        </label>
+                    </cell>
+                    <cell id="107">
+                        <label id="193">
+                            <text-property name="text">承租人</text-property>
+                        </label>
+                    </cell>
+                    <cell id="108">
+                        <label id="194">
+                            <text-property name="text">业务员</text-property>
+                        </label>
+                    </cell>
+                    <cell id="109">
+                        <label id="195">
+                            <text-property name="text">委访日期</text-property>
+                        </label>
+                    </cell>
+                    <cell id="110">
+                        <label id="196">
+                            <text-property name="text">回访日期</text-property>
+                        </label>
+                    </cell>
+                    <cell id="111">
+                        <label id="197">
+                            <text-property name="text">回访费用</text-property>
+                        </label>
+                    </cell>
+                    <cell id="112">
+                        <label id="198">
+                            <text-property name="text">请款日期</text-property>
+                        </label>
+                    </cell>
+                    <cell id="113">
+                        <label id="199">
+                            <text-property name="text">回访城市</text-property>
+                        </label>
+                    </cell>
+                    <cell id="114">
+                        <label id="200">
+                            <text-property name="text">回访人员</text-property>
+                        </label>
+                    </cell>
+                    <cell id="115">
+                        <label id="201">
+                            <text-property name="text">是否营业</text-property>
+                        </label>
+                    </cell>
+                    <cell id="116">
+                        <label id="202">
+                            <text-property name="text">接触对象</text-property>
+                        </label>
+                    </cell>
+                    <cell id="117">
+                        <label id="203">
+                            <text-property name="text">标的物外观</text-property>
+                        </label>
+                    </cell>
+                    <cell id="118">
+                        <label id="204">
+                            <text-property name="text">是否见标的物</text-property>
+                        </label>
+                    </cell>
+                    <cell id="119">
+                        <label id="205">
+                            <text-property name="text">标的物是否正常运营</text-property>
+                        </label>
+                    </cell>
+                    <cell id="120">
+                        <label id="206">
+                            <text-property name="text">回访结果</text-property>
+                        </label>
+                    </cell>
+                    <cell id="121">
+                        <label id="207">
+                            <text-property name="text">机器运行率</text-property>
+                        </label>
+                    </cell>
+                    <cell id="122">
+                        <label id="208">
+                            <text-property name="text">备注</text-property>
+                        </label>
+                    </cell>
+                    <cell id="123">
+                        <label id="209">
+                            <text-property name="text">委访后还款日期</text-property>
+                        </label>
+                    </cell>
+                    <cell id="124">
+                        <label id="210">
+                            <text-property name="text">委访后缴款天数</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="126">
+                    <property name="height">0.3229166666666667in</property>
+                    <cell id="220">
+                        <data id="224">
+                            <property name="resultSetColumn">companyName</property>
+                        </data>
+                    </cell>
+                    <cell id="127">
+                        <data id="213">
+                            <property name="resultSetColumn">decpName</property>
+                        </data>
+                    </cell>
+                    <cell id="128">
+                        <data id="214">
+                            <property name="resultSetColumn">leaseCode</property>
+                        </data>
+                    </cell>
+                    <cell id="129">
+                        <data id="215">
+                            <property name="resultSetColumn">custName</property>
+                        </data>
+                    </cell>
+                    <cell id="130">
+                        <data id="216">
+                            <property name="resultSetColumn">userName</property>
+                        </data>
+                    </cell>
+                    <cell id="131">
+                        <data id="217">
+                            <property name="resultSetColumn">auditDate</property>
+                        </data>
+                    </cell>
+                    <cell id="132"/>
+                    <cell id="133"/>
+                    <cell id="134"/>
+                    <cell id="135"/>
+                    <cell id="136"/>
+                    <cell id="137"/>
+                    <cell id="138"/>
+                    <cell id="139"/>
+                    <cell id="140"/>
+                    <cell id="141"/>
+                    <cell id="142"/>
+                    <cell id="143"/>
+                    <cell id="144"/>
+                    <cell id="145"/>
+                    <cell id="146"/>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

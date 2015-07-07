@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="GB2312"?>
+<configuration>  
+    <action>
+  		<name>compose</name>
+  		<allowType>xls</allowType>
+  		<denyType>jsp,exe</denyType>
+  		<path>/home/filsoft/financelease/upload</path>
+  		<maxSize>10240000</maxSize>
+  	</action> 	
+    <action>
+  		<name>pic</name>
+  		<allowType></allowType>
+  		<denyType>jsp,exe</denyType>
+  		<path>/home/filsoft/financelease/upload/pic</path>
+  		<maxSize>10240000</maxSize>
+  	</action> 
+    <action>
+  		<name>rentFile</name>
+  		<allowType></allowType>
+  		<denyType>jsp,exe</denyType>
+  		<path>/home/filsoft/financelease/upload/rentFile</path>
+  		<maxSize>10240000</maxSize>
+  	</action> 	  		
+    <action>
+  		<name>backVisitImage</name>
+  		<allowType></allowType>
+  		<denyType>jsp,exe</denyType>
+  		<path>/home/filsoft/financelease/upload/backVisitImage</path>
+  		<maxSize>10240000</maxSize>
+  	</action> 	  		
+    <action>
+  		<name>supplierUpload</name>
+  		<allowType></allowType>
+  		<denyType>jsp,exe</denyType>
+  		<path>/home/filsoft/financelease/upload/supplierUpload</path>
+  		<maxSize>10240000</maxSize>
+  	</action> 
+  	<!-- Add by Michael 上传水单 -->
+    <action>
+  		<name>transferCertificate</name>
+  		<allowType></allowType>
+  		<denyType>jsp,exe</denyType>
+  		<path>/home/filsoft/financelease/upload/decompose/transferCertificate</path>
+  		<maxSize>10240000</maxSize>
+  	</action> 
+  	
+  	<!-- 2012/6/12 Yang Yun 财务报表图片  -->
+    <action>
+  		<name>cropReportImg</name>
+  		<allowType></allowType>
+  		<denyType>jsp,exe</denyType>
+  		<path>/home/filsoft/financelease/upload/cropReportImg</path>
+  		<maxSize>10240000</maxSize>
+  	</action> 	 
+  	
+  	  	<!-- Add by Michael 2012 06-28 上传密码附件 -->
+    <action>
+  		<name>lockcodepassword</name>
+  		<allowType></allowType>
+  		<denyType>jsp,exe</denyType>
+  		<path>/home/filsoft/financelease/upload/lockcode/password</path>
+  		<maxSize>10240000</maxSize>
+  	</action>
+  	
+  	<!-- 2012/7/18 Yang Yun 理赔跟踪图片  -->
+    <action>
+  		<name>satisfactionImg</name>
+  		<allowType></allowType>
+  		<denyType>jsp,exe</denyType>
+  		<path>/home/filsoft/financelease/upload/satisfactionImg</path>
+  		<maxSize>10240000</maxSize>
+  	</action> 
+  	
+  	  	<!-- Add by Michael 2012 12-13  上传支票附件 -->
+    <action>
+  		<name>rentCheckDetailDoc</name>
+  		<allowType></allowType>
+  		<denyType>jsp,exe</denyType>
+  		<path>/home/filsoft/financelease/upload/rentCheck/rentCheckDetailDoc</path>
+  		<maxSize>10240000</maxSize>
+  	</action> 	
+  	<!-- 上传更改单图片 -->
+  	<action>
+  		<name>modifyOrderImage</name>
+  		<allowType></allowType>
+  		<denyType>jsp</denyType>
+  		<path>/home/filsoft/financelease/upload/modifyOrderImage</path>
+  		<maxSize>10240000</maxSize>
+  	</action>  
+  	<!-- 上传资讯需求单附件 -->
+  	<action>
+  		<name>demandImage</name>
+  		<allowType></allowType>
+  		<denyType>jsp</denyType>
+  		<path>/home/filsoft/financelease/upload/demandImage</path>
+  		<maxSize>10240000</maxSize>
+  	</action>  
+  	<action>
+  		<name>aprvFile</name>
+  		<allowType></allowType>
+  		<denyType>jsp</denyType>
+  		<path>/home/filsoft/financelease/upload/aprvFile</path>
+  		<maxSize>10240000</maxSize>
+  	</action> 
+  	<!-- 上传项目评审附件 -->
+  	<action>
+  		<name>riskFile</name>
+  		<allowType></allowType>
+  		<denyType>jsp</denyType>
+  		<path>/home/filsoft/financelease/upload/riskFile</path>
+  		<maxSize>10240000</maxSize>
+  	</action>
+  	
+  	<!-- 上传签办单附件 -->
+  	<action>
+  		<name>signOrderImage</name>
+  		<allowType></allowType>
+  		<denyType>jsp</denyType>
+  		<path>/home/filsoft/financelease/upload/signOrderImage</path>
+  		<maxSize>10240000</maxSize>
+  	</action> 
+  	
+</configuration>

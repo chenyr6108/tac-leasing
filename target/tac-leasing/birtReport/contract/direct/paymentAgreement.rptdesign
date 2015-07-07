@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[importPackage(Packages.java.lang);
+importPackage(Packages.java.util);
+importPackage(Packages.com.brick.contract.service);
+
+
+var dataMap = ContractBuilder.directPaymentAgreementBuilder(params["creditId"].value);
+vars["lease_code"] = dataMap.get("lease_code");
+vars["cust_name"] = dataMap.get("cust_name");
+vars["supl_name"] = dataMap.get("supl_name");
+vars["comp_name"] = dataMap.get("comp_name");
+vars["payMoney"] = dataMap.get("payMoney");
+vars["price2Supl"] = dataMap.get("price2Supl");
+vars["totalPrice"] = dataMap.get("totalPrice");
+vars["pledgePriceAvg"] = dataMap.get("pledgePriceAvg");]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="creditId" id="78">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <text id="9">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">32px</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[设备价款支付协议]]></text-property>
+        </text>
+        <text id="10">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">20px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[鉴于：]]></text-property>
+        </text>
+        <text id="11">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    __]]></text-property>
+        </text>
+        <data id="69">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">10px</property>
+            <property name="paddingLeft">1pt</property>
+            <property name="paddingRight">1pt</property>
+            <property name="textAlign">left</property>
+            <property name="whiteSpace">nowrap</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">cust_name</property>
+                    <text-property name="displayName">cust_name</text-property>
+                    <expression name="expression" type="javascript">vars["cust_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">cust_name</property>
+        </data>
+        <text id="12">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[__（下称“甲方”）与__]]></text-property>
+        </text>
+        <data id="70">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">10px</property>
+            <property name="paddingLeft">1pt</property>
+            <property name="paddingRight">1pt</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">comp_name</property>
+                    <text-property name="displayName">comp_name</text-property>
+                    <expression name="expression" type="javascript">vars["comp_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">comp_name</property>
+        </data>
+        <text id="13">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[__（下称“乙方”）签署了编号为__]]></text-property>
+        </text>
+        <data id="71">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">10px</property>
+            <property name="paddingLeft">1pt</property>
+            <property name="paddingRight">1pt</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">lease_code</property>
+                    <text-property name="displayName">lease_code</text-property>
+                    <expression name="expression" type="javascript">vars["lease_code"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">lease_code</property>
+        </data>
+        <text id="14">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[__的融资租赁合同（下称“租赁合同”），由乙方向甲方提供融资租赁服务，但乙方就租赁合同项下的标的物的购买和供应商的选定,系依甲方的自由意思及技能认定后,而指示乙方与供应商__]]></text-property>
+        </text>
+        <data id="72">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">10px</property>
+            <property name="paddingLeft">1pt</property>
+            <property name="paddingRight">1pt</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">supl_name</property>
+                    <text-property name="displayName">supl_name</text-property>
+                    <expression name="expression" type="javascript">vars["supl_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">supl_name</property>
+        </data>
+        <text id="15">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[__（下称“丙方”）,于]]></text-property>
+        </text>
+        <text id="75">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">10px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[        ]]></text-property>
+        </text>
+        <text id="16">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[年]]></text-property>
+        </text>
+        <text id="76">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">10px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[        ]]></text-property>
+        </text>
+        <text id="17">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[月]]></text-property>
+        </text>
+        <text id="77">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">10px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[        ]]></text-property>
+        </text>
+        <text id="18">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[__日就租赁合同标的物签定了合同号为__]]></text-property>
+        </text>
+        <data id="73">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">10px</property>
+            <property name="paddingLeft">1pt</property>
+            <property name="paddingRight">1pt</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">lease_code</property>
+                    <text-property name="displayName">lease_code</text-property>
+                    <expression name="expression" type="javascript">vars["lease_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">lease_code</property>
+        </data>
+        <text id="19">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="textAlign">left</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[__的买卖合同（下称“买卖合同”）。]]></text-property>
+        </text>
+        <text id="20">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[经协商一致，三方就买卖合同达成的共识如下：]]></text-property>
+        </text>
+        <text id="21">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">10px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[一. 增值税发票的开具事宜：]]></text-property>
+        </text>
+        <text id="22">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    因乙丙双方签订了买卖合同，故增值税发票开具的抬头为乙方，即]]></text-property>
+        </text>
+        <data id="85">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="paddingLeft">10px</property>
+            <property name="paddingRight">10px</property>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">comp_name</property>
+                    <text-property name="displayName">comp_name</text-property>
+                    <expression name="expression" type="javascript">vars["comp_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">comp_name</property>
+        </data>
+        <text id="23">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[。]]></text-property>
+        </text>
+        <text id="24">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">10px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[二. 付款履行事宜：]]></text-property>
+        </text>
+        <text id="25">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    针对买卖合同项下标的物总价款的履行，约定如下：]]></text-property>
+        </text>
+        <text id="26">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="marginLeft">30px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[1）甲方应于和乙方签定租赁合同及乙丙签订买卖合同前,先代乙方垫付买卖标的物的部份买卖价款]]></text-property>
+        </text>
+        <data id="79">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">10px</property>
+            <property name="marginLeft">30px</property>
+            <property name="paddingLeft">1pt</property>
+            <property name="paddingRight">1pt</property>
+            <structure name="numberFormat">
+                <property name="category">Currency</property>
+                <property name="pattern">¥#,##0.00{RoundingMode=HALF_UP}</property>
+            </structure>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">pledgePrice</property>
+                    <text-property name="displayName">price2Supl</text-property>
+                    <expression name="expression" type="javascript">vars["price2Supl"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">pledgePrice</property>
+        </data>
+        <text id="27">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="marginLeft">0px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[__元给丙方,作为租赁合同的保证金,并以此款项作为冲抵第一期租金的部份款。]]></text-property>
+        </text>
+        <text id="28">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">10px</property>
+            <property name="marginTop">0px</property>
+            <property name="marginLeft">0px</property>
+            <property name="display">block</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[    ]]></text-property>
+        </text>
+        <text id="84">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">0px</property>
+            <property name="marginLeft">30px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[2）剩馀买卖标的物价款]]></text-property>
+        </text>
+        <data id="80">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">0px</property>
+            <property name="marginLeft">0px</property>
+            <property name="paddingLeft">10px</property>
+            <property name="paddingRight">10px</property>
+            <structure name="numberFormat">
+                <property name="category">Currency</property>
+                <property name="pattern">¥#,##0.00{RoundingMode=HALF_UP}</property>
+            </structure>
+            <property name="display">inline</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">payMoney</property>
+                    <text-property name="displayName">payMoney</text-property>
+                    <expression name="expression" type="javascript">vars["totalPrice"]-vars["price2Supl"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">payMoney</property>
+        </data>
+        <text id="29">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">0px</property>
+            <property name="marginLeft">0px</property>
+            <property name="display">inline</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[元，由乙方支付给丙方。]]></text-property>
+        </text>
+        <text id="30">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="marginLeft">30px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[3）甲乙双方依本协议付款后,买卖价款即全额支付完毕。]]></text-property>
+        </text>
+        <text id="31">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">10px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[三. 本项买卖标的物若属可设置密码者,甲、丙双方均同意于本项租赁物上设置密码,并由乙方管控密码的发送权。]]></text-property>
+        </text>
+        <text id="32">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">10px</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[本协议经甲乙丙三方盖章后即为生效，本协议一式三份,三方各执一份。]]></text-property>
+        </text>
+        <grid id="33">
+            <property name="fontFamily">"宋体"</property>
+            <property name="fontSize">16px</property>
+            <property name="marginTop">30px</property>
+            <property name="width">7.947916666666667in</property>
+            <column id="34">
+                <property name="width">0.875in</property>
+            </column>
+            <column id="35">
+                <property name="width">7.072916666666667in</property>
+            </column>
+            <row id="36">
+                <property name="height">50px</property>
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="37">
+                    <text id="60">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[甲方：]]></text-property>
+                    </text>
+                </cell>
+                <cell id="38">
+                    <data id="81">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cust_name</property>
+                                <text-property name="displayName">cust_name</text-property>
+                                <expression name="expression" type="javascript">vars["cust_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cust_name</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="39">
+                <property name="height">50px</property>
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="40">
+                    <text id="61">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[日期：]]></text-property>
+                    </text>
+                </cell>
+                <cell id="41">
+                    <text id="66">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[    年    月    日]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="42">
+                <property name="height">20px</property>
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="43"/>
+                <cell id="44"/>
+            </row>
+            <row id="45">
+                <property name="height">50px</property>
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="46">
+                    <text id="64">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[乙方：]]></text-property>
+                    </text>
+                </cell>
+                <cell id="47">
+                    <data id="82">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">comp_name</property>
+                                <text-property name="displayName">comp_name</text-property>
+                                <expression name="expression" type="javascript">vars["comp_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">comp_name</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="48">
+                <property name="height">50px</property>
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="49">
+                    <text id="62">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[日期：]]></text-property>
+                    </text>
+                </cell>
+                <cell id="50">
+                    <text id="67">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[    年    月    日]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="51">
+                <property name="height">20px</property>
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="52"/>
+                <cell id="53"/>
+            </row>
+            <row id="54">
+                <property name="height">50px</property>
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="55">
+                    <text id="65">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[丙方：]]></text-property>
+                    </text>
+                </cell>
+                <cell id="56">
+                    <data id="83">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">supl_name</property>
+                                <text-property name="displayName">supl_name</text-property>
+                                <expression name="expression" type="javascript">vars["supl_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">supl_name</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="57">
+                <property name="height">50px</property>
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="58">
+                    <text id="63">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[日期：]]></text-property>
+                    </text>
+                </cell>
+                <cell id="59">
+                    <text id="68">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[    年    月    日]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="lease_code">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cust_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="supl_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="comp_name">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="payMoney">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="pledgePriceAvg">
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="price2Supl">
+            <expression name="value" type="javascript">0</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="totalPrice">
+            <expression name="value" type="javascript">0</expression>
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

@@ -1,0 +1,224 @@
+@CHARSET "UTF-8";
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.STYLE1 {
+	font-size: 12px;
+}
+
+.STYLE3 {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.STYLE4 {
+	color: #03515d;
+	font-size: 12px;
+	cursor: pointer;
+}
+.STYLE2 {
+	color: #03515d;
+	font-size: 12px;
+	cursor: pointer;
+	line-height: 1.8em;
+	margin: 3px;
+}
+.STYLE2 td {
+	padding-left: 5px;
+	background-color: #FFFFFF;
+}
+.STYLE2 th {
+	background-color: #d1eaf0;
+	padding-left: 5px;
+}
+.STYLE5 {
+	color: #03515d;
+	font-size: 12px;
+	cursor: pointer;
+	line-height: 1.8em;
+	margin: 3px;
+}
+.STYLE6 {
+	font-size: 12px;
+	font-weight: normal;
+	color: #03515D;
+	text-align: center;
+	line-height: 1.8em;
+}
+
+.keda_kuang_top {
+	background-image: url(keda_center_kuangtop_03_03.png);
+	background-repeat: repeat-x;
+	height:21px;
+}
+.kuang_line {
+	border: 1px solid #798d98;
+}
+select,input{
+	color: #03515d;
+	font-size: 10px;
+	vertical-align:middle;
+}
+.button_keda {
+	font-size: 12px;
+	color: #03515d;
+	background-image: url(button_keda_03.gif);
+	background-repeat: no-repeat;
+	text-align: center;
+	height: 23px;
+	width: 78px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+.button_chang {
+	font-size: 12px;
+	color: #03515d;
+	background-image: url(changbutton1.gif);
+	background-repeat: no-repeat;
+	text-align: center;
+	height: 23px;
+	width: 150px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+.mainbox, .header, .tablebox, .copyright {
+	margin-top:10px;
+	width:98%;
+	min-width:960px;
+	clear:both;
+	font-size: 12px;
+	color: #666666;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+.red {
+	font-size: 12px;
+	color: #FF0000;
+}
+
+
+.tagContent {
+	padding:8px;
+	background:#fff;
+	display:none;
+	margin: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #24618E;
+	border-bottom-color: #24618E;
+	border-left-color: #24618E;
+} 
+.displaynone {
+	display: none;
+}
+
+#tagContent div.selectTag{ display:block} 
+.canchukuang {
+	background-color: #FFFFFF;
+	width: 500px;
+	position: absolute;
+	left: 30%;
+	top: 30%;
+}
+
+.yanse1 {
+	background-color: #f6fbff;
+}
+
+.yanse2 {
+	background-color: #e8f4ff;
+}
+.yanse3 {
+	background-color: #d1eaf0;
+}
+
+
+
+.black_translucent {
+	position: absolute;
+	background: #000000;
+	filter:Alpha(opacity=30);
+	-moz-opacity:.5;
+	opacity:0.5;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+}
+h2 {
+        font: bold 14px Verdana, Arial, Helvetica, sans-serif;
+        color: #000;
+        margin: 0px;
+        padding: 0px 0px 0px 15px;
+}
+
+/*- Menu Tabs J--------------------------- */
+
+    #tabsJ {
+	float:left;
+	width:100%;
+	background:#ffffff;
+	font-size:93%;
+	line-height:normal;
+	border-bottom:1px solid #24618E;
+      }
+    #tabsJ ul {
+        margin:0;
+        padding:10px 10px 0 50px;
+        list-style:none;
+      }
+    #tabsJ li {
+      display:inline;
+      margin:0;
+      padding:0;
+      }
+    #tabsJ a {
+      float:left;
+      background:url(tableftJ.gif) no-repeat left top;
+      margin:0;
+      padding:0 0 0 5px;
+      text-decoration:none;
+      }
+    #tabsJ a span {
+      float:left;
+      display:block;
+      background:url(tabrightJ.gif) no-repeat right top;
+      padding:5px 15px 4px 6px;
+      color:#24618E;
+      }
+    /* Commented Backslash Hack hides rule from IE5-Mac \*/
+    #tabsJ a span {float:none;}
+    /* End IE5-Mac hack */
+    #tabsJ a:hover span {
+      color:#FFF;
+      }
+    #tabsJ a:hover {
+      background-position:0% -42px;
+      }
+    #tabsJ a:hover span {
+      background-position:100% -42px;
+      }
+
+        #tabsJ #current a {
+                background-position:0% -42px;
+        }
+        #tabsJ #current a span {
+                background-position:100% -42px;
+                color:#FFF;
+        }

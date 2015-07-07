@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>R-flesh.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+     <script type="text/javascript">
+     	function refresh(){
+     		$("#showLog").html("<font color='red'>loading.....</font>");
+     		$.ajax({
+     			type:'post',
+     			url:'../../../servlet/defaultDispatcher',
+     			data:'__action=biReport.createAllXml',
+     			success:function(databack){
+     				$("#showLog").html("<font color='green'>刷新完毕!</font>"); 	
+     			}
+     		});
+     	}
+     </script>
+
+  </head>
+  
+  <body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <center><a href="javascript:void(0)" onclick="refresh();">刷新报表数据</a>
+    	 <br /><div id="showLog"></div></center>
+  </body>
+</html>

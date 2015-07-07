@@ -1,0 +1,7 @@
+[ { "text": "1. Review of existing structures", "expanded": true, 
+	"children": [ { "text": "1.1 jQuery core" }, { "text": "1.2 metaplugins" } ] 
+}, 
+
+{ "text": "2. Wrapper plugins" }, 
+{ "text": "3. Summary", "hasChildren": true ,"class":"folder"}, 
+{ "text": "4. Questions and answers" } ] 

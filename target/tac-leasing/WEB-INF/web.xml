@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+
+	<!-- access check -->		
+	<!--<filter>
+			 <filter-name>accessFilter</filter-name>
+			 <filter-class>com.brick.util.filter.AccessFilter</filter-class>
+		  </filter>
+		  <filter-mapping>
+			<filter-name>accessFilter</filter-name>
+			<url-pattern>*.jsp</url-pattern>
+		  </filter-mapping>	
+	-->
+	
+	<!-- ip filter --><!--
+		 <filter>
+			<filter-name>IpFilter</filter-name>
+			<filter-class>com.brick.util.filter.IpFilter</filter-class>
+			<init-param>
+				<param-name>ip</param-name>
+				<param-value>192.168.0.2,192.168.0.3</param-value>
+			</init-param>
+		</filter>
+		-->
+		
+   	<context-param>  
+	   <param-name>contextConfigLocation</param-name>  
+	   <param-value>classpath:config/app-context.xml</param-value>  
+	</context-param>
+	<listener>  
+	    <listener-class>com.brick.base.listener.ContextAndDataAccessorLoaderListener</listener-class>  
+	</listener>
+
+
+<!-- Birt -->
+<!-- Default locale setting.
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_LOCALE</param-name>
+		<param-value>en-US</param-value>
+	</context-param>
+
+	<!-- 
+		Default timezone setting.
+		Examples: "Europe/Paris", "GMT+1".
+		Defaults to the container's timezone.		
+	 -->
+	<context-param>
+		<param-name>BIRT_VIEWER_TIMEZONE</param-name>
+		<param-value></param-value>
+	</context-param>
+	
+	<!--
+		Report resources directory for preview. Defaults to ${birt home}
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_WORKING_FOLDER</param-name>
+		<param-value></param-value>
+	</context-param>
+	
+	<!--
+		Temporary document files directory. Defaults to ${birt home}/documents
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_DOCUMENT_FOLDER</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!--
+		Flag whether the report resources can only be accessed under the
+		working folder. Defaults to true
+	-->
+	<context-param>
+		<param-name>WORKING_FOLDER_ACCESS_ONLY</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!--
+		Settings for how to deal with the url report path. e.g. "http://host/repo/test.rptdesign". 
+		
+		Following values are supported:
+		
+		<all> 		- All paths.
+		<domain>	- Only the paths with host matches current domain. Note the comparison is literal, "127.0.0.1" and "localhost" are considered as different hosts.
+		<none> 		- URL paths are not supported.
+		
+		Defaults to "domain".
+	-->
+	<context-param>
+		<param-name>URL_REPORT_PATH_POLICY</param-name>
+		<param-value>domain</param-value>
+	</context-param>
+
+	<!--
+		Temporary image/chart directory. Defaults to ${birt home}/report/images
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_IMAGE_DIR</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Engine log directory. Defaults to ${birt home}/logs -->
+	<context-param>
+		<param-name>BIRT_VIEWER_LOG_DIR</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Report engine log level -->
+	<context-param>
+		<param-name>BIRT_VIEWER_LOG_LEVEL</param-name>
+		<param-value>WARNING</param-value>
+	</context-param>
+
+	<!--
+		Directory where to store all the birt report script libraries (JARs).
+		Defaults to ${birt home}/scriptlib
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_SCRIPTLIB_DIR</param-name>
+		<param-value></param-value>
+	</context-param>
+	
+	<!-- Resource location directory. Defaults to ${birt home} -->
+	<context-param>
+		<param-name>BIRT_RESOURCE_PATH</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Preview report rows limit. An empty value means no limit. -->
+	<context-param>
+		<param-name>BIRT_VIEWER_MAX_ROWS</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!--
+		Max cube fetch levels limit for report preview (Only used when
+		previewing a report design file using the preview pattern)
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_MAX_CUBE_ROWLEVELS</param-name>
+		<param-value></param-value>
+	</context-param>
+	<context-param>
+		<param-name>BIRT_VIEWER_MAX_CUBE_COLUMNLEVELS</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Memory size in MB for creating a cube. -->
+	<context-param>
+		<param-name>BIRT_VIEWER_CUBE_MEMORY_SIZE</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Defines the BIRT viewer configuration file -->
+	<context-param>
+		<param-name>BIRT_VIEWER_CONFIG_FILE</param-name>
+		<param-value>WEB-INF/viewer.properties</param-value>
+	</context-param>
+
+	<!--
+		Flag whether to allow server-side printing. Possible values are "ON"
+		and "OFF". Defaults to "ON".
+	-->
+	<context-param>
+		<param-name>BIRT_VIEWER_PRINT_SERVERSIDE</param-name>
+		<param-value>ON</param-value>
+	</context-param>
+
+	<!--
+		Flag whether to force browser-optimized HTML output. Defaults to true
+	-->
+	<context-param>
+		<param-name>HTML_ENABLE_AGENTSTYLE_ENGINE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!--
+		Filename generator class/factory to use for the exported reports.
+	-->
+	<context-param>
+		<param-name>BIRT_FILENAME_GENERATOR_CLASS</param-name>
+		<param-value>org.eclipse.birt.report.utility.filename.DefaultFilenameGenerator</param-value>
+	</context-param>
+
+	<!-- 编码过滤器 -->
+	<filter> 
+		<filter-name>encodingFilter</filter-name> 
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
+		<init-param> 
+		<param-name>encoding</param-name> 
+		<param-value>UTF8</param-value> 
+		</init-param> 
+		<init-param> 
+		<param-name>forceEncoding</param-name> 
+		<param-value>true</param-value> 
+		</init-param> 
+	</filter> 
+	
+	<filter-mapping> 
+		<filter-name>encodingFilter</filter-name> 
+		<url-pattern>*.do</url-pattern> 
+	</filter-mapping> 
+	
+	<!--
+		Viewer Filter used to set the request character encoding to UTF-8.
+	-->
+	<filter>
+    	<filter-name>ViewerFilter</filter-name>
+        <filter-class>org.eclipse.birt.report.filter.ViewerFilter</filter-class>
+	</filter>
+    <filter-mapping>
+        <filter-name>ViewerFilter</filter-name>
+        <servlet-name>ViewerServlet</servlet-name>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>ViewerFilter</filter-name>
+        <servlet-name>EngineServlet</servlet-name>
+    </filter-mapping>
+    				
+	<!-- Viewer Servlet Context Listener -->
+	<listener>
+		<listener-class>org.eclipse.birt.report.listener.ViewerServletContextListener</listener-class>
+	</listener>
+
+	<!-- Viewer HttpSession Listener -->
+	<listener>
+		<listener-class>org.eclipse.birt.report.listener.ViewerHttpSessionListener</listener-class>
+	</listener>
+	
+	<!-- Viewer Servlet, Supports SOAP -->
+	<servlet>
+		<servlet-name>ViewerServlet</servlet-name>
+		<servlet-class>org.eclipse.birt.report.servlet.ViewerServlet</servlet-class>
+	</servlet>
+
+	<!-- Engine Servlet -->
+	<servlet>
+		<servlet-name>EngineServlet</servlet-name>
+		<servlet-class>org.eclipse.birt.report.servlet.BirtEngineServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ViewerServlet</servlet-name>
+		<url-pattern>/frameset</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ViewerServlet</servlet-name>
+		<url-pattern>/run</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/preview</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/download</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/parameter</url-pattern>
+	</servlet-mapping>	
+
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/document</url-pattern>
+	</servlet-mapping>	
+
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/output</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/extract</url-pattern>
+	</servlet-mapping>
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/birt.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tlds/birt.tld</taglib-location>
+		</taglib>
+		
+		<!-- 分页标签 -->
+		<taglib>
+	        <taglib-uri>/pagingtarglib</taglib-uri>
+	        <taglib-location>/WEB-INF/paging.tld</taglib-location>
+	    </taglib>
+	    
+	    <!-- 案件状态标签 -->
+		<taglib>
+	        <taglib-uri>/creditstatuslib</taglib-uri>
+	        <taglib-location>/WEB-INF/creditstatus.tld</taglib-location>
+	    </taglib>
+	    
+	    <!-- 标准下拉框（数据库数据集） -->
+		<taglib>
+	        <taglib-uri>/tacTaglib</taglib-uri>
+	        <taglib-location>/WEB-INF/tacTaglib.tld</taglib-location>
+	    </taglib>
+	    
+   		<!-- 多选下拉框标签-->
+		<taglib>
+	        <taglib-uri>/multiSelectlib</taglib-uri>
+	        <taglib-location>/WEB-INF/multiSelect.tld</taglib-location>
+	    </taglib>
+		
+		<!-- 图表标签 -->
+		<taglib>
+	        <taglib-uri>/charttarglib</taglib-uri>
+	        <taglib-location>/WEB-INF/chart.tld</taglib-location>
+	    </taglib>
+
+	</jsp-config>
+ 
+	<filter>
+		<filter-name>checkLogin</filter-name>
+		<filter-class>com.brick.util.filter.CheckLoginFilter</filter-class>
+	</filter> 
+	<filter-mapping>
+		<filter-name>checkLogin</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> 
+<!--Character Filter-->
+	<filter>
+		<filter-name>CharsetEncodingFilter</filter-name>
+		<filter-class>com.brick.util.filter.SetEncodeFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>		  
+	<filter-mapping>
+		<filter-name>CharsetEncodingFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+<!--character filter end-->	
+
+	<!-- Initialization -->
+	<servlet>
+		<servlet-name>area</servlet-name>
+		<servlet-class>
+			com.brick.servlet.AreaAction
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>area</servlet-name>
+		<url-pattern>/area.action</url-pattern>
+	</servlet-mapping>
+	<servlet>   
+		<servlet-name>ConfigInit</servlet-name>
+		<servlet-class>com.brick.servlet.ConfigInit</servlet-class>
+    
+		<init-param>
+			<param-name>config-file</param-name>
+			<param-value>/WEB-INF/glb-config.xml</param-value>
+		</init-param>    
+    
+    
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!-- End Of Initialization -->
+  
+	<servlet>
+		<servlet-name>GetImg</servlet-name>
+		<servlet-class>com.brick.servlet.GetImg</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetImg</servlet-name>
+		<url-pattern>/getimg</url-pattern>
+	</servlet-mapping> 
+	
+	<servlet>
+		<servlet-name>ShowImg</servlet-name>
+		<servlet-class>com.brick.servlet.ShowImg</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowImg</servlet-name>
+		<url-pattern>/showImg</url-pattern>
+	</servlet-mapping> 
+
+	<servlet>
+		<servlet-name>DefaultDispatcher</servlet-name>
+		<servlet-class>com.brick.servlet.DefaultDispatcher</servlet-class>
+		<init-param>
+			<param-name>upload-config</param-name>
+			<param-value>/WEB-INF/classes/config/upload-config.xml</param-value>
+		</init-param> 	
+	</servlet>
+	<servlet>
+    <servlet-name>EmailSendToTime</servlet-name>
+    <servlet-class>com.brick.servlet.EmailSendToTime</servlet-class>
+    <init-param>
+     		<param-name>startTask</param-name>
+     		<param-value>false</param-value>
+    	</init-param>
+    	<!-- caseReport is for 案况报表 -->
+    	<init-param>
+     		<param-name>caseReport</param-name>
+     		<param-value>false</param-value>
+    	</init-param>
+    	<init-param>
+     		<param-name>intervalTime</param-name>
+     		<param-value>1</param-value>
+    	</init-param>
+    	<load-on-startup>300</load-on-startup> 
+  </servlet>
+	
+	 <servlet-mapping>
+    <servlet-name>EmailSendToTime</servlet-name>
+    <url-pattern>/servlet/EmailSendToTime</url-pattern>
+  </servlet-mapping>
+	
+	
+	<servlet-mapping>
+		<servlet-name>DefaultDispatcher</servlet-name>
+		<url-pattern>/servlet/defaultDispatcher</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>  
+	  <servlet-name>springMVC</servlet-name>  
+	  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	  <init-param>  
+	        <param-name>contextConfigLocation</param-name>  
+	        <param-value>classpath:config/spring-mvc/springMVC.xml</param-value>  
+	    </init-param>  
+	  <load-on-startup>1</load-on-startup>  
+	</servlet>  
+	<servlet-mapping>  
+	    <servlet-name>springMVC</servlet-name>
+	    <url-pattern>*.do</url-pattern>  
+	</servlet-mapping> 
+	
+
+	
+	<welcome-file-list>
+	<!-- Modify by Michael 2012 07-13 修正已登录再开页面跳转Bug -->
+		<!-- <welcome-file>frame/main.jsp</welcome-file> -->
+		<welcome-file>sys/acl/login.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!--error-->
+	<error-page>
+   	<exception-type>com.brick.exceptions.AppException</exception-type>
+   	<location>/error.jsp</location>
+   </error-page>
+</web-app>

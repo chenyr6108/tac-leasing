@@ -1,0 +1,38 @@
+#menu_container div{
+	overflow: hidden;
+	font-size: 12px;
+}
+#menu_container .item {
+	height: 25px;
+	line-height: 25px;
+	cursor: pointer;
+	padding-left: 30px;
+}
+#menu_container .type{
+	padding-left: 10px;
+}
+#menu_container .childs{
+	display: none;
+}
+#menu_container .item:hover {
+	background: transparent url(../images/menu_background.gif) repeat;
+}
+#menu_container .selected{
+	background: transparent url(../images/menu_background.gif) repeat;
+}
+.collapsed{
+	background: transparent url(../images/menu_icons.png) no-repeat -192px -2px;/*-208px 50%*/
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.expanded{
+	background-position: -208px -2px;
+}
+#menu_container .item b{
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	line-height: 25px;
+}

@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>访厂</title>
+<script type="text/javascript" src="../import/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../import/jquery-ui-1.8.1.min.js"></script>
+
+<link rel="stylesheet" href="../script/search.css" rel="stylesheet"/>
+<link type="text/css" href="../resources/jquery/plugins/jq-grid/ui.jqgrid.css" rel="stylesheet"></link>
+<link type="text/css" href="../resources/jquery/themes/redmond/jquery-ui-1.8.1.custom.css" rel="stylesheet" />
+<link href="../script/image/ss_bigk.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	* {
+		font-size: 12px;
+	}
+	
+	#main {
+		text-align: left;
+	}
+	
+	div.zc_grid {
+		font-size: 12px;
+	}
+	
+	table.zc_grid_title {
+		width: 100%;
+	}
+	
+	div.zc_grid_body {
+		
+	}
+	
+	th.zc_grid_head {
+		text-align: center;
+		border-bottom: 1px solid #C5DBEC;
+	}
+	
+	.jqgrow table.zc_grid_table {
+		width: 99%;
+		margin: 5px 0.5%;
+		border-left: 1px solid #C5DBEC;
+	}
+	
+	.huise {
+		background-color: #cccccc;
+	}
+	.kk { border: 1px solid #c5dbec; background: #fbf3f3 repeat-x; font-weight: bold; color: #2e6e9e; }
+	.tb_return{border: 1px solid #A6C9E2; width: 200px; height: 22px;}
+	.tb_return_t{border: 1px solid #A6C9E2; width: 80px; height: 22px;}
+	.search_tb {border: 1px solid #A6C9E2; width: 100px; height: 16px;}
+</style>	 
+<script type="text/javascript">
+	$(function (){
+		$("#visit_date").datepicker($.datepicker.regional['zh-CN']);
+		$("#apply_date_from").datepicker($.datepicker.regional['zh-CN']);
+		$("#apply_date_to").datepicker($.datepicker.regional['zh-CN']);
+		$("#plan_date_from").datepicker($.datepicker.regional['zh-CN']);
+		$("#plan_date_to").datepicker($.datepicker.regional['zh-CN']);
+	});
+	function inputReport(e){
+		location.href="visitForm.html";
+	}
+	function outputReport(e){
+		location.href="visitFormForShow.html";
+	}
+	function assignVisit(e){
+		$("#assignVisit_div").dialog({modal:true, autoOpen:false, width:500});
+		$("#assignVisit_div").dialog("open");
+	}
+	function assignVisit_sub(){
+		$("#v_s").text("已分配");
+		$("#v_b").text($("#visit_by").val());
+		$("#v_d").text($("#visit_date").val() + $("#visit_time").val());
+		$('#assignVisit_div').dialog('close');
+	}
+</script>
+</head>
+<body>
+<div class="ui-jqgrid-titlebar ui-widget-header ui-corner-top ui-helper-clearfix" style="height: 30px">
+ 		<span class="ui-jqgrid-title" style="line-height: 30px; font-size: 15px;" >&nbsp;&nbsp;访厂</span>
+</div>
+<div class="zc_grid ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="main">
+        <div class="zc_grid_body jqgrowleft">
+		<div>
+		<table width="97%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+			<tr>
+		        <td style="width:54px;" class="ss_bigo">&nbsp;</td>
+		        <td style="width:600px;" class="ss_bigt">
+					<table style="margin-left: 10px;">
+						<tr>
+							<td>业务希望访厂时间：</td>
+							<td><input type="text" id="apply_date_from" class="search_tb"/></td>
+							<td>到：</td>
+							<td><input type="text" id="apply_date_to" class="search_tb"/></td>
+							<td>审查预计访厂时间：</td>
+							<td><input type="text" id="plan_date_from" class="search_tb"/></td>
+							<td>到：</td>
+							<td><input type="text" id="plan_date_to" class="search_tb"/></td>
+						</tr>
+						<tr>
+							<td>审查预计访厂人员：</td>
+							<td><input type="text" class="search_tb"/></td>
+							<td>经办人：</td>
+							<td><input type="text" class="search_tb"/></td>
+							<td>区域：</td>
+							<td colspan="3"><input type="text" class="search_tb"/></td>
+						</tr>
+						<tr>
+							<td>查询内容：</td>
+							<td colspan="7"><input type="text" style="border: 1px solid #A6C9E2; width: 477px; height: 16px;"/></td>
+						</tr>
+					</table>
+		 		</td>
+				<td style="width:50px;" class="ss_bigt" valign="middle">
+					<a href="javaScript:void(0)" id="search" onclick="$('#form1').submit();" class="blue_button">搜 索</a>
+				</td>
+				<td style="width:13px;" class="ss_bigth" valign="top">&nbsp;</td>
+			</tr>
+		</table>
+</div>
+<br/>
+<div class="ui-state-default ui-jqgrid-hdiv ">
+<input type="button" value="导出访厂报告" style="width: 100px; height: 28px;" onclick="outputReport(this);"/>
+<table cellspacing="0" cellpadding="0" border="0" class="ui-jqgrid-htable zc_grid_title" id="#table1">
+	<thead>
+	<tr class="ui-jqgrid-labels">
+		<th width="1%" class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>&nbsp;</strong>
+		</th>
+		<th width="2%" class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>序号</strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>客户名称 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>办事处</strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>区域主管 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>客户经理 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>融资额 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>资信调查报告</strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>业务希望<br/>访厂时间 </strong>
+		</th>
+		<th width="3%" class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>访厂<br/>区域 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>审查预计<br/>访厂时间 </strong>
+		</th>
+		<th width="5%" class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>审查预计<br/>访厂人员 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>实际访厂时间 </strong>
+		</th>
+		<th width="5%" class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>实际<br/>访厂人员 </strong>
+		</th>
+		<th class="ui-state-default ui-th-ltr zc_grid_head">
+			<strong>操作 </strong>
+		</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr	class="ui-widget-content jqgrow ui-row-ltr">
+			<td><input type="radio" name="exVisiReport"/></td>
+			<td>1&nbsp;</td>
+			<td>广州市彰旗模具制造有限公司 &nbsp;</td>
+			<td>佛山办事处 &nbsp;</td>
+			<td>王志成 &nbsp;</td>
+			<td>吴智 &nbsp;</td>
+			<td>￥735,000.00&nbsp;</td>
+			<td><a>[查看]</a>&nbsp;&nbsp;<a>[资料]</a></td>
+			<td>2012-4-20 下午</td>
+			<td>苏州</td>
+			<td>2012-4-20 下午</td>
+			<td>杨赟</td>
+			<td>2012-4-20 下午</td>
+			<td>杨赟</td>
+			<td id="test_td"><a id="assignVisit" href="javascript:void(0);" onclick="assignVisit(this)">[修改分配]</a>&nbsp;&nbsp;<a id="fillVisit" href="javascript:void(0);" onclick="inputReport(this)">[修改访厂报告]</a></td>
+		</tr>
+		<tr	class="ui-widget-content jqgrow ui-row-ltr">
+			<td><input type="radio" name="exVisiReport"/></td>
+			<td>2&nbsp;</td>
+			<td>广州市彰旗模具制造有限公司 &nbsp;</td>
+			<td>佛山办事处 &nbsp;</td>
+			<td>王志成 &nbsp;</td>
+			<td>吴智 &nbsp;</td>
+			<td>￥735,000.00&nbsp;</td> 
+			<td><a>[查看]</a>&nbsp;&nbsp;<a>[资料]</a></td>
+			<td>2012-4-20 上午</td>
+			<td>昆山</td>
+			<td id="v_d">&nbsp;</td>
+			<td id="v_b">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td id="test_td"><a id="assignVisit" href="javascript:void(0);" onclick="assignVisit(this)">[分配]</a>&nbsp;&nbsp;<a id="fillVisit" href="javascript:void(0);" onclick="inputReport(this)">[填报访厂报告]</a></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div style="display:none;" id="assignVisit_div" title="请选择访厂人员和时间">
+	<div class="zc_grid ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="main">
+          <div class="zc_grid_body jqgrowleft">
+			<div class="ui-widget-content jqgrow ui-row-ltr ">
+				<table cellspacing="1" cellpadding="3" border="0" class="ui-jqgrid-htable zc_grid_title">
+					<tr class="ui-state-default ui-jqgrid-hdiv">
+						<td style="text-align: center;"><strong>访厂人员：</strong><font color="red">*</font></td>
+						<td><input type="text" id="visit_by" name="visit_by" class="tb_return"/></td>
+					</tr>
+					<tr class="ui-state-default ui-jqgrid-hdiv">
+						<td style="text-align: center;"><strong>访厂日期：</strong><font color="red">*</font></td>
+						<td><input type="text" id="visit_date" name="visit_date" class="tb_return"/>&nbsp;</td>
+					</tr>
+					<tr class="ui-state-default ui-jqgrid-hdiv">
+						<td style="text-align: center;"><strong>访厂时间：</strong><font color="red">*</font></td>
+						<td><select class="tb_return_t" id="visit_time">
+							<option value="全天">全天</option>
+							<option value="上午">上午</option>
+							<option value="下午">下午</option>
+						</select></td>
+					</tr>
+					
+					<tr class="ui-state-default ui-jqgrid-hdiv">
+						<td colspan="2" id="button_flag" style="text-align: center;">
+							<input type="button" id="sumBut" value="确&nbsp;定" onclick="assignVisit_sub()" class="ui-state-default ui-corner-all" >
+							<input type="button" value="关&nbsp;闭" onclick="$('#assignVisit_div').dialog('close');" class="ui-state-default ui-corner-all">
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<formBeans>
+	<formBean id="searchFormBean">
+		<property name="searchTo" type="com.brick.base.to.BaseTo" />
+	</formBean>
+	<action path="riskAudit.getTheSame" formBean="searchFormBean"/>
+	
+	<action path="visitCommand.doApplyVisit" formBean="visitFormBean"/>
+	<formBean id="visitFormBean">
+		<property name="visitationTo" type="com.brick.visitation.to.VisitationTO"/>
+	</formBean>
+	
+	<action path="visitCommand.doInputReport" formBean="visitReportForm"/>
+	<action path="businessSupport.doInputReport" formBean="visitReportForm"/>
+	<formBean id="visitReportForm">
+		<property name="reportTo" type="com.brick.visitation.to.VisitationReportTo"/>
+	</formBean>
+	
+	<action path="invoiceManageCommand.updateInvoice" formBean="invoiceForm"/>
+	<action path="invoiceManageCommand.updateInvoiceStatus" formBean="invoiceForm"/>
+	<action path="invoiceManageCommand.batchUpdateInvoice" formBean="invoiceForm"/>
+	<formBean id="invoiceForm">
+		<property name="invoice" type="com.brick.invoice.to.InvoiceTO"/>
+	</formBean>
+	
+	<action path="riskAudit.addRatingSubject" formBean="riskScoreCardForm"/>
+	<action path="riskAudit.addRatingOption" formBean="riskScoreCardForm"/>
+	<formBean id="riskScoreCardForm">
+		<property name="riskScoreCard" type="com.brick.risk_audit.to.ScoreCardTO"/>
+	</formBean>
+	
+</formBeans>

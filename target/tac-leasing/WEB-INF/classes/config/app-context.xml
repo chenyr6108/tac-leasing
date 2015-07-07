@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+       xmlns:aop="http://www.springframework.org/schema/aop"  
+       xmlns:context="http://www.springframework.org/schema/context"  
+       xmlns:tx="http://www.springframework.org/schema/tx"  
+       xsi:schemaLocation="http://www.springframework.org/schema/beans    
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd   	
+       http://www.springframework.org/schema/aop    
+       http://www.springframework.org/schema/aop/spring-aop-3.2.xsd   
+       http://www.springframework.org/schema/context    
+       http://www.springframework.org/schema/context/spring-context-3.2.xsd   
+       http://www.springframework.org/schema/tx    
+       http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+	<!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean" autowire="no">
+		<property name="jndiName">
+			<value>java:comp/env/jdbc/tacDataSource</value>
+		</property>
+	</bean> -->
+	
+		
+		<context:component-scan base-package="com">
+	    	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">  
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />  
+        <property name="url" value="jdbc:sqlserver://127.0.0.1:1433;databaseName=ygDB" />
+        <property name="username" value="sa" />  
+        <property name="password" value="m4bj/6fu4u,4" />  
+    </bean> 
+	
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean"> 
+		<property name="configLocation" value="classpath:config/sql/sqlmap_cfg.xml"/> 
+		<property name="dataSource" ref="dataSource"/> 
+	</bean> 
+	
+	<bean id="sqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">  
+        <property name="sqlMapClient">  
+            <ref bean="sqlMapClient" />  
+        </property>  
+    </bean>
+	
+	<!-- 事务管理器 --> 
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean> 
+	
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+	
+	<!-- 事务通知 -->
+	<!-- <tx:advice id="txAdvice" transaction-manager="transactionManager">   
+        <tx:attributes>   
+            <tx:method name="insert*" propagation="REQUIRED" />
+            <tx:method name="add*" propagation="REQUIRED"/>
+            <tx:method name="update*" propagation="REQUIRED"/>   
+            <tx:method name="delete*" propagation="REQUIRED"/>   
+            <tx:method name="select*" read-only="true"/>
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="doService" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="*" read-only="true"/>   
+        </tx:attributes>   
+    </tx:advice>  -->
+	
+	<!-- aop配置 -->
+	<!-- 第一个*匹配方法的返回类型    第二*..匹配任何包以及其子包       
+        	第三个*匹配以相应表达式结尾的类或接口    第四个.*(..)匹配相应类中带任何参数的方法 -->
+	<!-- <aop:config>   
+        <aop:pointcut id="txPointcut" expression="execution(* com.brick.service.core.AService.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>   
+    </aop:config> -->
+    
+    <!-- <aop:config>   
+        <aop:pointcut id="txForCommand" expression="execution(* com.brick..*Command.*(..))"/>   
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txForCommand"/>   
+    </aop:config> -->	
+    
+	<bean id="baseDAO" class="com.brick.base.dao.BaseDAO">
+		<property name="sqlMapClientTemplate" ref="sqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="baseService" class="com.brick.base.service.BaseService">
+		<property name="baseDAO" ref="baseDAO"/>
+	</bean>
+	
+	<bean id="baseCommand" class="com.brick.base.command.BaseCommand">
+		<property name="baseService" ref="baseService"/>
+	</bean>
+	
+	<bean id="formBeanComposer" class="com.brick.base.FormBeanComposer" init-method="initFormBeans">
+		<property name="formBeanConfig" value="classpath:config/form-bean.xml"/>
+	</bean>
+	
+	<bean id="tacSqlMapClient" class="com.brick.base.common.TacSqlMapClientImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	
+	<import resource="classpath*:config/spring/spring-*.xml"/>
+</beans>
